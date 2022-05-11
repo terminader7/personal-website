@@ -8,6 +8,7 @@ export const About = () => {
     <section id="About">
       <AboutContainer>
         <h1>Hello, I'm Nader</h1>
+        <img></img>
         <p>blah blah blah blah blah</p>
       </AboutContainer>
     </section>
