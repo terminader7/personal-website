@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Hamburger } from "../images/Hamburger";
+import { Cottage } from "../images/Cottage";
 
 const NavbarContainer = styled.nav`
   background-color: #cc9a9a;
@@ -11,7 +12,23 @@ const NavbarContainer = styled.nav`
   width: 100%;
 `;
 const NavLink = styled.li`
-  display: inline;
+  display: inline-block;
+`;
+const LogoLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  :hover {
+    text-decoration: underline;
+  }
+`;
+const NavLinkItem = styled(Link)`
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 const NavLinkList = styled.ul`
   display: flex;
@@ -26,12 +43,15 @@ export const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <h1>Navbar</h1>
+      <h1>
+        <LogoLink to="/">
+          <Cottage />
+        </LogoLink>
+      </h1>
       <NavLinkList>
         <div
           onClick={() => {
             setIsOpen(!isOpen);
-            console.log(isOpen);
           }}
         >
           {!isOpen ? <Hamburger /> : "X"}
@@ -39,16 +59,13 @@ export const Navbar = () => {
         {isOpen && (
           <>
             <NavLink>
-              <Link to="/">Home</Link>
+              <NavLinkItem to="/about">About</NavLinkItem>
             </NavLink>
             <NavLink>
-              <Link to="/about">About</Link>
+              <NavLinkItem to="/projects">Projects</NavLinkItem>
             </NavLink>
             <NavLink>
-              <Link to="/projects">Projects</Link>
-            </NavLink>
-            <NavLink>
-              <Link to="/contact">Contact</Link>
+              <NavLinkItem to="/contact">Contact</NavLinkItem>
             </NavLink>
           </>
         )}
