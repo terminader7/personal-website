@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const AboutContainer = styled.div``;
+const AboutContainer = styled.div`
+  background-color: #f78888;
+`;
 
 export const About = () => {
   return (

@@ -8,7 +8,7 @@ const ContactItemsContainer = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
-  background-color: Tan;
+  background-color: #90ccf4;
   align-items: center;
   flex-direction: column;
 `;

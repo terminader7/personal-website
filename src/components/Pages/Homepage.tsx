@@ -25,27 +25,28 @@ const PreviewsContainer = styled.div`
   align-items: stretch;
   height: 100%;
   text-align: center;
+  font-size: 25px;
 `;
 const AboutPreview = styled.div`
-  background-color: #f3d250;
+  background-color: #f78888;
   width: 33.3vw;
 `;
 const AboutPreviewContent = styled.h1`
-  font-family: "majesti_bannerbold", Times, serif;
+  font-family: "majesti_bannerbold", Times, serif; ;
 `;
 const ProjectsPreview = styled.div`
-  background-color: #90ccf4;
+  background-color: #74f2b4;
   width: 33.3vw;
 `;
 const ProjectsPreviewContent = styled.h1`
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "majesti_bannerbold", Times, serif;
 `;
 const ContactPreview = styled.div`
-  background-color: #f78888;
+  background-color: #90ccf4;
   width: 33.4vw;
 `;
 const ContactPreviewContent = styled.h1`
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "majesti_bannerbold", Times, serif;
 `;
 export const Homepage = () => {
   return (

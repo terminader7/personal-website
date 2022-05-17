@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const ProjectsContainer = styled.div``;
+const ProjectsContainer = styled.div`
+  background-color: #74f2b4;
+`;
 
 export const Projects = () => {
   return (
