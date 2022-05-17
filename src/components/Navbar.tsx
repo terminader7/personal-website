@@ -5,7 +5,7 @@ import { Hamburger } from "../images/Hamburger";
 import { Cottage } from "../images/Cottage";
 
 const NavbarContainer = styled.nav`
-  background-color: #cc9a9a;
+  background-color: #ececec;
   color: black;
   display: flex;
   flex-direction: row;
@@ -30,6 +30,9 @@ const NavLinkItem = styled(Link)`
     text-decoration: underline;
   }
 `;
+const MenuItem = styled.div`
+  font-weight: bold;
+`;
 const NavLinkList = styled.ul`
   display: flex;
   justify-content: flex-end;
@@ -49,13 +52,13 @@ export const Navbar = () => {
         </LogoLink>
       </h1>
       <NavLinkList>
-        <div
+        <MenuItem
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         >
           {!isOpen ? <Hamburger /> : "X"}
-        </div>
+        </MenuItem>
         {isOpen && (
           <>
             <NavLink>

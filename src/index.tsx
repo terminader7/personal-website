@@ -15,6 +15,7 @@ const WebsiteContainer = styled.div`
   padding: 0;
   width: 100%;
   position: absolute;
+  height: 100vh;
 `; //page scrolls left to right, fix that
 
 export const App = () => {
