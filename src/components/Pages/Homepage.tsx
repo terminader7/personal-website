@@ -8,7 +8,8 @@ const HomepageContainer = styled.div`
   background-color: #b2c9d1;
   align-items: stretch;
   width: 100vw;
-  height: 91vh; //hardcoded, make less hacky
+  height: 90vh; //hardcoded, make less hacky
+  position: relative;
 `;
 const HomepageLink = styled(Link)`
   color: black;
@@ -48,6 +49,7 @@ const ContactPreview = styled.div`
 const ContactPreviewContent = styled.h1`
   font-family: "majesti_bannerbold", Times, serif;
 `;
+
 export const Homepage = () => {
   return (
     <HomepageContainer>

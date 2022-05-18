@@ -10,6 +10,7 @@ const NavbarContainer = styled.nav`
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 10vh;
 `;
 const NavLink = styled.li`
   display: inline-block;
