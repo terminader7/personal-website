@@ -5,7 +5,7 @@ import { Hamburger } from "../images/Hamburger";
 import { Cottage } from "../images/Cottage";
 
 const NavbarContainer = styled.nav`
-  background-color: #ececec;
+  background-color: transparent;
   color: black;
   display: flex;
   flex-direction: row;
