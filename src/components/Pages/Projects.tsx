@@ -5,11 +5,14 @@ import { Sections } from "../../types";
 const ProjectsContainer = styled.div`
   background-color: #74f2b4;
 `;
+const ProjectsTitleText = styled.div`
+  color: #2b2b2b;
+`;
 
 export const Projects = () => {
   return (
     <ProjectsContainer id={Sections.projects}>
-      <div>Projects</div>
+      <ProjectsTitleText>Projects</ProjectsTitleText>
     </ProjectsContainer>
   );
 };

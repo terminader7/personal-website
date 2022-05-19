@@ -9,23 +9,28 @@ const ContactItemsContainer = styled.div`
   display: flex;
   height: 100vh;
   flex: 1;
-  justify-content: center;
-  background-color: grey;
-  align-items: center;
+  background-color: #2b2b2b;
   flex-direction: column;
 `;
 const ContactButton = styled.button`
   background-color: transparent;
   border: none;
 `;
-const ContactMessage = styled.div`
+const ContactTitleText = styled.div`
   color: white;
+  font-size: 30pt;
+  font-weight: bold;
+`;
+const ContactTextInvitation = styled.div`
+  color: black;
 `;
 const ContactLinks = styled.div`
   gap: 5px;
   background-color: white;
-
+  align-items: center;
   flex-direction: row;
+  justify-content: center;
+  margin: auto;
 `;
 const EmailContainer = styled.div`
   border-color: black;
@@ -38,8 +43,9 @@ const EmailContainerItem = styled.a`
 export const Contact = () => {
   return (
     <ContactItemsContainer id={Sections.contact}>
-      <ContactMessage>How to reach me</ContactMessage>
+      <ContactTitleText>Contact</ContactTitleText>
       <ContactLinks>
+        <ContactTextInvitation>Want to know more?</ContactTextInvitation>
         <EmailContainer>
           <EmailContainerItem href="mailto:nebrahim2424@gmail.com">
             nebrahim2424@gmail.com

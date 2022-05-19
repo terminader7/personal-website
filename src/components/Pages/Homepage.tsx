@@ -6,8 +6,8 @@ import { About } from "./About";
 import { Projects } from "./Projects";
 import { ScrollTo } from "../../utils";
 import { Sections } from "../../types";
+import { Navbar } from "../Navbar";
 
-//TO DO, make each section of page even in size, change links to anchor tags, get rid of hamburger, change color scheme, get rid of routes
 const HomepageContainer = styled.div`
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@ const PreviewsContainer = styled.div`
 export const Homepage = () => {
   return (
     <HomepageContainer>
-      <WelcomeTextContainer>
+      <WelcomeTextContainer id={Sections.home}>
         <WelcomeText>
           Hello, I'm Nader Ebrahim.
           <br /> I'm a front-end developer
@@ -79,6 +79,7 @@ export const Homepage = () => {
           Learn more about me
         </WelcomeButton>
       </WelcomeTextContainer>
+      <Navbar />
       <PreviewsContainer>
         <About />
         <Projects />

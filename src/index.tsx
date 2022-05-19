@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Projects } from "./components/Pages/Projects";
 import { Homepage } from "./components/Pages/Homepage";
-import { Navbar } from "./components/Navbar";
-import { Contact } from "./components/Pages/Contact";
-import { About } from "./components/Pages/About";
 
 const WebsiteContainer = styled.div`
   box-sizing: border-box;
@@ -21,10 +16,7 @@ const WebsiteContainer = styled.div`
 export const App = () => {
   return (
     <WebsiteContainer>
-      <BrowserRouter>
-        <Navbar />
-        <Homepage />
-      </BrowserRouter>
+      <Homepage />
     </WebsiteContainer>
   );
 };

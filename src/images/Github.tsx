@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const LogoItem = styled.svg`
   :hover {
-    fill: #bd2c00;
+    fill: #6e5494;
     cursor: pointer;
   }
   transition: 0.5s;
