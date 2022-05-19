@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Sections } from "../../types";
 
 const ProjectsContainer = styled.div`
   background-color: #74f2b4;
@@ -7,8 +8,8 @@ const ProjectsContainer = styled.div`
 
 export const Projects = () => {
   return (
-    <ProjectsContainer>
-      <p>This is where the projects go</p>
+    <ProjectsContainer id={Sections.projects}>
+      <div>Projects</div>
     </ProjectsContainer>
   );
 };

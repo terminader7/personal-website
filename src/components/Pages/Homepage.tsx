@@ -1,35 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Link } from "react-router-dom";
+import { Contact } from "./Contact";
+import { About } from "./About";
+import { Projects } from "./Projects";
+import { ScrollTo } from "../../utils";
+import { Sections } from "../../types";
 
+//TO DO, make each section of page even in size, change links to anchor tags, get rid of hamburger, change color scheme, get rid of routes
 const HomepageContainer = styled.div`
   display: flex;
-  background-color: #b2c9d1;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-`;
-const HomepageLink = styled(Link)`
-  color: black;
-  text-decoration: none;
-  :hover {
-    text-decoration: underline;
-  }
+  width: 100%;
 `;
 const WelcomeTextContainer = styled.div`
   display: flex;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  text-align: center;
-  font-family: "Raleway", sans-serif;
+  animation: gradient 60s ease infinite;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  flex-direction: column;
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -42,64 +36,53 @@ const WelcomeTextContainer = styled.div`
     }
   }
 `;
-const WelcomeTextItem = styled.h1`
+const WelcomeText = styled.h1`
   color: white;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+const WelcomeButton = styled.button`
+  background: transparent;
+  border-color: white;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+  border-width: medium;
+  :hover {
+    background-color: #279df2;
+  }
+  transition: background-color 0.5s;
 `;
 const PreviewsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
   font-size: 25px;
-`;
-const AboutPreview = styled.div`
-  background-color: white;
-  width: 100vw;
-  height: 90%;
-`;
-const AboutPreviewContent = styled.h1`
-  font-family: "majesti_bannerbold", Times, serif; ;
-`;
-const ProjectsPreview = styled.div`
-  background-color: #74f2b4;
-  width: 100vw;
-`;
-const ProjectsPreviewContent = styled.h1`
-  font-family: "majesti_bannerbold", Times, serif;
-`;
-const ContactPreview = styled.div`
-  background-color: #90ccf4;
-  width: 100vw;
-`;
-const ContactPreviewContent = styled.h1`
-  font-family: "majesti_bannerbold", Times, serif;
+  justify-content: space-around;
+  width: 100%;
 `;
 
 export const Homepage = () => {
   return (
     <HomepageContainer>
       <WelcomeTextContainer>
-        <WelcomeTextItem>
+        <WelcomeText>
           Hello, I'm Nader Ebrahim.
           <br /> I'm a front-end developer
-        </WelcomeTextItem>
+        </WelcomeText>
+        <WelcomeButton
+          onClick={() => {
+            ScrollTo(Sections.about);
+          }}
+        >
+          Learn more about me
+        </WelcomeButton>
       </WelcomeTextContainer>
       <PreviewsContainer>
-        <AboutPreview>
-          <AboutPreviewContent>
-            <HomepageLink to="/about">About</HomepageLink>
-          </AboutPreviewContent>
-        </AboutPreview>
-        <ProjectsPreview>
-          <ProjectsPreviewContent>
-            <HomepageLink to="/projects">Projects I've worked on</HomepageLink>
-          </ProjectsPreviewContent>
-        </ProjectsPreview>
-        <ContactPreview>
-          <ContactPreviewContent>
-            <HomepageLink to="/contact">How to get in touch</HomepageLink>
-          </ContactPreviewContent>
-        </ContactPreview>
+        <About />
+        <Projects />
+        <Contact />
       </PreviewsContainer>
     </HomepageContainer>
   );

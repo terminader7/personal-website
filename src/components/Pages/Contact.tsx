@@ -3,12 +3,14 @@ import styled from "styled-components";
 
 import { Github } from "../../images/Github";
 import { Linkedin } from "../../images/Linkedin";
+import { Sections } from "../../types";
 
 const ContactItemsContainer = styled.div`
   display: flex;
+  height: 100vh;
   flex: 1;
   justify-content: center;
-  background-color: #90ccf4;
+  background-color: grey;
   align-items: center;
   flex-direction: column;
 `;
@@ -16,26 +18,26 @@ const ContactButton = styled.button`
   background-color: transparent;
   border: none;
 `;
-const ContactMessage = styled.h1``;
+const ContactMessage = styled.div`
+  color: white;
+`;
 const ContactLinks = styled.div`
   gap: 5px;
   background-color: white;
-  display: flex;
+
   flex-direction: row;
 `;
 const EmailContainer = styled.div`
-  display: flex;
   border-color: black;
   flex-direction: row;
 `;
 const EmailContainerItem = styled.a`
-  display: block;
   height: min-content;
   width: min-content;
 `;
 export const Contact = () => {
   return (
-    <ContactItemsContainer>
+    <ContactItemsContainer id={Sections.contact}>
       <ContactMessage>How to reach me</ContactMessage>
       <ContactLinks>
         <EmailContainer>

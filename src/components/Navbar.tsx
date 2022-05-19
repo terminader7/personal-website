@@ -1,28 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { Hamburger } from "../images/Hamburger";
+
 import { Cottage } from "../images/Cottage";
+import { Sections } from "../types";
+import { ScrollTo } from "../utils";
 
 const NavbarContainer = styled.nav`
-  background-color: transparent;
+  background-color: white;
   color: black;
   display: flex;
   flex-direction: row;
+  height: 7vh;
   width: 100%;
-  height: 10vh;
 `;
 const NavLink = styled.li`
   display: inline-block;
 `;
-const LogoLink = styled(Link)`
+const LogoLink = styled.div`
   text-decoration: none;
   color: black;
   :hover {
     text-decoration: underline;
   }
 `;
-const NavLinkItem = styled(Link)`
+const NavLinkItem = styled.div`
   text-decoration: none;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
@@ -31,48 +32,50 @@ const NavLinkItem = styled(Link)`
     text-decoration: underline;
   }
 `;
-const MenuItem = styled.div`
-  font-weight: bold;
-`;
 const NavLinkList = styled.ul`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 100%;
   gap: 5px;
   padding-right: 10px;
+  width: 100%;
 `;
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <NavbarContainer>
       <h1>
-        <LogoLink to="/">
+        <LogoLink>
           <Cottage />
         </LogoLink>
       </h1>
       <NavLinkList>
-        <MenuItem
-          onClick={() => {
-            setIsOpen(!isOpen);
-          }}
-        >
-          {!isOpen ? <Hamburger /> : "X"}
-        </MenuItem>
-        {isOpen && (
-          <>
-            <NavLink>
-              <NavLinkItem to="/about">About</NavLinkItem>
-            </NavLink>
-            <NavLink>
-              <NavLinkItem to="/projects">Projects</NavLinkItem>
-            </NavLink>
-            <NavLink>
-              <NavLinkItem to="/contact">Contact</NavLinkItem>
-            </NavLink>
-          </>
-        )}
+        <NavLink>
+          <NavLinkItem
+            onClick={() => {
+              ScrollTo(Sections.about);
+            }}
+          >
+            About
+          </NavLinkItem>
+        </NavLink>
+        <NavLink>
+          <NavLinkItem
+            onClick={() => {
+              ScrollTo(Sections.projects);
+            }}
+          >
+            Projects
+          </NavLinkItem>
+        </NavLink>
+        <NavLink>
+          <NavLinkItem
+            onClick={() => {
+              ScrollTo(Sections.contact);
+            }}
+          >
+            Contact
+          </NavLinkItem>
+        </NavLink>
       </NavLinkList>
     </NavbarContainer>
   );
