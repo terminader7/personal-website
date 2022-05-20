@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ReactDOM from "react-dom";
 
-import { Homepage } from "./components/Pages/Homepage";
+import { Homepage } from "./components/Sections/Homepage";
 
 const WebsiteContainer = styled.div`
   box-sizing: border-box;

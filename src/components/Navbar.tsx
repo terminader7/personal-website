@@ -12,6 +12,7 @@ const NavbarContainer = styled.nav`
   height: 40px;
   width: 100%;
   position: sticky;
+  z-index: 2;
   top: 0px;
   border-bottom: 3px solid #e73c7e;
 `;
@@ -24,7 +25,8 @@ const NavLinkItem = styled.div`
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   :hover {
-    color: #23a6d5;
+    color: #e73c7e;
+    cursor: pointer;
   }
   transition: 0.5s;
 `;

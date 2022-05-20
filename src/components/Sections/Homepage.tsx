@@ -51,7 +51,8 @@ const WelcomeButton = styled.button`
   padding: 5px;
   border-width: medium;
   :hover {
-    background-color: #279df2;
+    background-color: #e73c7e;
+    cursor: pointer;
   }
   transition: background-color 0.5s;
 `;

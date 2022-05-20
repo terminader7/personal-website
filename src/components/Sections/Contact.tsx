@@ -3,18 +3,15 @@ import styled from "styled-components";
 
 import { Github } from "../../images/Github";
 import { Linkedin } from "../../images/Linkedin";
+import { Resume } from "../../images/Resume";
 import { Sections } from "../../types";
 
 const ContactItemsContainer = styled.div`
   display: flex;
-  height: 100vh;
+  height: 50vh;
   flex: 1;
   background-color: #2b2b2b;
   flex-direction: column;
-`;
-const ContactButton = styled.button`
-  background-color: transparent;
-  border: none;
 `;
 const ContactTitleText = styled.div`
   color: white;
@@ -51,22 +48,21 @@ export const Contact = () => {
             nebrahim2424@gmail.com
           </EmailContainerItem>
         </EmailContainer>
-        <ContactButton>
-          <Github
-            onClick={() => {
-              window.open("https://github.com/terminader7");
-            }}
-          />
-        </ContactButton>
-        <ContactButton>
-          <Linkedin
-            onClick={() => {
-              window.open(
-                "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
-              );
-            }}
-          />
-        </ContactButton>
+        <Github
+          onClick={() => {
+            window.open("https://github.com/terminader7");
+          }}
+        />
+        <Linkedin
+          onClick={() => {
+            window.open("https://www.linkedin.com/in/nader-ebrahim-28576b199/");
+          }}
+        />
+        <Resume
+          onClick={() => {
+            window.open("/Resume.pdf");
+          }}
+        ></Resume>
       </ContactLinks>
     </ContactItemsContainer>
   );
