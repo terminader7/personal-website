@@ -5,7 +5,7 @@ const LogoItem = styled.svg`
   :hover {
     fill: #2bbd7e;
   }
-  transform: 0.5s;
+  transition: 0.5s;
 `;
 
 interface IProps {

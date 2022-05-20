@@ -60,7 +60,9 @@ export const Contact = () => {
         />
         <Resume
           onClick={() => {
-            window.open("/Resume.pdf");
+            window.open(
+              "https://drive.google.com/file/d/1t8Ob4M_V2B8fxoffVCIgKlNLGlez9Jyt/view?usp=sharing"
+            );
           }}
         ></Resume>
       </ContactLinks>

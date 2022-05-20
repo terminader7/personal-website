@@ -50,6 +50,7 @@ const WelcomeButton = styled.button`
   font-weight: bold;
   padding: 5px;
   border-width: medium;
+  border-radius: 15px;
   :hover {
     background-color: #e73c7e;
     cursor: pointer;
