@@ -6,6 +6,7 @@ const LogoItem = styled.svg`
     fill: #2bbd7e;
   }
   transition: 0.5s;
+  cursor: pointer;
 `;
 
 interface IProps {
@@ -25,7 +26,7 @@ export const Resume = ({
       height={height}
       viewBox="0 0 24 24"
       width={width}
-      fill="#000000"
+      fill="white"
       onClick={onClick}
     >
       <path d="M0 0h24v24H0z" fill="none" />
