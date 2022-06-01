@@ -5,6 +5,8 @@ import { Github } from "../../images/Github";
 import { Linkedin } from "../../images/Linkedin";
 import { Resume } from "../../images/Resume";
 import { Sections } from "../../types";
+import { UpArrow } from "../../images/UpArrow";
+import { ScrollTo } from "../../utils";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -16,7 +18,7 @@ const ContactItemsContainer = styled.div`
 const ContactTextInvitation = styled.div`
   color: white;
   font-weight: bold;
-  font-size: 20pt;
+  font-size: 25pt;
   font-family: Arial, Helvetica, sans-serif;
 `;
 const ContactLinks = styled.div`
@@ -38,6 +40,7 @@ const EmailContainer = styled.div`
 `;
 const EmailContainerItem = styled.a`
   color: white;
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   height: min-content;
   width: min-content;
@@ -45,6 +48,15 @@ const EmailContainerItem = styled.a`
 const LinksContainer = styled.div`
   display: flex;
   flex-direction: row;
+`;
+const UpArrowContainer = styled.div`
+  display: flex;
+  :hover {
+    background-color: #23a6d5;
+  }
+  justify-content: center;
+  width: 60px;
+  transition: 0.5s;
 `;
 export const Contact = () => {
   return (
@@ -77,6 +89,13 @@ export const Contact = () => {
             }}
           ></Resume>
         </LinksContainer>
+        <UpArrowContainer>
+          <UpArrow
+            onClick={() => {
+              ScrollTo(Sections.home);
+            }}
+          />
+        </UpArrowContainer>
       </ContactLinks>
     </ContactItemsContainer>
   );
