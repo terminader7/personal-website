@@ -48,9 +48,10 @@ const WelcomeButton = styled.button`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  padding: 5px;
+  padding: 15px;
   border-width: medium;
-  border-radius: 15px;
+  height: 50px;
+  width: fit-content;
   :hover {
     background-color: #e73c7e;
     cursor: pointer;
@@ -61,7 +62,7 @@ const PreviewsContainer = styled.div`
   align-items: center;
   text-align: center;
   font-size: 25px;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
 `;
 
