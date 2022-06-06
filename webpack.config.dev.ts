@@ -3,7 +3,7 @@ import path from "path";
 module.exports = {
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
-  mode: "production",
+  mode: "development",
   devServer: {
     static: {
       directory: path.join(__dirname, "dist"),

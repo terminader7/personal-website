@@ -8,3 +8,12 @@ export const ScrollTo = (id: Sections) => {
     behavior: "smooth",
   });
 };
+
+export const IsInDev = (): boolean => process.env.NODE_ENV === "development";
+
+export const GetBaseImgPath = (): string => {
+  if (IsInDev()) {
+    return "images";
+  }
+  return "dist/images";
+};

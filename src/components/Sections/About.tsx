@@ -6,11 +6,23 @@ import { ReactLogo } from "../../images/ReactLogo";
 import { JSLogo } from "../../images/JSLogo";
 import { HTMLLogo } from "../../images/HTMLLogo";
 import { CSSLogo } from "../../images/CSSLogo";
+import { GetBaseImgPath } from "../../utils";
 
 const AboutContainer = styled.div`
   background-color: #ebf5ee;
   height: 70vh;
   width: 100%;
+  .fade-in {
+    animation: fadeIn 5s;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 const AboutTitleText = styled.div`
   color: #2b2b2b;
@@ -23,13 +35,19 @@ const AboutTitleText = styled.div`
 const AboutContentContainer = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: gray;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-around;
 `;
 const BioContainer = styled.div`
+  justify-content: center;
+  display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+`;
+const BioPictureText = styled.div`
+  font-size: 25px;
+  color: #2b2b2b;
+  font-weight: bold;
 `;
 const BioText = styled.div`
   font-size: 20px;
@@ -37,10 +55,13 @@ const BioText = styled.div`
 `;
 const SkillsContainer = styled.div`
   display: flex;
+  justify-content: center;
+  position: relative;
   flex-direction: column;
-  justify-content: flex-end;
+  gap: 10px;
 `;
 const SkillsItemsText = styled.div`
+  color: #2b2b2b;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 30px;
@@ -52,7 +73,13 @@ const SkillsItem = styled.div`
 `;
 const SkillsItemRow = styled.div`
   display: flex;
+  padding-top: 30px;
   flex-direction: row;
+  gap: 10px;
+`;
+const PictureOfMe = styled.img`
+  height: 200px;
+  width: 200px;
 `;
 export const About = () => {
   return (
@@ -60,9 +87,9 @@ export const About = () => {
       <AboutTitleText>About</AboutTitleText>
       <AboutContentContainer>
         <BioContainer>
-          <img src="./dist/images/pictureOfMe.jpg" />
+          <PictureOfMe src={`${GetBaseImgPath()}/pictureOfMe.jpg`} />
+          <BioPictureText>Nice to meet you!</BioPictureText>
           <BioText>
-            Nice to meet you! <br />
             I'm a self-taught, front-end developer from Southern California.{" "}
             <br />I have a serious passion for crafting a fun, yet beautifully
             simple user experience.

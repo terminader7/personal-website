@@ -51,6 +51,7 @@ const LinksContainer = styled.div`
 `;
 const UpArrowContainer = styled.div`
   display: flex;
+  position: sticky;
   :hover {
     background-color: #23a6d5;
   }
