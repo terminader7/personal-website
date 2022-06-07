@@ -6,6 +6,7 @@ import { ReactLogo } from "../../images/ReactLogo";
 import { JSLogo } from "../../images/JSLogo";
 import { HTMLLogo } from "../../images/HTMLLogo";
 import { CSSLogo } from "../../images/CSSLogo";
+import { TypeScriptLogo } from "../../images/TypeScriptLogo";
 import { GetBaseImgPath } from "../../utils";
 
 const AboutContainer = styled.div`
@@ -48,6 +49,7 @@ const BioPictureText = styled.div`
   font-size: 25px;
   color: #2b2b2b;
   font-weight: bold;
+  padding-top: 10px;
 `;
 const BioText = styled.div`
   font-size: 20px;
@@ -78,8 +80,9 @@ const SkillsItemRow = styled.div`
   gap: 10px;
 `;
 const PictureOfMe = styled.img`
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
 `;
 export const About = () => {
   return (
@@ -111,6 +114,9 @@ export const About = () => {
             </SkillsItemRow>
             <SkillsItemRow>
               <CSSLogo /> CSS
+            </SkillsItemRow>
+            <SkillsItemRow>
+              <TypeScriptLogo /> TypeScript
             </SkillsItemRow>
           </SkillsItem>
         </SkillsContainer>

@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const LogoItem = styled.svg`
-  :hover {
-    fill: #0a66c2;
-  }
-  transition: fill 0.5s;
-`;
+const LogoItem = styled.svg``;
 
 interface IProps {
   height?: string;
