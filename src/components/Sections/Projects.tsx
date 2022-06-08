@@ -42,7 +42,7 @@ export const Projects = () => {
     },
     {
       title: "Github-Finder",
-      src: `${GetBaseImgPath()}/Screenshots/quoteBoxScreenshot.png`,
+      src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png,`,
       githubLink: "https://github.com/terminader7/github-finder",
     },
   ];
