@@ -82,7 +82,7 @@ const SkillsItemRow = styled.div`
 const PictureOfMe = styled.img`
   height: 250px;
   width: 250px;
-  border-radius: 20px;
+  border-radius: 50%;
 `;
 export const About = () => {
   return (
