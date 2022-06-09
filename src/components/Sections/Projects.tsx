@@ -15,12 +15,12 @@ const ProjectsTitleText = styled.div`
   font-weight: bold;
 `;
 const ProjectsPicturesGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 0;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 20px;
+  padding-left: 30px;
+  padding-bottom: 10px;
 `;
 
 export const Projects = () => {
@@ -42,7 +42,7 @@ export const Projects = () => {
     },
     {
       title: "Github-Finder",
-      src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png,`,
+      src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png`,
       githubLink: "https://github.com/terminader7/github-finder",
     },
   ];
@@ -57,4 +57,3 @@ export const Projects = () => {
     </ProjectsContainer>
   );
 };
-// make it sexy, or make a different mobile experience(carousel?) vs desktop experience.
