@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const LogoItem = styled.svg`
   :hover {
-    fill: #2bbd7e;
+    fill: #ee7752;
   }
   transition: 0.5s;
   cursor: pointer;
@@ -16,7 +16,7 @@ interface IProps {
 }
 
 export const Resume = ({
-  height = "80px",
+  height = "75px",
   width = "80px",
   onClick,
 }: IProps) => {

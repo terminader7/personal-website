@@ -7,6 +7,7 @@ import { Resume } from "../../images/Resume";
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
+import { EmailLogo } from "../../images/EmailLogo";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -14,12 +15,17 @@ const ContactItemsContainer = styled.div`
   flex: 1;
   background-color: #2b2b2b;
   flex-direction: column;
+  font-family: Roboto;
 `;
 const ContactTextInvitation = styled.div`
   color: white;
   font-weight: bold;
   font-size: 25pt;
-  font-family: Arial, Helvetica, sans-serif;
+`;
+
+const ContactTextInvitationTwo = styled.div`
+  color: white;
+  font-size: 15pt;
 `;
 const ContactLinks = styled.div`
   display: flex;
@@ -27,27 +33,18 @@ const ContactLinks = styled.div`
   width: calc(100% - 4px - 20px);
   border: 2px rgba(255, 255, 255, 0.65) solid;
   border-radius: 5px;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   margin: auto;
 `;
-const EmailContainer = styled.div`
-  background-color: #2b2b2b;
-  flex-direction: row;
-  border-radius: 5px;
-`;
-const EmailContainerItem = styled.a`
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  height: min-content;
-  width: min-content;
-`;
+
 const LinksContainer = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 10px;
 `;
 const UpArrowContainer = styled.div`
   display: flex;
@@ -64,12 +61,15 @@ export const Contact = () => {
     <ContactItemsContainer id={Sections.contact}>
       <ContactLinks>
         <ContactTextInvitation>Want to know more?</ContactTextInvitation>
-        <EmailContainer>
-          <EmailContainerItem href="mailto:nebrahim2424@gmail.com">
-            nebrahim2424@gmail.com
-          </EmailContainerItem>
-        </EmailContainer>
+        <ContactTextInvitationTwo>Let's get in touch!</ContactTextInvitationTwo>
         <LinksContainer>
+          <Resume
+            onClick={() => {
+              window.open(
+                "https://drive.google.com/file/d/1t8Ob4M_V2B8fxoffVCIgKlNLGlez9Jyt/view?usp=sharing"
+              );
+            }}
+          />
           <Github
             onClick={() => {
               window.open("https://github.com/terminader7");
@@ -82,13 +82,11 @@ export const Contact = () => {
               );
             }}
           />
-          <Resume
+          <EmailLogo
             onClick={() => {
-              window.open(
-                "https://drive.google.com/file/d/1t8Ob4M_V2B8fxoffVCIgKlNLGlez9Jyt/view?usp=sharing"
-              );
+              window.open("mailto:nebrahim2424@gmail.com");
             }}
-          ></Resume>
+          />
         </LinksContainer>
         <UpArrowContainer>
           <UpArrow

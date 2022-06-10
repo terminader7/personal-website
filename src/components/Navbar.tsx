@@ -15,6 +15,21 @@ const NavbarContainer = styled.nav`
   z-index: 2;
   top: 0px;
   border-bottom: 3px solid #e73c7e;
+  @font-face {
+    font-family: "Roboto";
+    src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot");
+    src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.svg#Roboto")
+        format("svg");
+  }
+  font-family: Roboto;
 `;
 const NavLink = styled.li`
   display: inline-block;
@@ -23,7 +38,6 @@ const NavLink = styled.li`
 const NavLinkItem = styled.div`
   text-decoration: none;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
   :hover {
     color: #e73c7e;
     cursor: pointer;

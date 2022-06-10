@@ -13,6 +13,7 @@ const AboutContainer = styled.div`
   background-color: #ebf5ee;
   height: 70vh;
   width: 100%;
+  font-family: Roboto;
   .fade-in {
     animation: fadeIn 5s;
   }
@@ -27,7 +28,7 @@ const AboutContainer = styled.div`
 `;
 const AboutTitleText = styled.div`
   color: #2b2b2b;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: 30pt;
   font-weight: bold;
   position: relative;
@@ -38,6 +39,7 @@ const AboutContentContainer = styled.div`
   flex-direction: row;
   gap: 20px;
   justify-content: space-around;
+  font-family: inherit;
 `;
 const BioContainer = styled.div`
   justify-content: center;
@@ -50,6 +52,7 @@ const BioPictureText = styled.div`
   color: #2b2b2b;
   font-weight: bold;
   padding-top: 10px;
+  font-family: Roboto;
 `;
 const BioText = styled.div`
   font-size: 20px;
@@ -61,23 +64,23 @@ const SkillsContainer = styled.div`
   position: relative;
   flex-direction: column;
   gap: 10px;
+  font-family: inherit;
 `;
 const SkillsItemsText = styled.div`
   color: #2b2b2b;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 30px;
 `;
 const SkillsItem = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
 `;
 const SkillsItemRow = styled.div`
   display: flex;
   padding-top: 30px;
   flex-direction: row;
   gap: 10px;
+  align-items: center;
 `;
 const PictureOfMe = styled.img`
   height: 250px;

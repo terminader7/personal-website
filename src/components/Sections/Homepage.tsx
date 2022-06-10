@@ -37,23 +37,38 @@ const WelcomeTextContainer = styled.div`
   }
 `;
 const WelcomeText = styled.h1`
+  @font-face {
+    font-family: "Roboto";
+    src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot");
+    src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot?#iefix")
+        format("embedded-opentype"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.woff2")
+        format("woff2"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.woff")
+        format("woff"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.ttf")
+        format("truetype"),
+      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.svg#Roboto")
+        format("svg");
+  }
+  font-family: Roboto;
   color: white;
   font-size: 50px;
-  font-family: Arial, Helvetica, sans-serif;
 `;
 const WelcomeButton = styled.button`
   background: transparent;
-  border-color: white;
+  border: 2px solid white;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
+  font-family: Roboto;
   padding: 15px;
-  border-width: medium;
   height: 50px;
   width: fit-content;
   :hover {
-    background-color: #e73c7e;
+    color: #e73c7e;
+    background-color: white;
+    border-color: #e73c7e;
     cursor: pointer;
   }
   transition: background-color 0.5s;

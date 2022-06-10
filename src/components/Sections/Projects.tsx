@@ -7,21 +7,29 @@ import { ProjectItem } from "./ProjectItem";
 
 const ProjectsContainer = styled.div`
   background-color: #f5f7fa;
+  font-family: Roboto;
 `;
 const ProjectsTitleText = styled.div`
   color: #2b2b2b;
-  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 30pt;
   font-weight: bold;
 `;
-const ProjectsPicturesGrid = styled.div`
+const ProjectItemsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+const ProjectsPicturesColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
   gap: 20px;
   padding-left: 30px;
   padding-bottom: 10px;
+  padding-top: 20px;
 `;
+
+const ProjectDescription = styled.div``;
 
 export const Projects = () => {
   const ProjectItemArray = [
@@ -49,11 +57,14 @@ export const Projects = () => {
   return (
     <ProjectsContainer id={Sections.projects}>
       <ProjectsTitleText>Projects</ProjectsTitleText>
-      <ProjectsPicturesGrid>
-        {ProjectItemArray.map(({ title, src, githubLink }) => (
-          <ProjectItem title={title} src={src} githubLink={githubLink} />
-        ))}
-      </ProjectsPicturesGrid>
+      <ProjectItemsContainer>
+        <ProjectsPicturesColumn>
+          {ProjectItemArray.map(({ title, src, githubLink }) => (
+            <ProjectItem title={title} src={src} githubLink={githubLink} />
+          ))}
+        </ProjectsPicturesColumn>
+        <ProjectDescription></ProjectDescription>
+      </ProjectItemsContainer>
     </ProjectsContainer>
   );
 };
