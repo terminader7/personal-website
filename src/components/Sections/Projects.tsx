@@ -36,22 +36,22 @@ export const Projects = () => {
     {
       title: "Calculator",
       src: `${GetBaseImgPath()}/Screenshots/calculatorScreenshot.png`,
-      githubLink: "https://github.com/terminader7/js-calculator",
+      path: "/jscalculator",
     },
     {
       title: "Clock",
       src: `${GetBaseImgPath()}/Screenshots/clockScreenshot.png`,
-      githubLink: "https://github.com/terminader7/clock",
+      path: "/clock",
     },
     {
       title: "Drum-Machine",
       src: `${GetBaseImgPath()}/Screenshots/drumMachineScreenshot.png`,
-      githubLink: "https://github.com/terminader7/drum-machine-fcc",
+      path: "/drummachine",
     },
     {
       title: "Github-Finder",
       src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png`,
-      githubLink: "https://github.com/terminader7/github-finder",
+      path: "/githubfinder",
     },
   ];
   return (
@@ -59,8 +59,8 @@ export const Projects = () => {
       <ProjectsTitleText>Projects</ProjectsTitleText>
       <ProjectItemsContainer>
         <ProjectsPicturesColumn>
-          {ProjectItemArray.map(({ title, src, githubLink }) => (
-            <ProjectItem title={title} src={src} githubLink={githubLink} />
+          {ProjectItemArray.map(({ title, src, path }) => (
+            <ProjectItem title={title} src={src} path={path} />
           ))}
         </ProjectsPicturesColumn>
         <ProjectDescription></ProjectDescription>

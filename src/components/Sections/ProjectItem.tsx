@@ -4,7 +4,7 @@ import styled from "styled-components";
 interface IProps {
   title: string;
   src: string;
-  githubLink: string;
+  path: string;
 }
 
 const ProjectCard = styled.div`
@@ -60,7 +60,7 @@ const ProjectHoverCardButton = styled.button`
   border: 2 solid white;
 `;
 
-export const ProjectItem = ({ title, src, githubLink }: IProps) => {
+export const ProjectItem = ({ title, src, path }: IProps) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseOver = () => {
@@ -76,10 +76,10 @@ export const ProjectItem = ({ title, src, githubLink }: IProps) => {
         <ProjectHoverCardTitleText>{title}</ProjectHoverCardTitleText>
         <ProjectHoverCardButton
           onClick={() => {
-            window.open(`${githubLink}`);
+            window.open(`${path}`);
           }}
         >
-          Learn More
+          Try it out!
         </ProjectHoverCardButton>
       </ProjectHoverCard>
       <PictureContainer isHovering={isHovering}>
