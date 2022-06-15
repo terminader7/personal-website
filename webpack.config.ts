@@ -4,17 +4,6 @@ module.exports = {
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
   mode: "production",
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    compress: true,
-    port: 3000,
-    hot: true,
-    historyApiFallback: {
-      index: "index.html",
-    },
-  },
   module: {
     rules: [
       {

@@ -59,7 +59,7 @@ const WelcomeButton = styled.button`
   background: transparent;
   border: 2px solid white;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   font-family: Roboto;
   padding: 15px;
