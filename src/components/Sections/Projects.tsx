@@ -29,7 +29,16 @@ const ProjectsPicturesColumn = styled.div`
   padding-top: 20px;
 `;
 
-const ProjectDescription = styled.div``;
+const ProjectDescriptions = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-family: inherit;
+`;
+
+const ProjectParagraph = styled.div`
+  font-size: 30pt;
+`;
 
 export const Projects = () => {
   const ProjectItemArray = [
@@ -63,7 +72,11 @@ export const Projects = () => {
             <ProjectItem title={title} src={src} path={path} />
           ))}
         </ProjectsPicturesColumn>
-        <ProjectDescription></ProjectDescription>
+        <ProjectDescriptions>
+          <ProjectParagraph>
+            I used these things to make this thing
+          </ProjectParagraph>
+        </ProjectDescriptions>
       </ProjectItemsContainer>
     </ProjectsContainer>
   );
