@@ -12,7 +12,7 @@ const NavbarContainer = styled.nav`
   height: 40px;
   width: 100%;
   position: sticky;
-  z-index: 2;
+  z-index: 3;
   top: 0px;
   border-bottom: 3px solid #e73c7e;
   @font-face {

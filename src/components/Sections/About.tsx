@@ -101,7 +101,7 @@ export const About = () => {
             Crafting a fun, yet beautifully simple user experience is what I aim
             for with all of my projects.
             <br /> I'm regularly working on improving my skills and furthering
-            my development, one design problem at a time{" "}
+            my development, one design problem at a time.{" "}
           </BioText>
         </BioContainer>
         <SkillsContainer>

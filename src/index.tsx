@@ -24,7 +24,7 @@ export const App = () => {
         <Routes>
           <Route path="/personal-website" element={<Homepage />} />
           <Route
-            path="/personal-website/jscalculator"
+            path="/personal-website?app=jscalculator"
             element={<JSCalculator />}
           />
           <Route path="/personal-website/clock" element={<Clock />} />
