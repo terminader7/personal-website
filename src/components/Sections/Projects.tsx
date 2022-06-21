@@ -45,22 +45,22 @@ export const Projects = () => {
     {
       title: "Calculator",
       src: `${GetBaseImgPath()}/Screenshots/calculatorScreenshot.png`,
-      path: "/jscalculator",
+      path: "/personal-website/jscalculator",
     },
     {
       title: "Clock",
       src: `${GetBaseImgPath()}/Screenshots/clockScreenshot.png`,
-      path: "/clock",
+      path: "/personal-website/clock",
     },
     {
       title: "Drum-Machine",
       src: `${GetBaseImgPath()}/Screenshots/drumMachineScreenshot.png`,
-      path: "/drummachine",
+      path: "/personal-website/drummachine",
     },
     {
       title: "Github-Finder",
       src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png`,
-      path: "/githubfinder",
+      path: "/personal-website/githubfinder",
     },
   ];
   return (
