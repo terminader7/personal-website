@@ -22,15 +22,18 @@ export const App = () => {
     <WebsiteContainer>
       <Router>
         <Routes>
-          <Route path="/personal-site" element={<Homepage />} />
+          <Route path="/personal-website" element={<Homepage />} />
           <Route
-            path="/personal-site/jscalculator"
+            path="/personal-website/jscalculator"
             element={<JSCalculator />}
           />
-          <Route path="/personal-site/clock" element={<Clock />} />
-          <Route path="/personal-site/drummachine" element={<DrumMachine />} />
+          <Route path="/personal-website/clock" element={<Clock />} />
           <Route
-            path="/personal-site/githubfinder"
+            path="/personal-website/drummachine"
+            element={<DrumMachine />}
+          />
+          <Route
+            path="/personal-website/githubfinder"
             element={<GithubFinder />}
           />
         </Routes>
