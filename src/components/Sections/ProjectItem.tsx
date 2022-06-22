@@ -19,8 +19,8 @@ const PictureContainer = styled.div<{ isHovering: boolean }>`
 `;
 
 const ProjectPicture = styled.img`
-  height: 300px;
-  width: 320px;
+  height: auto;
+  width: 300px;
 `;
 
 const ProjectHoverCard = styled.div<{ isHovering: boolean }>`
