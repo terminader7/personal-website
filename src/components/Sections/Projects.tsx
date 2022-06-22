@@ -45,22 +45,22 @@ export const Projects = () => {
     {
       title: "Calculator",
       src: `${GetBaseImgPath()}/Screenshots/calculatorScreenshot.png`,
-      path: "/personal-website/jscalculator",
+      path: "https://js-calculator-nader.herokuapp.com/",
     },
     {
       title: "Clock",
       src: `${GetBaseImgPath()}/Screenshots/clockScreenshot.png`,
-      path: "/personal-website/clock",
+      path: "https://clock-nader.herokuapp.com/",
     },
     {
       title: "Drum-Machine",
       src: `${GetBaseImgPath()}/Screenshots/drumMachineScreenshot.png`,
-      path: "/personal-website/drummachine",
+      path: "https://drum-machine-nader.herokuapp.com/",
     },
     {
       title: "Github-Finder",
       src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png`,
-      path: "/personal-website/githubfinder",
+      path: "https://github-finder-nader.herokuapp.com/",
     },
   ];
   return (
