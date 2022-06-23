@@ -1,90 +1,74 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+
+import { TinyGithub } from "../../images/TinyGithub";
+import { AppLink } from "../../images/AppLink";
+import { App } from "../..";
 
 interface IProps {
   title: string;
   src: string;
   path: string;
+  description: string;
+  technologies: string;
+  height: string;
+  width: string;
+  github: string;
 }
 
-const ProjectCard = styled.div`
+const ProjectRow = styled.div`
+  display: flex;
+  flex-direction: row;
   position: relative;
-  height: 300px;
-  width: 320px;
+  height: auto;
+  width: 390px;
 `;
 
-const PictureContainer = styled.div<{ isHovering: boolean }>`
-  opacity: ${(props) => (props.isHovering ? ".1" : "1")};
+const PictureContainer = styled.div`
   transition: 0.5s;
 `;
 
+const ProjectTitle = styled.div``;
+
 const ProjectPicture = styled.img`
-  height: auto;
+  height: 320px;
   width: 300px;
 `;
 
-const ProjectHoverCard = styled.div<{ isHovering: boolean }>`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: ${(props) => (!props.isHovering ? "0" : "1")};
-  z-index: 2;
-  font-family: inherit;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 30px;
-`;
+const ProjectDescriptions = styled.div``;
 
-const ProjectHoverCardTitleText = styled.div`
-  color: #2b2b2b;
-  font-weight: 150;
-  font-family: inherit;
-`;
+const ProjectTechs = styled.div``;
 
-const ProjectHoverCardButton = styled.button`
-  :hover {
-    color: white;
-    background-color: #23a6d5;
-    border-color: transparent;
-  }
-  cursor: pointer;
-  color: black;
-  transition: 0.5s;
-  width: 150px;
-  height: 50px;
-  font-size: 16px;
-  font-family: inherit;
-  padding: 15px;
-  border: 2 solid white;
-`;
+const ProjectLink = styled.div``;
 
-export const ProjectItem = ({ title, src, path }: IProps) => {
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
+export const ProjectItem = ({
+  title,
+  src,
+  path,
+  description,
+  technologies,
+  height,
+  width,
+  github,
+}: IProps) => {
   return (
-    <ProjectCard onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-      <ProjectHoverCard isHovering={isHovering}>
-        <ProjectHoverCardTitleText>{title}</ProjectHoverCardTitleText>
-        <ProjectHoverCardButton
-          onClick={() => {
-            window.open(`${path}`);
-          }}
-        >
-          Try it out!
-        </ProjectHoverCardButton>
-      </ProjectHoverCard>
-      <PictureContainer isHovering={isHovering}>
-        <ProjectPicture src={src} />
+    <ProjectRow>
+      <ProjectTitle>{title}</ProjectTitle>
+      <PictureContainer>
+        <ProjectPicture src={src} height={height} width={width} />
       </PictureContainer>
-    </ProjectCard>
+      <ProjectDescriptions>{description}</ProjectDescriptions>
+      <ProjectTechs>{technologies}</ProjectTechs>
+      <TinyGithub
+        onClick={() => {
+          window.open(github);
+        }}
+      />
+      <AppLink
+        onClick={() => {
+          window.open(path);
+        }}
+      />
+    </ProjectRow>
   );
 };

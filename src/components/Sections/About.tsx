@@ -8,6 +8,7 @@ import { HTMLLogo } from "../../images/HTMLLogo";
 import { CSSLogo } from "../../images/CSSLogo";
 import { TypeScriptLogo } from "../../images/TypeScriptLogo";
 import { GetBaseImgPath } from "../../utils";
+import { Line } from "../../images/Line";
 
 const AboutContainer = styled.div`
   background-color: #ebf5ee;
@@ -26,6 +27,14 @@ const AboutContainer = styled.div`
     }
   }
 `;
+
+const AboutHeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 const AboutTitleText = styled.div`
   color: #2b2b2b;
   font-family: inherit;
@@ -34,6 +43,7 @@ const AboutTitleText = styled.div`
   position: relative;
   padding-top: 40px;
 `;
+
 const AboutContentContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -90,7 +100,10 @@ const PictureOfMe = styled.img`
 export const About = () => {
   return (
     <AboutContainer id={Sections.about}>
-      <AboutTitleText>About</AboutTitleText>
+      <AboutHeaderContainer>
+        <AboutTitleText>About Me</AboutTitleText>
+        <Line />
+      </AboutHeaderContainer>
       <AboutContentContainer>
         <BioContainer>
           <PictureOfMe src={`${GetBaseImgPath()}/pictureOfMe.jpg`} />

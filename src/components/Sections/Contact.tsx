@@ -8,6 +8,7 @@ import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
 import { EmailLogo } from "../../images/EmailLogo";
+import { LineTwo } from "../../images/LineTwo";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -16,6 +17,12 @@ const ContactItemsContainer = styled.div`
   background-color: #2b2b2b;
   flex-direction: column;
   font-family: Roboto;
+`;
+const ContactHeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 const ContactTextInvitation = styled.div`
   color: white;
@@ -60,8 +67,13 @@ export const Contact = () => {
   return (
     <ContactItemsContainer id={Sections.contact}>
       <ContactLinks>
-        <ContactTextInvitation>Want to know more?</ContactTextInvitation>
-        <ContactTextInvitationTwo>Let's get in touch!</ContactTextInvitationTwo>
+        <ContactHeaderContainer>
+          <ContactTextInvitation>Want to know more?</ContactTextInvitation>
+          <LineTwo />
+          <ContactTextInvitationTwo>
+            Let's get in touch!
+          </ContactTextInvitationTwo>
+        </ContactHeaderContainer>
         <LinksContainer>
           <Resume
             onClick={() => {
