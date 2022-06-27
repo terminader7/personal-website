@@ -32,7 +32,7 @@ const ContactTextInvitation = styled.div`
 
 const ContactTextInvitationTwo = styled.div`
   color: white;
-  font-size: 15pt;
+  font-size: 20pt;
 `;
 const ContactLinks = styled.div`
   display: flex;
@@ -62,6 +62,13 @@ const UpArrowContainer = styled.div`
   justify-content: center;
   width: 60px;
   transition: 0.5s;
+`;
+
+const BuiltByText = styled.div`
+  display: flex;
+  font-family: inherit;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
 `;
 export const Contact = () => {
   return (
@@ -107,6 +114,7 @@ export const Contact = () => {
             }}
           />
         </UpArrowContainer>
+        <BuiltByText>Designed & Built by Nader Ebrahim</BuiltByText>
       </ContactLinks>
     </ContactItemsContainer>
   );

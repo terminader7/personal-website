@@ -8,6 +8,8 @@ import { ProjectItem } from "./ProjectItem";
 import { Line } from "../../images/Line";
 
 const ProjectsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #f5f7fa;
   font-family: Roboto;
 `;
@@ -18,7 +20,7 @@ const ProjectHeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const ProjectsTitleText = styled.div`
+const ProjectsSectionTitleText = styled.div`
   color: #2b2b2b;
   font-size: 30pt;
   font-weight: bold;
@@ -26,6 +28,7 @@ const ProjectsTitleText = styled.div`
 const ProjectContentContainer = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: column;
 `;
 const ProjectItemsContainer = styled.div`
   display: flex;
@@ -38,17 +41,32 @@ const ProjectsPictures = styled.div`
   gap: 20px;
   padding-bottom: 10px;
   padding-top: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Projects = () => {
+  //make object differentiating left structure from right structure
   const ProjectItemArray = [
+    {
+      title: "Github Finder",
+      src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png`,
+      path: "https://github-finder-nader.herokuapp.com/",
+      github: "https://github.com/terminader7/github-finder",
+      description:
+        "React app that makes requests to the Github API by searching profiles on github and returning information and data, such as profile image, biography, latest repository commits, etc.",
+      technologies: "thing",
+      height: "",
+      width: "",
+    },
     {
       title: "Calculator",
       src: `${GetBaseImgPath()}/Screenshots/calculatorScreenshot.png`,
       path: "https://js-calculator-nader.herokuapp.com/",
       github: "https://github.com/terminader7/js-calculator",
       description: "calculator woo",
-      technologies: "cool things!",
+      technologies: "",
       height: "",
       width: "",
     },
@@ -57,7 +75,7 @@ export const Projects = () => {
       src: `${GetBaseImgPath()}/Screenshots/clockScreenshot.png`,
       path: "https://clock-nader.herokuapp.com/",
       github: "https://github.com/terminader7/clock",
-      description: "",
+      description: "Clock woo!",
       technologies: "",
       height: "",
       width: "",
@@ -72,21 +90,11 @@ export const Projects = () => {
       height: "",
       width: "",
     },
-    {
-      title: "Github-Finder",
-      src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png`,
-      path: "https://github-finder-nader.herokuapp.com/",
-      github: "https://github.com/terminader7/github-finder",
-      description: "",
-      technologies: "",
-      height: "",
-      width: "",
-    },
   ];
   return (
     <ProjectsContainer id={Sections.projects}>
       <ProjectHeaderContainer>
-        <ProjectsTitleText>Projects</ProjectsTitleText>
+        <ProjectsSectionTitleText>Projects</ProjectsSectionTitleText>
         <Line />
       </ProjectHeaderContainer>
       <ProjectContentContainer>

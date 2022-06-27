@@ -4,7 +4,9 @@ import styled from "styled-components";
 const LogoItem = styled.svg`
   :hover {
     cursor: pointer;
+    color: #e73c7e;
   }
+
   transition: 0.5s;
 `;
 
@@ -15,8 +17,8 @@ interface IProps {
 }
 
 export const TinyGithub = ({
-  height = "30px",
-  width = "30px",
+  height = "25px",
+  width = "25px",
   onClick,
 }: IProps) => {
   return (
