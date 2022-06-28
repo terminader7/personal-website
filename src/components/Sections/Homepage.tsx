@@ -7,6 +7,7 @@ import { Projects } from "./Projects";
 import { ScrollTo } from "../../utils";
 import { Sections } from "../../types";
 import { Navbar } from "../Navbar";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 const HomepageContainer = styled.div`
   display: flex;

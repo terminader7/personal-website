@@ -28,15 +28,19 @@ const ProjectRow = styled.div`
 const PictureContainer = styled.div``;
 
 const ProjectTitle = styled.div`
+  :hover {
+    color: #64ffda;
+    cursor: pointer;
+  }
   display: flex;
-  justify-content: flex-end;
-  color: #23d5ab;
+  justify-content: center;
   font-weight: bold;
   padding-bottom: 20px;
+  transition: 0.5s;
 `;
 const ProjectPicture = styled.img`
   :hover {
-    opacity: 0.5;
+    opacity: 0.65;
     cursor: pointer;
   }
   height: 350px;
@@ -62,10 +66,10 @@ const ProjectDescriptionContainer = styled.div`
   background-color: #2b2b2b;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  width: 250px;
+  width: 400;
 `;
 
-const ProjectDescriptions = styled.div`
+const ProjectDescription = styled.div`
   display: flex;
   padding-left: 5px;
   padding-right: 5px;
@@ -76,7 +80,6 @@ const ProjectDescriptions = styled.div`
 const ProjectTechs = styled.div`
   display: flex;
   padding-top: 5px;
-  padding-left: 2px;
   padding-bottom: 5px;
   color: rgba(255, 255, 255, 0.65);
   font-size: 12px;
@@ -112,9 +115,15 @@ export const ProjectItem = ({
           />
         </PictureContainer>
         <ProjectInfoContainer>
-          <ProjectTitle>{title}</ProjectTitle>
+          <ProjectTitle
+            onClick={() => {
+              window.open(path);
+            }}
+          >
+            {title}
+          </ProjectTitle>
           <ProjectDescriptionContainer>
-            <ProjectDescriptions>{description}</ProjectDescriptions>
+            <ProjectDescription>{description}</ProjectDescription>
             <ProjectTechs>{technologies}</ProjectTechs>
             <LinksContainer>
               <TinyGithub
