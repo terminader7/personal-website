@@ -10,7 +10,7 @@ import { Line } from "../../images/Line";
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #f5f7fa;
+  background-color: #616161;
   font-family: Roboto;
 `;
 
@@ -39,11 +39,12 @@ const ProjectItemsContainer = styled.div`
 const ProjectsPictures = styled.div`
   display: flex;
   gap: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   padding-top: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 `;
 
 export const Projects = () => {
@@ -56,39 +57,64 @@ export const Projects = () => {
       github: "https://github.com/terminader7/github-finder",
       description:
         "React app that makes requests to the Github API by searching profiles on github and returning information and data, such as profile image, biography, latest repository commits, etc.",
-      technologies: "thing",
-      height: "",
-      width: "",
+      technologies: ["Axios ", " , ", " Github API ", " , ", " React "],
     },
     {
       title: "Calculator",
       src: `${GetBaseImgPath()}/Screenshots/calculatorScreenshot.png`,
       path: "https://js-calculator-nader.herokuapp.com/",
       github: "https://github.com/terminader7/js-calculator",
-      description: "calculator woo",
-      technologies: "",
-      height: "",
-      width: "",
+      description:
+        "Calculator app that uses JavaScript to perform mathematical functions accurately.",
+      technologies: [
+        "React",
+        " , ",
+        "Styled Components",
+        " , ",
+        "Heroku",
+        " , ",
+        "JavaScript",
+        " , ",
+        "Functional Components",
+      ],
     },
     {
       title: "25 + 5 Clock",
       src: `${GetBaseImgPath()}/Screenshots/clockScreenshot.png`,
       path: "https://clock-nader.herokuapp.com/",
       github: "https://github.com/terminader7/clock",
-      description: "Clock woo!",
-      technologies: "",
-      height: "",
-      width: "",
+      description:
+        "A clock app that switches between input session and break time automatically.",
+      technologies: [
+        "React",
+        " , ",
+        "JavaScript",
+        " , ",
+        "Heroku",
+        " , ",
+        "Styled Components",
+        " , ",
+        "Functional Components",
+      ],
     },
     {
       title: "Drum-Machine",
       src: `${GetBaseImgPath()}/Screenshots/drumMachineScreenshot.png`,
       path: "https://drum-machine-nader.herokuapp.com/",
       github: "https://github.com/terminader7/drum-machine-fcc",
-      description: "",
-      technologies: "",
-      height: "",
-      width: "",
+      description:
+        "I wanted to use this app as an opportunity to learn how to tie audio to an on button press. I used JavaScript and CSS styling to set it up",
+      technologies: [
+        "React",
+        " , ",
+        "CSS Styling",
+        " , ",
+        "JavaScript",
+        " , ",
+        "React Hooks",
+        " , ",
+        "Heroku",
+      ],
     },
   ];
   return (
@@ -101,24 +127,13 @@ export const Projects = () => {
         <ProjectItemsContainer>
           <ProjectsPictures>
             {ProjectItemArray.map(
-              ({
-                title,
-                src,
-                path,
-                description,
-                technologies,
-                height,
-                width,
-                github,
-              }) => (
+              ({ title, src, path, description, technologies, github }) => (
                 <ProjectItem
                   title={title}
                   src={src}
                   path={path}
                   description={description}
                   technologies={technologies}
-                  height={height}
-                  width={width}
                   github={github}
                 />
               )

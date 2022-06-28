@@ -9,9 +9,7 @@ interface IProps {
   src: string;
   path: string;
   description: string;
-  technologies: string;
-  height: string;
-  width: string;
+  technologies: string[];
   github: string;
 }
 const ProjectItemContainer = styled.div``;
@@ -22,21 +20,28 @@ const ProjectRow = styled.div`
   position: relative;
   height: auto;
   width: 800px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  background-color: green;
+  overflow: hidden;
 `;
 
 const PictureContainer = styled.div``;
 
+const ProjectTitle = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  color: #23d5ab;
+  font-weight: bold;
+  padding-bottom: 20px;
+`;
 const ProjectPicture = styled.img`
   :hover {
     opacity: 0.5;
     cursor: pointer;
   }
-  height: 300px;
-  width: 80%;
-  border-radius: 7px;
+  height: 350px;
+  width: 450px;
+  border-radius: 3px;
   transition: 0.5s;
 `;
 const ProjectInfoContainer = styled.div`
@@ -46,7 +51,7 @@ const ProjectInfoContainer = styled.div`
   height: fit-content;
   justify-content: center;
   align-items: center;
-  margin-left: -100px;
+  margin-left: -60px;
 `;
 
 const ProjectDescriptionContainer = styled.div`
@@ -55,29 +60,26 @@ const ProjectDescriptionContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #2b2b2b;
-  border-radius: 7px;
+  border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   width: 250px;
 `;
-const ProjectTitle = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  color: #e73c7e;
-  font-weight: bold;
-`;
+
 const ProjectDescriptions = styled.div`
   display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   justify-content: flex-start;
   font-size: 17px;
 `;
 
 const ProjectTechs = styled.div`
-  padding-left: 3px;
+  display: flex;
+  padding-top: 5px;
+  padding-left: 2px;
+  padding-bottom: 5px;
   color: rgba(255, 255, 255, 0.65);
   font-size: 12px;
-  display: flex;
   flex-direction: row;
   justify-content: flex-start;
 `;
@@ -95,8 +97,7 @@ export const ProjectItem = ({
   path,
   description,
   technologies,
-  height,
-  width,
+
   github,
 }: IProps) => {
   return (
@@ -105,8 +106,6 @@ export const ProjectItem = ({
         <PictureContainer>
           <ProjectPicture
             src={src}
-            height={height}
-            width={width}
             onClick={() => {
               window.open(path);
             }}
