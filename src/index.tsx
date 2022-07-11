@@ -18,7 +18,7 @@ export const App = () => {
     <WebsiteContainer>
       <Router>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/personal-website" element={<Homepage />} />
         </Routes>
       </Router>
     </WebsiteContainer>

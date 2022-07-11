@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 import { Github } from "../../images/Github";
@@ -27,18 +28,18 @@ const ContactHeaderContainer = styled.div`
 const ContactTextInvitation = styled.div`
   color: white;
   font-weight: bold;
-  font-size: 25pt;
+  font-size: 40pt;
 `;
 
 const ContactTextInvitationTwo = styled.div`
   color: white;
-  font-size: 20pt;
+  font-size: 17pt;
 `;
 const ContactLinks = styled.div`
   display: flex;
   height: calc(100% - 4px - 20px);
   width: calc(100% - 4px - 20px);
-  border: 2px rgba(255, 255, 255, 0.65) solid;
+  border: 3px #14a76c solid;
   border-radius: 5px;
   gap: 20px;
   align-items: center;
@@ -51,13 +52,19 @@ const LinksContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
+  padding-top: 15px;
+`;
+const LinkItemContainer = styled(motion.div)`
+  display: flex;
+  height: fit-content;
+  width: fit-content;
 `;
 const UpArrowContainer = styled.div`
   display: flex;
   position: sticky;
   :hover {
-    background-color: #23a6d5;
+    background-color: #14a76c;
   }
   justify-content: center;
   width: 60px;
@@ -70,7 +77,7 @@ const BuiltByText = styled.div`
   font-size: 13px;
   color: rgba(255, 255, 255, 0.65);
 `;
-export const Contact = () => {
+export const Contact = ({ scaleSize = 1.1 }) => {
   return (
     <ContactItemsContainer id={Sections.contact}>
       <ContactLinks>
@@ -78,34 +85,43 @@ export const Contact = () => {
           <ContactTextInvitation>Want to know more?</ContactTextInvitation>
           <LineTwo />
           <ContactTextInvitationTwo>
-            Let's get in touch!
+            I'm currently open to new job opportunities, <br />
+            if you would like to get in touch, my inbox is always open!
           </ContactTextInvitationTwo>
         </ContactHeaderContainer>
         <LinksContainer>
-          <Resume
-            onClick={() => {
-              window.open(
-                "https://drive.google.com/file/d/1t8Ob4M_V2B8fxoffVCIgKlNLGlez9Jyt/view?usp=sharing"
-              );
-            }}
-          />
-          <Github
-            onClick={() => {
-              window.open("https://github.com/terminader7");
-            }}
-          />
-          <Linkedin
-            onClick={() => {
-              window.open(
-                "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
-              );
-            }}
-          />
-          <EmailLogo
-            onClick={() => {
-              window.open("mailto:nebrahim2424@gmail.com");
-            }}
-          />
+          <LinkItemContainer whileHover={{ scale: scaleSize }}>
+            <Resume
+              onClick={() => {
+                window.open(
+                  "https://drive.google.com/file/d/1t8Ob4M_V2B8fxoffVCIgKlNLGlez9Jyt/view?usp=sharing"
+                );
+              }}
+            />
+          </LinkItemContainer>
+          <LinkItemContainer whileHover={{ scale: scaleSize }}>
+            <Github
+              onClick={() => {
+                window.open("https://github.com/terminader7");
+              }}
+            />
+          </LinkItemContainer>
+          <LinkItemContainer whileHover={{ scale: scaleSize }}>
+            <Linkedin
+              onClick={() => {
+                window.open(
+                  "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
+                );
+              }}
+            />
+          </LinkItemContainer>
+          <LinkItemContainer whileHover={{ scale: scaleSize }}>
+            <EmailLogo
+              onClick={() => {
+                window.open("mailto:nebrahim2424@gmail.com");
+              }}
+            />
+          </LinkItemContainer>
         </LinksContainer>
         <UpArrowContainer>
           <UpArrow

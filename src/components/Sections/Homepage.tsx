@@ -7,7 +7,7 @@ import { Projects } from "./Projects";
 import { ScrollTo } from "../../utils";
 import { Sections } from "../../types";
 import { Navbar } from "../Navbar";
-import { Scrollbars } from "react-custom-scrollbars-2";
+import { Socials } from "../Socials";
 
 const HomepageContainer = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const HomepageContainer = styled.div`
 `;
 const WelcomeTextContainer = styled.div`
   display: flex;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #14a76c);
   background-size: 400% 400%;
   animation: gradient 60s ease infinite;
   height: 100vh;
@@ -87,8 +87,8 @@ export const Homepage = () => {
     <HomepageContainer>
       <WelcomeTextContainer id={Sections.home}>
         <WelcomeText>
-          Hello, I'm Nader Ebrahim.
-          <br /> I'm a front-end developer
+          Hi, I'm Nader Ebrahim.
+          <br /> I'm a front-end developer.
         </WelcomeText>
         <WelcomeButton
           onClick={() => {
@@ -102,6 +102,7 @@ export const Homepage = () => {
       <PreviewsContainer>
         <About />
         <Projects />
+        <Socials />
         <Contact />
       </PreviewsContainer>
     </HomepageContainer>

@@ -10,8 +10,9 @@ import { LineTwo } from "../../images/LineTwo";
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #888888;
+  background-color: #2b2b2b;
   font-family: Roboto;
+  padding-bottom: 100px;
 `;
 
 const ProjectHeaderContainer = styled.div`
@@ -58,7 +59,7 @@ export const Projects = () => {
       github: "https://github.com/terminader7/github-finder",
       description:
         "React app that makes requests to the Github API by searching profiles on github and returning information and data, such as profile image, biography, latest repository commits, etc.",
-      technologies: ["Axios ", " , ", " Github API ", " , ", " React "],
+      technologies: ["Axios ", " Github API ", " React ", " Heroku "],
     },
     {
       title: "Calculator",
@@ -66,18 +67,8 @@ export const Projects = () => {
       path: "https://js-calculator-nader.herokuapp.com/",
       github: "https://github.com/terminader7/js-calculator",
       description:
-        "Calculator app that uses JavaScript to perform mathematical functions accurately.",
-      technologies: [
-        "React",
-        " , ",
-        "Styled Components",
-        " , ",
-        "Heroku",
-        " , ",
-        "JavaScript",
-        " , ",
-        "Functional Components",
-      ],
+        "Calculator app that uses JavaScript to perform mathematical equations accurately.",
+      technologies: ["React", "Styled Components", "Heroku", "JavaScript"],
     },
     {
       title: "25 + 5 Clock",
@@ -86,17 +77,7 @@ export const Projects = () => {
       github: "https://github.com/terminader7/clock",
       description:
         "A clock app that switches between input session and break time automatically.",
-      technologies: [
-        "React",
-        " , ",
-        "JavaScript",
-        " , ",
-        "Heroku",
-        " , ",
-        "Styled Components",
-        " , ",
-        "Functional Components",
-      ],
+      technologies: ["React", "JavaScript", "Heroku", "Styled Components"],
     },
     {
       title: "Drum-Machine",
@@ -104,16 +85,12 @@ export const Projects = () => {
       path: "https://drum-machine-nader.herokuapp.com/",
       github: "https://github.com/terminader7/drum-machine-fcc",
       description:
-        "I wanted to use this app as an opportunity to learn how to tie audio to an on button press. I used JavaScript and CSS styling to set it up",
+        "Drum machine app with audio tied to each individual button press",
       technologies: [
         "React",
-        " , ",
         "CSS Styling",
-        " , ",
         "JavaScript",
-        " , ",
         "React Hooks",
-        " , ",
         "Heroku",
       ],
     },
@@ -121,7 +98,9 @@ export const Projects = () => {
   return (
     <ProjectsContainer id={Sections.projects}>
       <ProjectHeaderContainer>
-        <ProjectsSectionTitleText>Projects</ProjectsSectionTitleText>
+        <ProjectsSectionTitleText>
+          Projects I've Worked On
+        </ProjectsSectionTitleText>
         <LineTwo />
       </ProjectHeaderContainer>
       <ProjectContentContainer>
