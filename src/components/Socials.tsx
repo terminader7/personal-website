@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-
 import { motion } from "framer-motion";
 
 import { TinyGithub } from "../images/TinyGithub";
@@ -17,7 +16,7 @@ const SocialsList = styled.div`
   width: fit-content;
   justify-content: space-evenly;
   gap: 20px;
-  left: 40px;
+  left: 50px;
   bottom: 15px;
   justify-content: flex-start;
   width: auto;
