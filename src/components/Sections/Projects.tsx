@@ -5,7 +5,7 @@ import { Sections } from "../../types";
 import { GetBaseImgPath } from "../../utils";
 import { ProjectItem } from "./ProjectItem";
 
-import { LineTwo } from "../../images/LineTwo";
+import { Line } from "../../images/Line";
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -101,7 +101,7 @@ export const Projects = () => {
         <ProjectsSectionTitleText>
           Projects I've Worked On
         </ProjectsSectionTitleText>
-        <LineTwo />
+        <Line />
       </ProjectHeaderContainer>
       <ProjectContentContainer>
         <ProjectItemsContainer>

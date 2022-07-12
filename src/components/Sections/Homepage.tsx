@@ -8,6 +8,8 @@ import { ScrollTo } from "../../utils";
 import { Sections } from "../../types";
 import { Navbar } from "../Navbar";
 import { Socials } from "../Socials";
+import { Email } from "../Email";
+import { SideArrow } from "../../images/SideArrow";
 
 const HomepageContainer = styled.div`
   display: flex;
@@ -56,23 +58,37 @@ const WelcomeText = styled.h1`
   color: white;
   font-size: 50px;
 `;
-const WelcomeButton = styled.button`
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: Roboto;
-  padding: 15px;
-  height: 50px;
-  width: fit-content;
+
+const SideArrowContainer = styled.div`
+  padding-left: 5px;
+  transition: 0.5s;
+`;
+const WelcomeButtonContainer = styled.div`
   :hover {
-    color: #e73c7e;
-    background-color: white;
-    border-color: #e73c7e;
+    background-color: #3d3d3d;
+    border-color: white;
     cursor: pointer;
   }
-  transition: background-color 0.5s;
+  :hover ${SideArrowContainer} {
+    transform: rotate(90deg);
+  }
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 3px;
+  height: 50px;
+  color: white;
+  width: auto;
+  transition: 0.5s;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+
+const WelcomeButtonText = styled.div`
+  font-size: 18px;
+  font-family: Roboto;
 `;
 const PreviewsContainer = styled.div`
   align-items: center;
@@ -90,13 +106,16 @@ export const Homepage = () => {
           Hi, I'm Nader Ebrahim.
           <br /> I'm a front-end developer.
         </WelcomeText>
-        <WelcomeButton
+        <WelcomeButtonContainer
           onClick={() => {
             ScrollTo(Sections.about);
           }}
         >
-          Learn more about me
-        </WelcomeButton>
+          <WelcomeButtonText>Learn more about me</WelcomeButtonText>
+          <SideArrowContainer>
+            <SideArrow />
+          </SideArrowContainer>
+        </WelcomeButtonContainer>
       </WelcomeTextContainer>
       <Navbar />
       <PreviewsContainer>
@@ -104,6 +123,7 @@ export const Homepage = () => {
         <Projects />
         <Contact />
         <Socials />
+        <Email />
       </PreviewsContainer>
     </HomepageContainer>
   );

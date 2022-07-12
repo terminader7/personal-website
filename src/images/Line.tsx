@@ -16,9 +16,9 @@ export const Line = ({ height = "60px", width = "150px" }: IProps) => {
       viewBox="0 4 16 12"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      fill="#2b2b2b"
+      fill="white"
     >
-      <path fill="#2b2b2b" d="M0 7h16v1h-16v-1z"></path>
+      <path fill="#00db8b" d="M0 7h16v1h-16v-1z"></path>
     </LogoItem>
   );
 };

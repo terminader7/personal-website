@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
-import { LineTwo } from "../../images/LineTwo";
+import { Line } from "../../images/Line";
 import { TinyGithubTwo } from "../../images/TinyGithubTwo";
 
 const ContactItemsContainer = styled.div`
@@ -99,30 +99,39 @@ const TinyGitHubContainer = styled.div`
   position: absolute;
   flex-direction: column;
   bottom: 0;
-  right: 0;
-  padding-right: 15px;
-  padding-bottom: 15px;
+  right: 75px;
   font-family: inherit;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.65);
   transition: 0.5s;
   align-items: center;
   justify-content: center;
+  width: 100px;
+  gap: 5px;
+  padding-bottom: 5px;
 `;
+
+const TinyGithubText = styled.div`
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Contact = ({ scaleSize = 1.1 }) => {
   return (
     <ContactItemsContainer id={Sections.contact}>
       <ContactLinks>
         <ContactHeaderContainer>
           <ContactTextInvitation>Want to know more?</ContactTextInvitation>
-          <LineTwo />
+          <Line />
           <ContactTextInvitationTwo>
             I'm currently open to new job opportunities, <br />
             if you would like to get in touch, my inbox is always open!
           </ContactTextInvitationTwo>
         </ContactHeaderContainer>
         <EmailButton
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: scaleSize }}
+          transition={{ duration: 0.2 }}
           onClick={() => {
             window.open("mailto:nebrahim2424@gmail.com");
           }}
@@ -147,10 +156,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             window.open("https://github.com/terminader7/personal-website");
           }}
         >
-          <div>
-            Like the site? <br />
-            View the repo here!
-          </div>
+          <TinyGithubText>Like the site? View the repo here!</TinyGithubText>
           <TinyGithubTwo />
         </TinyGitHubContainer>
       </ContactLinks>

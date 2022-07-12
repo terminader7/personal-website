@@ -8,17 +8,16 @@ interface IProps {
   width?: string;
 }
 
-export const LineTwo = ({ height = "60px", width = "150px" }: IProps) => {
+export const VerticalLine = ({ height = "200px", width = "45px" }: IProps) => {
   return (
     <LogoItem
       width={width}
       height={height}
-      viewBox="0 4 16 12"
+      viewBox="0 0 16 16"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      fill="white"
     >
-      <path fill="#00db8b" d="M0 7h16v1h-16v-1z"></path>
+      <path fill="white" d="M8 0h1v16h-1v-16z"></path>
     </LogoItem>
   );
 };

@@ -11,7 +11,7 @@ import { CSSLogo } from "../../images/CSSLogo";
 import { NodeJSLogo } from "../../images/NodeJSLogo";
 import { TypeScriptLogo } from "../../images/TypeScriptLogo";
 import { GetBaseImgPath } from "../../utils";
-import { LineTwo } from "../../images/LineTwo";
+import { Line } from "../../images/Line";
 
 const AboutContainer = styled.div`
   background-color: #2b2b2b;
@@ -46,12 +46,11 @@ const AboutContentContainer = styled.div`
 `;
 const BioContainer = styled.div`
   justify-content: center;
-
   display: flex;
-
   flex-direction: row;
   align-items: center;
   gap: 40px;
+  padding-bottom: 60px;
 `;
 const PictureOfMe = styled.img`
   height: 400px;
@@ -125,7 +124,7 @@ export const About = () => {
     <AboutContainer id={Sections.about}>
       <AboutHeaderContainer>
         <AboutTitleText>About Me</AboutTitleText>
-        <LineTwo />
+        <Line />
       </AboutHeaderContainer>
       <AboutContentContainer>
         <BioContainer>
