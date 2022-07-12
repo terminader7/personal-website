@@ -17,7 +17,7 @@ const HomepageContainer = styled.div`
 `;
 const WelcomeTextContainer = styled.div`
   display: flex;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #14a76c);
+  background: linear-gradient(-45deg, #a7c7e7, #00db8b, #ffb8c9, #ffb347);
   background-size: 400% 400%;
   animation: gradient 60s ease infinite;
   height: 100vh;
@@ -76,10 +76,10 @@ const WelcomeButton = styled.button`
 `;
 const PreviewsContainer = styled.div`
   align-items: center;
-  text-align: center;
   font-size: 25px;
   justify-content: center;
   width: 100%;
+  background-color: #2b2b2b;
 `;
 
 export const Homepage = () => {
@@ -102,8 +102,8 @@ export const Homepage = () => {
       <PreviewsContainer>
         <About />
         <Projects />
-        <Socials />
         <Contact />
+        <Socials />
       </PreviewsContainer>
     </HomepageContainer>
   );

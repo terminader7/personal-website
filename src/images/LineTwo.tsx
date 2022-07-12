@@ -18,7 +18,7 @@ export const LineTwo = ({ height = "60px", width = "150px" }: IProps) => {
       xmlns="http://www.w3.org/2000/svg"
       fill="white"
     >
-      <path fill="white" d="M0 7h16v1h-16v-1z"></path>
+      <path fill="#00db8b" d="M0 7h16v1h-16v-1z"></path>
     </LogoItem>
   );
 };

@@ -2,14 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-import { Github } from "../../images/Github";
-import { Linkedin } from "../../images/Linkedin";
-import { Resume } from "../../images/Resume";
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
-import { EmailLogo } from "../../images/EmailLogo";
 import { LineTwo } from "../../images/LineTwo";
+import { TinyGithub } from "../../images/TinyGithub";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -34,6 +31,9 @@ const ContactTextInvitation = styled.div`
 const ContactTextInvitationTwo = styled.div`
   color: white;
   font-size: 17pt;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
 `;
 const ContactLinks = styled.div`
   display: flex;
@@ -46,36 +46,68 @@ const ContactLinks = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: auto;
+  position: relative;
 `;
 
-const LinksContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  padding-top: 15px;
-`;
-const LinkItemContainer = styled(motion.div)`
-  display: flex;
-  height: fit-content;
-  width: fit-content;
-`;
-const UpArrowContainer = styled.div`
-  display: flex;
-  position: sticky;
+const EmailButton = styled(motion.div)`
   :hover {
-    background-color: #14a76c;
+    background-color: #3d3d3d;
+  }
+  cursor: pointer;
+  font-size: 20px;
+  font-family: inherit;
+  border: 2px #00db8b solid;
+  border-radius: 5px;
+  padding: 15px;
+  color: #00db8b;
+  transition: 0.5s;
+`;
+
+const UpArrowContainer = styled(motion.div)`
+  display: flex;
+  :hover {
+    background-color: #00db8b;
   }
   justify-content: center;
   width: 60px;
   transition: 0.5s;
+  margin-top: 20px;
+  border-radius: 4px;
 `;
-
-const BuiltByText = styled.div`
+const BuiltByTextContainer = styled.div`
   display: flex;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 15px;
+  transition: 0.5s;
   color: rgba(255, 255, 255, 0.65);
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+`;
+const BuiltByText = styled.div`
+  display: flex;
+`;
+const TinyGitHubContainer = styled.div`
+  :hover {
+    cursor: pointer;
+    color: #00db8b;
+  }
+  display: flex;
+  color: white;
+  position: absolute;
+  flex-direction: column;
+  bottom: 0;
+  right: 0;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  font-family: inherit;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  transition: 0.5s;
+  align-items: center;
+  justify-content: center;
 `;
 export const Contact = ({ scaleSize = 1.1 }) => {
   return (
@@ -89,48 +121,38 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             if you would like to get in touch, my inbox is always open!
           </ContactTextInvitationTwo>
         </ContactHeaderContainer>
-        <LinksContainer>
-          <LinkItemContainer whileHover={{ scale: scaleSize }}>
-            <Resume
-              onClick={() => {
-                window.open(
-                  "https://drive.google.com/file/d/1t8Ob4M_V2B8fxoffVCIgKlNLGlez9Jyt/view?usp=sharing"
-                );
-              }}
-            />
-          </LinkItemContainer>
-          <LinkItemContainer whileHover={{ scale: scaleSize }}>
-            <Github
-              onClick={() => {
-                window.open("https://github.com/terminader7");
-              }}
-            />
-          </LinkItemContainer>
-          <LinkItemContainer whileHover={{ scale: scaleSize }}>
-            <Linkedin
-              onClick={() => {
-                window.open(
-                  "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
-                );
-              }}
-            />
-          </LinkItemContainer>
-          <LinkItemContainer whileHover={{ scale: scaleSize }}>
-            <EmailLogo
-              onClick={() => {
-                window.open("mailto:nebrahim2424@gmail.com");
-              }}
-            />
-          </LinkItemContainer>
-        </LinksContainer>
-        <UpArrowContainer>
+        <EmailButton
+          whileHover={{ scale: 1.1 }}
+          onClick={() => {
+            window.open("mailto:nebrahim2424@gmail.com");
+          }}
+        >
+          Lets Chat!
+        </EmailButton>
+        <UpArrowContainer
+          whileHover={{ y: -5 }}
+          transition={{ type: "spring", duration: 0.02 }}
+        >
           <UpArrow
             onClick={() => {
               ScrollTo(Sections.home);
             }}
           />
         </UpArrowContainer>
-        <BuiltByText>Designed & Built by Nader Ebrahim</BuiltByText>
+        <BuiltByTextContainer>
+          <BuiltByText>Designed & Built by Nader Ebrahim</BuiltByText>
+        </BuiltByTextContainer>
+        <TinyGitHubContainer
+          onClick={() => {
+            window.open("https://github.com/terminader7/personal-website");
+          }}
+        >
+          <div>
+            Like the site? <br />
+            View the repo here!
+          </div>
+          <TinyGithub />
+        </TinyGitHubContainer>
       </ContactLinks>
     </ContactItemsContainer>
   );

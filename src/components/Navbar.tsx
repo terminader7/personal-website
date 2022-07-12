@@ -14,7 +14,7 @@ const NavbarContainer = styled.nav`
   position: sticky;
   z-index: 3;
   top: 0px;
-  border-bottom: 3px solid #14a76c;
+  border-bottom: 3px solid #00db8b;
   @font-face {
     font-family: "Roboto";
     src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot");

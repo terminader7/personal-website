@@ -4,27 +4,34 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import { TinyGithub } from "../images/TinyGithub";
-
-const SocialsContainer = styled.div`
-  display: flex;
-  position: sticky;
-  flex-direction: column;
-  z-index: 3;
-  bottom: 0px;
-  justify-content: flex-start;
-  background-color: #2b2b2b;
-  padding-left: 80px;
-`;
+import { Linkedin } from "../images/Linkedin";
+import { Instagram } from "../images/Instagram";
+import { Resume } from "../images/Resume";
+import { Twitter } from "../images/Twitter";
 
 const SocialsList = styled.div`
   display: flex;
+  position: fixed;
+  z-index: 0;
   flex-direction: column;
+  width: fit-content;
+  justify-content: space-evenly;
+  gap: 20px;
+  left: 40px;
+  bottom: 30px;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  background-color: transparent;
 `;
 
 const SocialLinkItem = styled(motion.div)`
   :hover {
-    color: #14a76c;
+    color: #00db8b;
+    cursor: pointer;
   }
+  width: 25px;
+  height: 25px;
   display: flex;
   color: white;
   transition: 0.5s;
@@ -32,16 +39,59 @@ const SocialLinkItem = styled(motion.div)`
 
 export const Socials = () => {
   return (
-    <SocialsContainer>
-      <SocialsList>
-        <SocialLinkItem whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
-          <TinyGithub
-            onClick={() => {
-              window.open("https://github.com/terminader7");
-            }}
-          />
-        </SocialLinkItem>
-      </SocialsList>
-    </SocialsContainer>
+    <SocialsList>
+      <SocialLinkItem
+        whileHover={{ y: -10 }}
+        transition={{ type: "spring", duration: 0.02 }}
+      >
+        <TinyGithub
+          onClick={() => {
+            window.open("https://github.com/terminader7");
+          }}
+        />
+      </SocialLinkItem>
+      <SocialLinkItem
+        whileHover={{ y: -10 }}
+        transition={{ type: "spring", duration: 0.1 }}
+      >
+        <Linkedin
+          onClick={() => {
+            window.open("https://www.linkedin.com/in/nader-ebrahim-28576b199/");
+          }}
+        />
+      </SocialLinkItem>
+      <SocialLinkItem
+        whileHover={{ y: -10 }}
+        transition={{ type: "spring", duration: 0.1 }}
+      >
+        <Instagram
+          onClick={() => {
+            window.open("https://www.instagram.com/the_terminader/");
+          }}
+        />
+      </SocialLinkItem>
+      <SocialLinkItem
+        whileHover={{ y: -10 }}
+        transition={{ type: "spring", duration: 0.1 }}
+      >
+        <Twitter
+          onClick={() => {
+            window.open("https://twitter.com/The_terminader");
+          }}
+        />
+      </SocialLinkItem>
+      <SocialLinkItem
+        whileHover={{ y: -10 }}
+        transition={{ type: "spring", duration: 0.1 }}
+      >
+        <Resume
+          onClick={() => {
+            window.open(
+              "https://drive.google.com/file/d/1t8Ob4M_V2B8fxoffVCIgKlNLGlez9Jyt/view?usp=sharing"
+            );
+          }}
+        />
+      </SocialLinkItem>
+    </SocialsList>
   );
 };
