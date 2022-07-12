@@ -17,7 +17,7 @@ const HomepageContainer = styled.div`
 `;
 const WelcomeTextContainer = styled.div`
   display: flex;
-  background: linear-gradient(-45deg, #a7c7e7, #00db8b, #ffb8c9, #ffb347);
+  background: linear-gradient(-45deg, #a7c7e7, #00db8b, #ff5148, #ffb347);
   background-size: 400% 400%;
   animation: gradient 60s ease infinite;
   height: 100vh;

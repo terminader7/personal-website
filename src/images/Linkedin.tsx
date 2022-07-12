@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const LogoItem = styled.svg`
   :hover {
-    color: #14a76c;
+    color: #00db8b;
   }
   color: white;
 `;

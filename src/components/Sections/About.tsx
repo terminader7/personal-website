@@ -46,7 +46,9 @@ const AboutContentContainer = styled.div`
 `;
 const BioContainer = styled.div`
   justify-content: center;
+
   display: flex;
+
   flex-direction: row;
   align-items: center;
   gap: 40px;
@@ -56,8 +58,16 @@ const PictureOfMe = styled.img`
   width: 400px;
   border-radius: 7px;
 `;
-const BioText = styled.div`
+const BioTextContainer = styled.div`
+  display: flex;
+  background-color: #3d3d3d;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   width: 700px;
+  height: auto;
+  padding: 20px;
+`;
+const BioText = styled.div`
   font-size: 20px;
   color: white;
   justify-content: flex-start;
@@ -65,11 +75,17 @@ const BioText = styled.div`
 const SkillsContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   flex-direction: column;
   padding-top: 40px;
   gap: 10px;
   font-family: inherit;
+  border: 2px #00db8b solid;
+  border-radius: 5px;
+  padding: 20px;
+  margin: auto;
+  position: relative;
 `;
 const SkillsItemsTitleText = styled.div`
   display: flex;
@@ -113,13 +129,15 @@ export const About = () => {
       </AboutHeaderContainer>
       <AboutContentContainer>
         <BioContainer>
-          <BioText>
-            Hello! My name's Nader and I'm a self-taught, front-end developer
-            from Southern California. Crafting a fun yet beautifully simple user
-            experience is what I aim for with all of my projects.
-            <br /> I'm regularly working on improving my skills and furthering
-            my development, one design problem at a time.{" "}
-          </BioText>
+          <BioTextContainer>
+            <BioText>
+              Hello! My name's Nader and I'm a self-taught, front-end developer
+              from Southern California. Crafting a fun yet beautifully simple
+              user experience is what I aim for with all of my projects.
+              <br /> I'm regularly working on improving my skills and furthering
+              my development, one design problem at a time.{" "}
+            </BioText>
+          </BioTextContainer>
           <PictureOfMe src={`${GetBaseImgPath()}/pictureOfMe.jpg`} />
         </BioContainer>
         <SkillsContainer>

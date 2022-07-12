@@ -6,7 +6,7 @@ import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
 import { LineTwo } from "../../images/LineTwo";
-import { TinyGithub } from "../../images/TinyGithub";
+import { TinyGithubTwo } from "../../images/TinyGithubTwo";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -151,7 +151,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             Like the site? <br />
             View the repo here!
           </div>
-          <TinyGithub />
+          <TinyGithubTwo />
         </TinyGitHubContainer>
       </ContactLinks>
     </ContactItemsContainer>
