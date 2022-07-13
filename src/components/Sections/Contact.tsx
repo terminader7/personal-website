@@ -29,8 +29,11 @@ const ContactTextInvitation = styled.div`
 `;
 
 const ContactTextInvitationTwo = styled.div`
+  display: flex;
+  flex-direction: column;
   color: white;
   font-size: 17pt;
+  width: fit-content;
   padding-bottom: 20px;
   justify-content: center;
   align-items: center;
@@ -125,8 +128,10 @@ export const Contact = ({ scaleSize = 1.1 }) => {
           <ContactTextInvitation>Want to know more?</ContactTextInvitation>
           <Line />
           <ContactTextInvitationTwo>
-            I'm currently open to new job opportunities, <br />
-            if you would like to get in touch, my inbox is always open!
+            <div>I'm currently open to new job opportunities,</div>
+            <div>
+              if you would like to get in touch, my inbox is always open!
+            </div>
           </ContactTextInvitationTwo>
         </ContactHeaderContainer>
         <EmailButton

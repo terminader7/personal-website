@@ -52,7 +52,26 @@ const BioContainer = styled.div`
   gap: 40px;
   padding-bottom: 60px;
 `;
+const AccentBox = styled.div`
+  z-index: 0;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  height: 400px;
+  width: 400px;
+  border: 2px solid #00db8b;
+  border-radius: 7px;
+  opacity: 1;
+`;
+const PictureOfMeContainer = styled.div`
+  position: relative;
+  border-radius: 7px;
+  height: 400px;
+  width: fit-content;
+`;
 const PictureOfMe = styled.img`
+  z-index: 2;
+  position: relative;
   height: 400px;
   width: 400px;
   border-radius: 7px;
@@ -62,7 +81,7 @@ const BioTextContainer = styled.div`
   background-color: #3d3d3d;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  width: 700px;
+  width: 500px;
   height: auto;
   padding: 20px;
 `;
@@ -133,11 +152,15 @@ export const About = () => {
               Hello! My name's Nader and I'm a self-taught, front-end developer
               from Southern California. Crafting a fun yet beautifully simple
               user experience is what I aim for with all of my projects.
-              <br /> I'm regularly working on improving my skills and furthering
-              my development, one design problem at a time.{" "}
+              <br /> <br />
+              I'm regularly working on improving my skills and furthering my
+              development, one design problem at a time.{" "}
             </BioText>
           </BioTextContainer>
-          <PictureOfMe src={`${GetBaseImgPath()}/pictureOfMe.jpg`} />
+          <PictureOfMeContainer>
+            <PictureOfMe src={`${GetBaseImgPath()}/pictureOfMe.jpg`} />{" "}
+            <AccentBox />
+          </PictureOfMeContainer>
         </BioContainer>
         <SkillsContainer>
           <SkillsItemsTitleText>Skills</SkillsItemsTitleText>

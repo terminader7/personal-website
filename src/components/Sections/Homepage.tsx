@@ -40,6 +40,8 @@ const WelcomeTextContainer = styled.div`
   }
 `;
 const WelcomeText = styled.h1`
+  display: flex;
+  flex-direction: column;
   @font-face {
     font-family: "Roboto";
     src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot");
@@ -57,6 +59,8 @@ const WelcomeText = styled.h1`
   font-family: Roboto;
   color: white;
   font-size: 50px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const SideArrowContainer = styled.div`
@@ -65,8 +69,9 @@ const SideArrowContainer = styled.div`
 `;
 const WelcomeButtonContainer = styled.div`
   :hover {
-    background-color: #3d3d3d;
+    background-color: rgba(0, 0, 0, 0.5);
     border-color: white;
+    opacity: 1;
     cursor: pointer;
   }
   :hover ${SideArrowContainer} {
@@ -75,7 +80,7 @@ const WelcomeButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   background: transparent;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 3px;
   height: 50px;
   color: white;
@@ -84,6 +89,8 @@ const WelcomeButtonContainer = styled.div`
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+  justify-content: center;
+  opacity: 0.5;
 `;
 
 const WelcomeButtonText = styled.div`
@@ -103,8 +110,8 @@ export const Homepage = () => {
     <HomepageContainer>
       <WelcomeTextContainer id={Sections.home}>
         <WelcomeText>
-          Hi, I'm Nader Ebrahim.
-          <br /> I'm a front-end developer.
+          <div>Hi, I'm Nader Ebrahim.</div>
+          <div>I'm a front-end developer.</div>
         </WelcomeText>
         <WelcomeButtonContainer
           onClick={() => {

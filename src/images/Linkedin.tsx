@@ -2,9 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const LogoItem = styled.svg`
-  :hover {
-    color: #00db8b;
-  }
   color: white;
 `;
 

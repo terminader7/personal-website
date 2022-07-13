@@ -27,7 +27,6 @@ const SocialsList = styled.div`
 
 const SocialLinkItem = styled(motion.div)`
   :hover {
-    color: #00db8b;
     cursor: pointer;
   }
   width: 25px;

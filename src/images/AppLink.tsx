@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const LogoItem = styled.svg`
-  :hover {
-    cursor: pointer;
-    color: #14a76c;
-  }
   transition: 0.5s;
 `;
 

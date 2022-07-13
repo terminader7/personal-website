@@ -28,7 +28,7 @@ const ProjectRow = styled.div`
 
 const ProjectTitle = styled.div`
   :hover {
-    color: #14a76c;
+    color: #00db8b;
     cursor: pointer;
   }
   display: flex;
@@ -42,18 +42,16 @@ const ProjectTitle = styled.div`
 
 const PictureContainer = styled.div`
   display: flex;
-  height: 400px;
-  width: 500px;
+  height: auto;
+  width: auto;
   overflow: hidden;
   justify-content: center;
   align-items: center;
 `;
 
 const ProjectPicture = styled.img`
-  :hover {
-    opacity: 0.65;
-    cursor: pointer;
-  }
+  z-index: 2;
+  cursor: pointer;
   height: auto;
   width: 500px;
   border-radius: 3px;
@@ -62,7 +60,7 @@ const ProjectPicture = styled.img`
 const ProjectInfoContainer = styled.div`
   font-size: 30px;
   color: white;
-  z-index: 2;
+  z-index: 4;
   height: 350px;
   justify-content: flex-end;
   align-items: center;
@@ -71,6 +69,7 @@ const ProjectInfoContainer = styled.div`
 `;
 
 const ProjectDescriptionContainer = styled.div`
+  position: relative;
   color: white;
   justify-content: center;
   align-items: center;
@@ -82,7 +81,21 @@ const ProjectDescriptionContainer = styled.div`
   margin-top: 95px;
 `;
 
+const AccentBox = styled.div`
+  z-index: -1;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00db8b;
+  border-radius: 5px;
+  opacity: 0.7;
+`;
+
 const ProjectDescription = styled.div`
+  position: relative;
+  z-index: 2;
   display: flex;
   padding: 25px;
   justify-content: flex-start;
@@ -98,6 +111,25 @@ const ProjectTechs = styled.div`
   color: rgba(255, 255, 255, 0.65);
   font-size: 15px;
   flex-direction: row;
+`;
+const TinyGithubContainer = styled.div`
+  :hover {
+    color: #00db8b;
+  }
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+`;
+
+const AppLinkContainer = styled.div`
+  :hover {
+    color: #00db8b;
+  }
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
 `;
 
 const LinksContainer = styled.div`
@@ -140,21 +172,26 @@ export const ProjectItem = ({
           </ProjectTitle>
           <ProjectDescriptionContainer>
             <ProjectDescription>{description}</ProjectDescription>
+            <AccentBox />
           </ProjectDescriptionContainer>
           <ProjectTechsContainer>
             <ProjectTechs>{technologies.join(",  ")}</ProjectTechs>
           </ProjectTechsContainer>
           <LinksContainer>
-            <TinyGithub
-              onClick={() => {
-                window.open(github);
-              }}
-            />
-            <AppLink
-              onClick={() => {
-                window.open(path);
-              }}
-            />
+            <TinyGithubContainer>
+              <TinyGithub
+                onClick={() => {
+                  window.open(github);
+                }}
+              />
+            </TinyGithubContainer>
+            <AppLinkContainer>
+              <AppLink
+                onClick={() => {
+                  window.open(path);
+                }}
+              />
+            </AppLinkContainer>
           </LinksContainer>
         </ProjectInfoContainer>
       </ProjectRow>

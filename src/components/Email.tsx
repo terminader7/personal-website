@@ -20,9 +20,6 @@ const EmailContainer = styled.div`
 `;
 
 const EmailItem = styled(motion.div)`
-  :hover {
-    color: #00db8b;
-  }
   @font-face {
     font-family: "Roboto";
     src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot");
