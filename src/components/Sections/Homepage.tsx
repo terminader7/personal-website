@@ -64,7 +64,10 @@ const WelcomeText = styled.h1`
 `;
 
 const SideArrowContainer = styled.div`
-  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
   transition: 0.5s;
 `;
 const WelcomeButtonContainer = styled.div`

@@ -55,22 +55,29 @@ const BioContainer = styled.div`
 const AccentBox = styled.div`
   z-index: 0;
   position: absolute;
-  top: 10px;
+  top: 15px;
   left: 15px;
   height: 400px;
   width: 400px;
   border: 2px solid #00db8b;
   border-radius: 7px;
   opacity: 1;
+  transition: 0.5s;
 `;
 const PictureOfMeContainer = styled.div`
+  :hover ${AccentBox} {
+    top: 5px;
+    left: 5px;
+  }
   position: relative;
   border-radius: 7px;
   height: 400px;
   width: fit-content;
+  transition: 0.2s ease-in-out;
 `;
 const PictureOfMe = styled.img`
   z-index: 2;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   position: relative;
   height: 400px;
   width: 400px;

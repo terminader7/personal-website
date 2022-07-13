@@ -50,6 +50,9 @@ const PictureContainer = styled.div`
 `;
 
 const ProjectPicture = styled.img`
+  :hover {
+    opacity: 0.7;
+  }
   z-index: 2;
   cursor: pointer;
   height: auto;
@@ -60,7 +63,7 @@ const ProjectPicture = styled.img`
 const ProjectInfoContainer = styled.div`
   font-size: 30px;
   color: white;
-  z-index: 4;
+  z-index: 2;
   height: 350px;
   justify-content: flex-end;
   align-items: center;
