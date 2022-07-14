@@ -62,7 +62,7 @@ export const Projects = () => {
       path: "https://github-finder-nader.herokuapp.com/",
       github: "https://github.com/terminader7/github-finder",
       description:
-        "React app to earch Github profiles. This app uses the Context API along with the useContext and useReducer hooks for state management",
+        "React app to earch Github profiles. This app uses the Context API along with the useContext and useReducer hooks for state management.",
       technologies: ["Axios ", " Github API ", " React ", " Heroku "],
     },
     {
@@ -89,7 +89,7 @@ export const Projects = () => {
       path: "https://drum-machine-nader.herokuapp.com/",
       github: "https://github.com/terminader7/drum-machine-fcc",
       description:
-        "Drum machine app with audio tied to each individual button press",
+        "Drum machine app with audio tied to each individual button press.",
       technologies: [
         "React",
         "CSS Styling",

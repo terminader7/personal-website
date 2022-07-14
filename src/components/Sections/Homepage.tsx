@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import { Contact } from "./Contact";
 import { About } from "./About";
@@ -39,7 +40,7 @@ const WelcomeTextContainer = styled.div`
     }
   }
 `;
-const WelcomeText = styled.h1`
+const WelcomeText = styled(motion.h1)`
   display: flex;
   flex-direction: column;
   @font-face {
@@ -70,16 +71,16 @@ const SideArrowContainer = styled.div`
   padding-left: 10px;
   transition: 0.5s;
 `;
-const WelcomeButtonContainer = styled.div`
+const WelcomeButtonContainer = styled(motion.div)`
   :hover {
     background-color: rgba(0, 0, 0, 0.5);
     border-color: white;
-    opacity: 1;
     cursor: pointer;
   }
   :hover ${SideArrowContainer} {
     transform: rotate(90deg);
   }
+  transform-origin: center center;
   display: flex;
   flex-direction: row;
   background: transparent;
@@ -109,14 +110,28 @@ const PreviewsContainer = styled.div`
 `;
 
 export const Homepage = () => {
+  const appearVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 1 },
+  };
+
   return (
     <HomepageContainer>
       <WelcomeTextContainer id={Sections.home}>
-        <WelcomeText>
+        <WelcomeText
+          variants={appearVariant}
+          initial="hidden"
+          transition={{ duration: 1 }}
+          animate="visible"
+        >
           <div>Hi, I'm Nader Ebrahim.</div>
           <div>I'm a front-end developer.</div>
         </WelcomeText>
         <WelcomeButtonContainer
+          variants={appearVariant}
+          initial="hidden"
+          transition={{ duration: 1.5 }}
+          animate="visible"
           onClick={() => {
             ScrollTo(Sections.about);
           }}

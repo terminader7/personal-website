@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import { TinyGithub } from "../images/TinyGithub";
 import { Linkedin } from "../images/Linkedin";
@@ -8,7 +9,7 @@ import { Instagram } from "../images/Instagram";
 import { Resume } from "../images/Resume";
 import { Twitter } from "../images/Twitter";
 
-const SocialsList = styled.div`
+const SocialsList = styled(motion.div)`
   display: flex;
   position: fixed;
   z-index: 0;
@@ -41,8 +42,17 @@ const VerticalLine = styled.div`
   height: 120px;
 `;
 export const Socials = () => {
+  const appearVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 1 },
+  };
   return (
-    <SocialsList>
+    <SocialsList
+      variants={appearVariant}
+      initial="hidden"
+      transition={{ duration: 3 }}
+      animate="visible"
+    >
       <SocialLinkItem
         whileHover={{ y: -10 }}
         transition={{ type: "spring", duration: 0.02 }}

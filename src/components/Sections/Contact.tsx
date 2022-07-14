@@ -1,6 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import styled from "styled-components";
+import { useInView } from "react-intersection-observer";
 
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";

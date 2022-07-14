@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-const EmailContainer = styled.div`
+const EmailContainer = styled(motion.div)`
   display: flex;
   position: fixed;
   z-index: 0;
@@ -54,8 +55,17 @@ const VeritcalLine = styled.div`
 `;
 
 export const Email = () => {
+  const appearVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 1 },
+  };
   return (
-    <EmailContainer>
+    <EmailContainer
+      variants={appearVariant}
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 3 }}
+    >
       <EmailItem
         onClick={() => {
           window.open("mailto:nebrahim2424@gmail.com");

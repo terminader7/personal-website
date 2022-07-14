@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import { TinyGithub } from "../../images/TinyGithub";
 import { AppLink } from "../../images/AppLink";
@@ -12,9 +14,9 @@ interface IProps {
   technologies: string[];
   github: string;
 }
-const ProjectItemContainer = styled.div``;
+const ProjectItemContainer = styled(motion.div)``;
 
-const ProjectRow = styled.div`
+const ProjectRow = styled(motion.div)`
   display: flex;
   flex-direction: row;
   position: relative;
@@ -22,11 +24,10 @@ const ProjectRow = styled.div`
   width: 1500px;
   align-items: flex-start;
   justify-content: center;
-  overflow: hidden;
   padding-top: 30px;
 `;
 
-const ProjectTitle = styled.div`
+const ProjectTitle = styled(motion.div)`
   :hover {
     color: #00db8b;
     cursor: pointer;
@@ -39,54 +40,53 @@ const ProjectTitle = styled.div`
   width: fit-content;
   margin-left: 200px;
 `;
-
-const PictureContainer = styled.div`
+const AccentBox = styled(motion.div)`
+  z-index: 0;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00db8b;
+  border-radius: 3px;
+  transition: 0.25s ease-in-out;
+`;
+const PictureContainer = styled(motion.div)`
+  :hover ${AccentBox} {
+    top: 10px;
+    right: 10px;
+  }
   display: flex;
-  height: auto;
-  width: auto;
-  overflow: hidden;
+  position: relative;
+  height: fit-content;
+  width: fit-content;
   justify-content: center;
   align-items: center;
+  transition: 0.25s ease-in-out;
 `;
 
-const ProjectPicture = styled.img`
-  :hover {
-    opacity: 0.7;
-  }
+const ProjectPicture = styled(motion.img)`
   z-index: 2;
+  position: relative;
   cursor: pointer;
   height: auto;
   width: 500px;
   border-radius: 3px;
   transition: 0.5s;
+  transition: ease-in-out;
 `;
-const ProjectInfoContainer = styled.div`
+const ProjectInfoContainer = styled(motion.div)`
+  z-index: 3;
   font-size: 30px;
   color: white;
-  z-index: 2;
   height: 350px;
   justify-content: flex-end;
   align-items: center;
   margin-left: -60px;
   width: 500px;
 `;
-const AccentBox = styled.div`
-  z-index: -1;
-  position: absolute;
-  top: 7px;
-  left: 7px;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #00db8b;
-  border-radius: 5px;
-  opacity: 0.7;
-  transition: 0.3s ease-in-out;
-`;
-const ProjectDescriptionContainer = styled.div`
-  :hover ${AccentBox} {
-    top: 3px;
-    left: 3px;
-  }
+
+const ProjectDescriptionContainer = styled(motion.div)`
   position: relative;
   color: white;
   justify-content: center;
@@ -100,27 +100,26 @@ const ProjectDescriptionContainer = styled.div`
   margin-top: 95px;
 `;
 
-const ProjectDescription = styled.div`
+const ProjectDescription = styled(motion.div)`
   position: relative;
-  z-index: 2;
   display: flex;
   padding: 25px;
   justify-content: flex-start;
   font-size: 17px;
   font-weight: 100;
 `;
-const ProjectTechsContainer = styled.div`
+const ProjectTechsContainer = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
   padding-top: 30px;
 `;
-const ProjectTechs = styled.div`
+const ProjectTechs = styled(motion.div)`
   display: flex;
   color: rgba(255, 255, 255, 0.65);
   font-size: 15px;
   flex-direction: row;
 `;
-const TinyGithubContainer = styled.div`
+const TinyGithubContainer = styled(motion.div)`
   :hover {
     color: #00db8b;
   }
@@ -130,7 +129,7 @@ const TinyGithubContainer = styled.div`
   height: fit-content;
 `;
 
-const AppLinkContainer = styled.div`
+const AppLinkContainer = styled(motion.div)`
   :hover {
     color: #00db8b;
   }
@@ -140,15 +139,14 @@ const AppLinkContainer = styled.div`
   height: fit-content;
 `;
 
-const LinksContainer = styled.div`
+const LinksContainer = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
-  position: absolute;
+  position: relative;
   bottom: 0;
   flex-direction: row;
   gap: 10px;
-  padding-bottom: 15px;
-  margin-left: 420px;
+  padding-top: 40px;
 `;
 
 export const ProjectItem = ({
@@ -159,18 +157,59 @@ export const ProjectItem = ({
   technologies,
   github,
 }: IProps) => {
+  const control = useAnimation();
+
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [inView]);
+
+  const slideInLeftVariant = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -200 },
+  };
+  const slideInRightVariant = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 200 },
+  };
+  const appearVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 1 },
+  };
+
   return (
     <ProjectItemContainer>
       <ProjectRow>
         <PictureContainer>
           <ProjectPicture
+            ref={ref}
+            variants={slideInLeftVariant}
+            initial="hidden"
+            transition={{ duration: 1 }}
+            animate={control}
             src={src}
             onClick={() => {
               window.open(path);
             }}
           />
+          <AccentBox
+            ref={ref}
+            variants={appearVariant}
+            initial="hidden"
+            transition={{ duration: 2 }}
+            animate={control}
+          />
         </PictureContainer>
-        <ProjectInfoContainer>
+        <ProjectInfoContainer
+          ref={ref}
+          variants={slideInRightVariant}
+          initial="hidden"
+          transition={{ duration: 1 }}
+          animate={control}
+        >
           <ProjectTitle
             onClick={() => {
               window.open(path);
@@ -180,7 +219,6 @@ export const ProjectItem = ({
           </ProjectTitle>
           <ProjectDescriptionContainer>
             <ProjectDescription>{description}</ProjectDescription>
-            <AccentBox />
           </ProjectDescriptionContainer>
           <ProjectTechsContainer>
             <ProjectTechs>{technologies.join(",  ")}</ProjectTechs>
