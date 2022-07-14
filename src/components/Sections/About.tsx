@@ -62,7 +62,7 @@ const AccentBox = styled.div`
   border: 2px solid #00db8b;
   border-radius: 7px;
   opacity: 1;
-  transition: 0.5s;
+  transition: 0.3s ease-in-out;
 `;
 const PictureOfMeContainer = styled.div`
   :hover ${AccentBox} {
@@ -73,7 +73,7 @@ const PictureOfMeContainer = styled.div`
   border-radius: 7px;
   height: 400px;
   width: fit-content;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
 `;
 const PictureOfMe = styled.img`
   z-index: 2;
@@ -93,7 +93,7 @@ const BioTextContainer = styled.div`
   padding: 20px;
 `;
 const BioText = styled.div`
-  font-size: 20px;
+  font-size: 17px;
   color: white;
   justify-content: flex-start;
 `;
@@ -157,11 +157,18 @@ export const About = () => {
           <BioTextContainer>
             <BioText>
               Hello! My name's Nader and I'm a self-taught, front-end developer
-              from Southern California. Crafting a fun yet beautifully simple
-              user experience is what I aim for with all of my projects.
+              from Southern California. My main goal with web design is crafting
+              a fun yet beautifully simple user experience. To put it plainly,
+              I'm a big believer that less is more.
+              <br />
+              <br />
+              I attended San Francisco State University and initially got my
+              Bachelor's in Communications but I always had a passing
+              fascination in programming. In early 2022, I decided to turn my
+              fascination into a profession and dive in head first.
               <br /> <br />
               I'm regularly working on improving my skills and furthering my
-              development, one design problem at a time.{" "}
+              development, one design problem at a time.
             </BioText>
           </BioTextContainer>
           <PictureOfMeContainer>

@@ -11,7 +11,7 @@ const EmailContainer = styled.div`
   justify-content: space-evenly;
   gap: 20px;
   right: 50px;
-  bottom: 15px;
+  bottom: 13px;
   justify-content: flex-end;
   width: auto;
   height: auto;
@@ -44,7 +44,7 @@ const EmailItem = styled(motion.div)`
 `;
 
 const VeritcalLine = styled.div`
-  border-left: 2px solid white;
+  border-left: 1px solid white;
   height: 120px;
 `;
 

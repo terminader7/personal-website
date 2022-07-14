@@ -70,8 +70,23 @@ const ProjectInfoContainer = styled.div`
   margin-left: -60px;
   width: 500px;
 `;
-
+const AccentBox = styled.div`
+  z-index: -1;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #00db8b;
+  border-radius: 5px;
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+`;
 const ProjectDescriptionContainer = styled.div`
+  :hover ${AccentBox} {
+    top: 3px;
+    left: 3px;
+  }
   position: relative;
   color: white;
   justify-content: center;
@@ -81,19 +96,8 @@ const ProjectDescriptionContainer = styled.div`
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   width: 500px;
   height: fit-content;
+  transition: 0.3s ease-in-out;
   margin-top: 95px;
-`;
-
-const AccentBox = styled.div`
-  z-index: -1;
-  position: absolute;
-  top: 7px;
-  left: 7px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #00db8b;
-  border-radius: 5px;
-  opacity: 0.7;
 `;
 
 const ProjectDescription = styled.div`

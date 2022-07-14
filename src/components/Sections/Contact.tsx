@@ -77,21 +77,7 @@ const UpArrowContainer = styled(motion.div)`
   margin-top: 20px;
   border-radius: 4px;
 `;
-const BuiltByTextContainer = styled.div`
-  display: flex;
-  font-family: inherit;
-  font-size: 15px;
-  transition: 0.5s;
-  color: rgba(255, 255, 255, 0.65);
-  position: absolute;
-  bottom: 0;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 20px;
-`;
-const BuiltByText = styled.div`
-  display: flex;
-`;
+
 const TinyGitHubContainer = styled.div`
   :hover {
     cursor: pointer;
@@ -128,9 +114,9 @@ export const Contact = ({ scaleSize = 1.1 }) => {
           <ContactTextInvitation>Want to know more?</ContactTextInvitation>
           <Line />
           <ContactTextInvitationTwo>
-            <div>I'm currently open to new job opportunities,</div>
+            <div>I'm currently open to new job opportunities.</div>
             <div>
-              if you would like to get in touch, my inbox is always open!
+              If you would like to get in touch, my inbox is always open!
             </div>
           </ContactTextInvitationTwo>
         </ContactHeaderContainer>
@@ -153,9 +139,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             }}
           />
         </UpArrowContainer>
-        <BuiltByTextContainer>
-          <BuiltByText>Designed & Built by Nader Ebrahim</BuiltByText>
-        </BuiltByTextContainer>
+
         <TinyGitHubContainer
           onClick={() => {
             window.open("https://github.com/terminader7/personal-website");

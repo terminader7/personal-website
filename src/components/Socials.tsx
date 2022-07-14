@@ -17,7 +17,7 @@ const SocialsList = styled.div`
   justify-content: space-evenly;
   gap: 20px;
   left: 50px;
-  bottom: 15px;
+  bottom: 13px;
   justify-content: flex-start;
   width: auto;
   height: auto;
@@ -37,7 +37,7 @@ const SocialLinkItem = styled(motion.div)`
 `;
 
 const VerticalLine = styled.div`
-  border-left: 2px solid white;
+  border-left: 1px solid white;
   height: 120px;
 `;
 export const Socials = () => {
