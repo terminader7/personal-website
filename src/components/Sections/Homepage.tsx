@@ -80,7 +80,6 @@ const WelcomeButtonContainer = styled(motion.div)`
   :hover ${SideArrowContainer} {
     transform: rotate(90deg);
   }
-  transform-origin: center center;
   display: flex;
   flex-direction: row;
   background: transparent;
