@@ -107,6 +107,7 @@ const ProjectDescription = styled.div`
   padding: 25px;
   justify-content: flex-start;
   font-size: 17px;
+  font-weight: 100;
 `;
 const ProjectTechsContainer = styled.div`
   display: flex;

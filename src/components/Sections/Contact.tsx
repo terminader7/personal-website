@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
-import { Line } from "../../images/Line";
 import { TinyGithubTwo } from "../../images/TinyGithubTwo";
 
 const ContactItemsContainer = styled.div`
@@ -14,7 +13,7 @@ const ContactItemsContainer = styled.div`
   flex: 1;
   background-color: #2b2b2b;
   flex-direction: column;
-  font-family: Roboto;
+  font-family: Bahnschrift;
 `;
 const ContactHeaderContainer = styled.div`
   display: flex;
@@ -22,10 +21,15 @@ const ContactHeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+const HorizontalLine = styled.div`
+  border-bottom: 2px solid #00db8b;
+  width: 125px;
+`;
 const ContactTextInvitation = styled.div`
   color: white;
   font-weight: bold;
   font-size: 40pt;
+  padding-bottom: 15px;
 `;
 
 const ContactTextInvitationTwo = styled.div`
@@ -34,6 +38,7 @@ const ContactTextInvitationTwo = styled.div`
   color: white;
   font-size: 17pt;
   width: fit-content;
+  padding-top: 35px;
   padding-bottom: 20px;
   justify-content: center;
   align-items: center;
@@ -112,7 +117,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
       <ContactLinks>
         <ContactHeaderContainer>
           <ContactTextInvitation>Want to know more?</ContactTextInvitation>
-          <Line />
+          <HorizontalLine />
           <ContactTextInvitationTwo>
             <div>I'm currently open to new job opportunities.</div>
             <div>

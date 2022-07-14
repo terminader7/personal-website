@@ -20,27 +20,32 @@ const EmailContainer = styled.div`
 `;
 
 const EmailItem = styled(motion.div)`
+  :hover {
+    opacity: 1;
+  }
   @font-face {
-    font-family: "Roboto";
-    src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot");
-    src: url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.eot?#iefix")
+    font-family: "Bahnschrift";
+    src: url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.eot");
+    src: url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.eot?#iefix")
         format("embedded-opentype"),
-      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.woff2")
+      url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.woff2")
         format("woff2"),
-      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.woff")
+      url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.woff")
         format("woff"),
-      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.ttf")
+      url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.ttf")
         format("truetype"),
-      url("//db.onlinewebfonts.com/t/0033a2fbc0329740fb86c1cfd134cb94.svg#Roboto")
+      url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.svg#Bahnschrift")
         format("svg");
   }
-  font-family: Roboto;
+  font-family: Bahnschrift;
   color: white;
   font-size: 18px;
   font-weight: lighter;
   writing-mode: vertical-lr;
   transition: 0.5s;
   cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
 `;
 
 const VeritcalLine = styled.div`

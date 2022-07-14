@@ -5,13 +5,11 @@ import { Sections } from "../../types";
 import { GetBaseImgPath } from "../../utils";
 import { ProjectItem } from "./ProjectItem";
 
-import { Line } from "../../images/Line";
-
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #2b2b2b;
-  font-family: Roboto;
+  font-family: Bahnschrift;
   padding-bottom: 100px;
 `;
 
@@ -20,12 +18,18 @@ const ProjectHeaderContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 40px;
 `;
 const ProjectsSectionTitleText = styled.div`
   padding-top: 10px;
   color: white;
   font-size: 30pt;
   font-weight: bold;
+  padding-bottom: 15px;
+`;
+const HorizontalLine = styled.div`
+  border-bottom: 2px solid #00db8b;
+  width: 125px;
 `;
 const ProjectContentContainer = styled.div`
   display: flex;
@@ -99,7 +103,7 @@ export const Projects = () => {
     <ProjectsContainer id={Sections.projects}>
       <ProjectHeaderContainer>
         <ProjectsSectionTitleText>Recent Projects</ProjectsSectionTitleText>
-        <Line />
+        <HorizontalLine />
       </ProjectHeaderContainer>
       <ProjectContentContainer>
         <ProjectItemsContainer>

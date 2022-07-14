@@ -11,13 +11,12 @@ import { CSSLogo } from "../../images/CSSLogo";
 import { NodeJSLogo } from "../../images/NodeJSLogo";
 import { TypeScriptLogo } from "../../images/TypeScriptLogo";
 import { GetBaseImgPath } from "../../utils";
-import { Line } from "../../images/Line";
 
 const AboutContainer = styled.div`
   background-color: #2b2b2b;
   height: fit-content;
   width: 100%;
-  font-family: Roboto;
+  font-family: Bahnschrift;
   padding-bottom: 100px;
 `;
 
@@ -26,6 +25,7 @@ const AboutHeaderContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 80px;
 `;
 
 const AboutTitleText = styled(motion.div)`
@@ -35,8 +35,13 @@ const AboutTitleText = styled(motion.div)`
   font-weight: bold;
   position: relative;
   padding-top: 40px;
+  padding-bottom: 15px;
 `;
 
+const HorizontalLine = styled.div`
+  border-bottom: 2px solid #00db8b;
+  width: 125px;
+`;
 const AboutContentContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -141,8 +146,8 @@ const SkillsItemList = styled.ul`
   display: grid;
   grid-template-columns: repeat(1, minmax(140px, 200px));
   gap: 20px;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const About = () => {
@@ -150,7 +155,7 @@ export const About = () => {
     <AboutContainer id={Sections.about}>
       <AboutHeaderContainer>
         <AboutTitleText>About Me</AboutTitleText>
-        <Line />
+        <HorizontalLine />
       </AboutHeaderContainer>
       <AboutContentContainer>
         <BioContainer>
