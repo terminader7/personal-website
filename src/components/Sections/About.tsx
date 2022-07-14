@@ -87,6 +87,7 @@ const PictureOfMe = styled(motion.img)`
   height: 400px;
   width: 400px;
   border-radius: 7px;
+  transition: ease-in-out;
 `;
 const BioTextContainer = styled(motion.div)`
   display: flex;
@@ -96,6 +97,7 @@ const BioTextContainer = styled(motion.div)`
   width: 500px;
   height: auto;
   padding: 20px;
+  transition: ease-in-out;
 `;
 const BioText = styled(motion.div)`
   font-size: 17px;
@@ -153,13 +155,23 @@ const SkillsItemList = styled(motion.ul)`
 export const About = () => {
   const control = useAnimation();
 
-  const [ref, inView] = useInView();
+  const control2 = useAnimation();
+
+  const [ref, inView] = useInView({ threshold: 0.1 });
+
+  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (inView) {
       control.start("visible");
     }
   }, [inView]);
+
+  useEffect(() => {
+    if (inView2) {
+      control2.start("visible");
+    }
+  });
 
   const appearVariant = {
     visible: { opacity: 1, scale: 1 },
@@ -228,11 +240,11 @@ export const About = () => {
           </PictureOfMeContainer>
         </BioContainer>
         <SkillsContainer
-          ref={ref}
+          ref={ref2}
           variants={appearFromBottomVariant}
           initial="hidden"
-          transition={{ duration: 0.5 }}
-          animate={control}
+          transition={{ duration: 1 }}
+          animate={control2}
         >
           <SkillsItemsTitleText>Skills</SkillsItemsTitleText>
           <SkillsItem>

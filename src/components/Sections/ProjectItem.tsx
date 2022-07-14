@@ -159,7 +159,7 @@ export const ProjectItem = ({
 }: IProps) => {
   const control = useAnimation();
 
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ threshold: 1 });
 
   useEffect(() => {
     if (inView) {
