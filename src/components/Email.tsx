@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const EmailContainer = styled(motion.div)`
   display: flex;
@@ -24,7 +23,6 @@ const EmailItem = styled(motion.div)`
   :hover {
     opacity: 1;
   }
-
   font-family: Bahnschrift;
   color: white;
   font-size: 18px;
