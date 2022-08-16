@@ -57,12 +57,21 @@ export const Projects = () => {
   //make object differentiating left structure from right structure
   const ProjectItemArray = [
     {
+      title: "Contact Keeper",
+      src: `${GetBaseImgPath()}/Screenshots/contactKeeper.png`,
+      path: "https://contact-keeper-nader.herokuapp.com/",
+      github: "https://github.com/terminader7/Contact-Keeper",
+      description:
+        "This project is a Full Stack MERN Application in which a user can register an account and will be able to create and keep contacts with some basic information such as name, email, phone, etc. The app utilizes Mongo DB as its primary database.",
+      technologies: ["ReactJS", "Node.JS", "Mongo DB", "Express", "Axios"],
+    },
+    {
       title: "Github Finder",
       src: `${GetBaseImgPath()}/Screenshots/githubFinderScreenshot.png`,
       path: "https://github-finder-nader.herokuapp.com/",
       github: "https://github.com/terminader7/github-finder",
       description:
-        "React app to earch Github profiles. This app uses the Context API along with the useContext and useReducer hooks for state management.",
+        "React app to each Github profiles. This app uses the Context API along with the useContext and useReducer hooks for state management.",
       technologies: [
         " ReactJS ",
         "Axios ",
@@ -79,15 +88,6 @@ export const Projects = () => {
       description:
         "Calculator app that uses JavaScript to perform mathematical equations accurately.",
       technologies: ["ReactJS", "Styled Components", "Heroku", "JavaScript"],
-    },
-    {
-      title: "Contact Keeper",
-      src: `${GetBaseImgPath()}/Screenshots/contactKeeper.png`,
-      path: "https://contact-keeper-nader.herokuapp.com/",
-      github: "https://github.com/terminader7/Contact-Keeper",
-      description:
-        "This project is a Full Stack MERN Application in which a user can register an account and will be able to create and keep contacts with some basic information such as name, email, phone, etc. The app utilizes Mongo DB as its primary database.",
-      technologies: ["ReactJS", "Node.JS", "Mongo DB", "Express", "Axios"],
     },
     {
       title: "Drum-Machine",

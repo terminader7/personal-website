@@ -10,7 +10,6 @@ import { Sections } from "../../types";
 import { Navbar } from "../Navbar";
 import { Socials } from "../Socials";
 import { Email } from "../Email";
-import { SideArrow } from "../../images/SideArrow";
 
 const HomepageContainer = styled.div`
   display: flex;
@@ -50,21 +49,11 @@ const WelcomeText = styled(motion.h1)`
   align-items: center;
 `;
 
-const SideArrowContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 10px;
-  transition: 0.5s;
-`;
 const WelcomeButtonContainer = styled(motion.div)`
   :hover {
     background-color: rgba(0, 0, 0, 0.5);
     border-color: white;
     cursor: pointer;
-  }
-  :hover ${SideArrowContainer} {
-    transform: rotate(90deg);
   }
   display: flex;
   flex-direction: row;
@@ -125,9 +114,6 @@ export const Homepage = () => {
           }}
         >
           <WelcomeButtonText>Learn more about me</WelcomeButtonText>
-          <SideArrowContainer>
-            <SideArrow />
-          </SideArrowContainer>
         </WelcomeButtonContainer>
       </WelcomeTextContainer>
       <Navbar />
