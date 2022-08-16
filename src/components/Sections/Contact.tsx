@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import { useInView } from "react-intersection-observer";
 
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
@@ -48,7 +47,7 @@ const ContactLinks = styled.div`
   display: flex;
   height: calc(100% - 4px - 20px);
   width: calc(100% - 4px - 20px);
-  border: 3px #14a76c solid;
+  border: 2px #14a76c solid;
   border-radius: 5px;
   gap: 20px;
   align-items: center;
