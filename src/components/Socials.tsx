@@ -100,7 +100,7 @@ export const Socials = () => {
         <Resume
           onClick={() => {
             window.open(
-              "https://drive.google.com/file/d/1r4MbRv7Sq5-KCWn4IvtkroMD-ORP8tnM/view"
+              "https://docs.google.com/document/d/1L5rM2lNEvGW-y87W-DhdTfmfv7Jyk58Oh88hihm04YA/edit?usp=sharinghttps://docs.google.com/document/d/1L5rM2lNEvGW-y87W-DhdTfmfv7Jyk58Oh88hihm04YA/edit?usp=sharing"
             );
           }}
         />
