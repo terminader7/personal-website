@@ -17,6 +17,10 @@ const NavbarContainer = styled.nav`
   top: 0px;
   border-bottom: 1px solid #00db8b;
   font-family: Bahnschrift;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const NavLink = styled.li`
   display: inline-block;

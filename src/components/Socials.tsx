@@ -8,6 +8,7 @@ import { Linkedin } from "../images/Linkedin";
 import { Instagram } from "../images/Instagram";
 import { Resume } from "../images/Resume";
 import { Twitter } from "../images/Twitter";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
 const SocialsList = styled(motion.div)`
   display: flex;
@@ -24,6 +25,12 @@ const SocialsList = styled(motion.div)`
   height: auto;
   background-color: transparent;
   align-items: center;
+  ${mobileMediaQuery} {
+    left: 13px;
+    gap: 15px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const SocialLinkItem = styled(motion.div)`
@@ -35,11 +42,22 @@ const SocialLinkItem = styled(motion.div)`
   display: flex;
   color: white;
   transition: 0.5s;
+  ${mobileMediaQuery} {
+    height: 15px;
+    width: 15px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const VerticalLine = styled.div`
   border-left: 1px solid white;
   height: 120px;
+  ${mobileMediaQuery} {
+    height: 45px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 export const Socials = () => {
   const appearVariant = {

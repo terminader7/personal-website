@@ -71,6 +71,11 @@ const ContactContentContainer = styled.div`
   justify-content: center;
   margin: auto;
   position: relative;
+  ${mobileMediaQuery} {
+    gap: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const EmailButton = styled(motion.div)`
@@ -98,8 +103,9 @@ const UpArrowContainer = styled(motion.div)`
   :hover {
     background-color: #00db8b;
   }
+  opacity: 0.85;
   justify-content: center;
-  width: 70px;
+  width: 60px;
   transition: 0.5s;
   margin-top: 20px;
   border-radius: 4px;

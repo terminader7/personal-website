@@ -15,7 +15,9 @@ interface IProps {
   technologies: string[];
   github: string;
 }
-const ProjectItemContainer = styled(motion.div)``;
+const ProjectItemContainer = styled(motion.div)`
+  display: flex;
+`;
 
 const ProjectRow = styled(motion.div)`
   display: flex;
@@ -27,7 +29,9 @@ const ProjectRow = styled(motion.div)`
   justify-content: center;
   padding-top: 30px;
   ${mobileMediaQuery} {
+    flex-direction: column-reverse;
     width: 100%;
+    padding-top: 15px;
   }
   ${tabletMediaQuery} {
   }
@@ -47,6 +51,9 @@ const ProjectTitle = styled(motion.div)`
   margin-left: 200px;
   ${mobileMediaQuery} {
     padding-top: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
   }
   ${tabletMediaQuery} {
   }
@@ -61,11 +68,17 @@ const AccentBox = styled(motion.div)`
   border: 2px solid #00db8b;
   border-radius: 3px;
   transition: 0.25s ease-in-out;
+  ${mobileMediaQuery} {
+    top: 10px;
+    right: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const PictureContainer = styled(motion.div)`
   :hover ${AccentBox} {
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
   }
   display: flex;
   position: relative;
@@ -74,6 +87,10 @@ const PictureContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   transition: 0.25s ease-in-out;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const ProjectPicture = styled(motion.img)`
@@ -85,6 +102,11 @@ const ProjectPicture = styled(motion.img)`
   border-radius: 3px;
   transition: 0.5s;
   transition: ease-in-out;
+  ${mobileMediaQuery} {
+    width: 300px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const ProjectInfoContainer = styled(motion.div)`
   z-index: 3;
@@ -95,6 +117,13 @@ const ProjectInfoContainer = styled(motion.div)`
   align-items: center;
   margin-left: -60px;
   width: 500px;
+  ${mobileMediaQuery} {
+    width: 0;
+    justify-content: center;
+    margin-left: 0px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const ProjectDescriptionContainer = styled(motion.div)`
@@ -109,6 +138,12 @@ const ProjectDescriptionContainer = styled(motion.div)`
   height: fit-content;
   transition: 0.3s ease-in-out;
   margin-top: 95px;
+  ${mobileMediaQuery} {
+    width: 300px;
+    margin-top: 0px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const ProjectDescription = styled(motion.div)`
@@ -118,17 +153,31 @@ const ProjectDescription = styled(motion.div)`
   justify-content: flex-start;
   font-size: 17px;
   font-weight: 100;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const ProjectTechsContainer = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
   padding-top: 30px;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const ProjectTechs = styled(motion.div)`
   display: flex;
   color: rgba(255, 255, 255, 0.65);
   font-size: 15px;
   flex-direction: row;
+  ${mobileMediaQuery} {
+    justify-content: center;
+    align-items: center;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const TinyGithubContainer = styled(motion.div)`
   :hover {
@@ -138,6 +187,10 @@ const TinyGithubContainer = styled(motion.div)`
   display: flex;
   width: fit-content;
   height: fit-content;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const AppLinkContainer = styled(motion.div)`
@@ -148,6 +201,10 @@ const AppLinkContainer = styled(motion.div)`
   display: flex;
   width: fit-content;
   height: fit-content;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const LinksContainer = styled(motion.div)`
@@ -158,6 +215,13 @@ const LinksContainer = styled(motion.div)`
   flex-direction: row;
   gap: 10px;
   padding-top: 40px;
+  ${mobileMediaQuery} {
+    gap: 7px;
+    padding-top: 20px;
+    justify-content: center;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 export const ProjectItem = ({

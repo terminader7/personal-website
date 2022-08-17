@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
 const EmailContainer = styled(motion.div)`
   display: flex;
@@ -17,6 +18,11 @@ const EmailContainer = styled(motion.div)`
   height: auto;
   background-color: transparent;
   align-items: center;
+  ${mobileMediaQuery} {
+    right: 13px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const EmailItem = styled(motion.div)`
@@ -32,11 +38,21 @@ const EmailItem = styled(motion.div)`
   cursor: pointer;
   opacity: 0.7;
   transition: 0.3s;
+  ${mobileMediaQuery} {
+    font-size: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const VeritcalLine = styled.div`
   border-left: 1px solid white;
   height: 120px;
+  ${mobileMediaQuery} {
+    height: 45px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 export const Email = () => {
