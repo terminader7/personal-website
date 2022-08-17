@@ -72,7 +72,6 @@ const ContactContentContainer = styled.div`
   margin: auto;
   position: relative;
   ${mobileMediaQuery} {
-    gap: 10px;
   }
   ${tabletMediaQuery} {
   }
