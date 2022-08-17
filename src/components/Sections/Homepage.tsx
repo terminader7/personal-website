@@ -10,6 +10,7 @@ import { Sections } from "../../types";
 import { Navbar } from "../Navbar";
 import { Socials } from "../Socials";
 import { Email } from "../Email";
+import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
 
 const HomepageContainer = styled.div`
   display: flex;
@@ -21,12 +22,17 @@ const WelcomeTextContainer = styled.div`
   display: flex;
   background: linear-gradient(-45deg, #a7c7e7, #00db8b, #ff5148, #ffb347);
   background-size: 400% 400%;
-  animation: gradient 60s ease infinite;
   height: 100vh;
   width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  animation: gradient 60s ease infinite;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
+
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -47,6 +53,11 @@ const WelcomeText = styled(motion.h1)`
   font-size: 50px;
   justify-content: center;
   align-items: center;
+  ${mobileMediaQuery} {
+    font-size: 30px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const WelcomeButtonContainer = styled(motion.div)`
@@ -69,6 +80,11 @@ const WelcomeButtonContainer = styled(motion.div)`
   padding-right: 10px;
   justify-content: center;
   opacity: 0.5;
+  ${mobileMediaQuery} {
+    height: 40px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const WelcomeButtonText = styled.div`

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
 import { Sections } from "../types";
 import { ScrollTo } from "../utils";
@@ -36,6 +37,11 @@ const NavLinkList = styled.ul`
   gap: 20px;
   width: 100%;
   font-size: 20px;
+  ${mobileMediaQuery} {
+    font-size: 18px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 export const Navbar = () => {
   return (

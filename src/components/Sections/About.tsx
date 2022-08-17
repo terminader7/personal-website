@@ -11,6 +11,7 @@ import { CSSLogo } from "../../images/CSSLogo";
 import { NodeJSLogo } from "../../images/NodeJSLogo";
 import { TypeScriptLogo } from "../../images/TypeScriptLogo";
 import { GetBaseImgPath } from "../../utils";
+import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
 
 const AboutContainer = styled(motion.div)`
   background-color: #2b2b2b;
@@ -18,6 +19,12 @@ const AboutContainer = styled(motion.div)`
   width: 100%;
   font-family: Bahnschrift;
   padding-bottom: 100px;
+  ${mobileMediaQuery} {
+    padding-bottom: 80px;
+  }
+
+  ${tabletMediaQuery} {
+  }
 `;
 
 const AboutHeaderContainer = styled(motion.div)`
@@ -31,16 +38,27 @@ const AboutHeaderContainer = styled(motion.div)`
 const AboutTitleText = styled(motion.div)`
   color: white;
   font-family: inherit;
-  font-size: 30pt;
+  font-size: 40px;
   font-weight: bold;
   position: relative;
   padding-top: 60px;
   padding-bottom: 15px;
+  ${mobileMediaQuery} {
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const HorizontalLine = styled(motion.div)`
   border-bottom: 2px solid #00db8b;
   width: 125px;
+  ${mobileMediaQuery} {
+    width: 70px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const AboutContentContainer = styled(motion.div)`
   display: flex;
@@ -48,14 +66,22 @@ const AboutContentContainer = styled(motion.div)`
   gap: 40px;
   justify-content: space-around;
   font-family: inherit;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const BioContainer = styled(motion.div)`
   justify-content: center;
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 40px;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
+  ${mobileMediaQuery} {
+    flex-direction: column-reverse;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const AccentBox = styled(motion.div)`
   z-index: 0;
@@ -68,6 +94,14 @@ const AccentBox = styled(motion.div)`
   border-radius: 7px;
   opacity: 1;
   transition: 0.25s ease-in-out;
+  ${mobileMediaQuery} {
+    height: 200px;
+    width: 200px;
+    top: 10px;
+    left: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const PictureOfMeContainer = styled(motion.div)`
   :hover ${AccentBox} {
@@ -79,6 +113,11 @@ const PictureOfMeContainer = styled(motion.div)`
   height: 400px;
   width: fit-content;
   transition: 0.25s ease-in-out;
+  ${mobileMediaQuery} {
+    height: 200px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const PictureOfMe = styled(motion.img)`
   z-index: 2;
@@ -88,6 +127,12 @@ const PictureOfMe = styled(motion.img)`
   width: 400px;
   border-radius: 7px;
   transition: ease-in-out;
+  ${mobileMediaQuery} {
+    height: 200px;
+    width: 200px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const BioTextContainer = styled(motion.div)`
   display: flex;
@@ -98,11 +143,22 @@ const BioTextContainer = styled(motion.div)`
   height: auto;
   padding: 20px;
   transition: ease-in-out;
+  ${mobileMediaQuery} {
+    width: 300px;
+  }
+
+  ${tabletMediaQuery} {
+  }
 `;
 const BioText = styled(motion.div)`
   font-size: 17px;
   color: white;
   justify-content: flex-start;
+  ${mobileMediaQuery} {
+    font-size: 12px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const SkillsContainer = styled(motion.div)`
   display: flex;
@@ -115,9 +171,16 @@ const SkillsContainer = styled(motion.div)`
   font-family: inherit;
   border: 2px #00db8b solid;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
   margin: auto;
   position: relative;
+  ${mobileMediaQuery} {
+    padding-top: 30px;
+    width: 36-0px;
+  }
+
+  ${tabletMediaQuery} {
+  }
 `;
 const SkillsItemsTitleText = styled(motion.div)`
   display: flex;
@@ -126,6 +189,12 @@ const SkillsItemsTitleText = styled(motion.div)`
   font-size: 30px;
   align-items: center;
   justify-content: center;
+  ${mobileMediaQuery} {
+    font-size: 25px;
+  }
+
+  ${tabletMediaQuery} {
+  }
 `;
 const SkillsItem = styled(motion.div)`
   display: flex;
@@ -134,6 +203,12 @@ const SkillsItem = styled(motion.div)`
   align-items: center;
   color: white;
   gap: 60px;
+  ${mobileMediaQuery} {
+    gap: 10px;
+  }
+
+  ${tabletMediaQuery} {
+  }
 `;
 const SkillsItemRow = styled(motion.div)`
   display: flex;
@@ -142,14 +217,26 @@ const SkillsItemRow = styled(motion.div)`
   gap: 10px;
   align-items: center;
   justify-content: center;
+  ${mobileMediaQuery} {
+    font-size: 20px;
+    gap: 3px;
+  }
+
+  ${tabletMediaQuery} {
+  }
 `;
 
 const SkillsItemList = styled(motion.ul)`
   display: grid;
   grid-template-columns: repeat(1, minmax(140px, 200px));
-  gap: 20px;
   align-items: center;
   justify-content: center;
+  ${mobileMediaQuery} {
+    grid-template-columns: repeat(1, minmax(70px, 100px));
+  }
+
+  ${tabletMediaQuery} {
+  }
 `;
 
 export const About = () => {
