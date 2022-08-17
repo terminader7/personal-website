@@ -1,16 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
-interface IProps {
-  height?: string;
-  width?: string;
-}
+const NodeLogo = styled.svg`
+  height: 40px;
+  width: 40px;
+  ${mobileMediaQuery} {
+    height: 25px;
+    width: 25px;
+  }
+  ${tabletMediaQuery} {
+  }
+`;
 
-export const NodeJSLogo = ({ height = "40px", width = "40px" }: IProps) => {
+export const NodeJSLogo = () => {
   return (
-    <svg
-      width={width}
-      height={height}
+    <NodeLogo
       viewBox="-16.5 0 289 289"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +27,6 @@ export const NodeJSLogo = ({ height = "40px", width = "40px" }: IProps) => {
           fill="#539E43"
         ></path>
       </g>
-    </svg>
+    </NodeLogo>
   );
 };

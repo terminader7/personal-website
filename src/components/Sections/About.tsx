@@ -176,7 +176,8 @@ const SkillsContainer = styled(motion.div)`
   position: relative;
   ${mobileMediaQuery} {
     padding-top: 30px;
-    width: 36-0px;
+    width: fit-content;
+    padding: 15px;
   }
 
   ${tabletMediaQuery} {
@@ -215,24 +216,26 @@ const SkillsItemRow = styled(motion.div)`
   padding-top: 30px;
   flex-direction: row;
   gap: 10px;
+  padding-left: 10px;
   align-items: center;
-  justify-content: center;
   ${mobileMediaQuery} {
     font-size: 20px;
-    gap: 3px;
+    gap: 5px;
   }
 
   ${tabletMediaQuery} {
   }
 `;
 
-const SkillsItemList = styled(motion.ul)`
+const SkillsItemList = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(1, minmax(140px, 200px));
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: start;
+  justify-content: flex-start;
+  padding-bottom: 10px;
   ${mobileMediaQuery} {
-    grid-template-columns: repeat(1, minmax(70px, 100px));
+    grid-template-columns: repeat(1);
   }
 
   ${tabletMediaQuery} {
@@ -345,8 +348,6 @@ export const About = () => {
               <SkillsItemRow>
                 <HTMLLogo /> HTML
               </SkillsItemRow>
-            </SkillsItemList>
-            <SkillsItemList>
               <SkillsItemRow>
                 <CSSLogo /> CSS
               </SkillsItemRow>

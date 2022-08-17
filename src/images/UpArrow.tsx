@@ -3,27 +3,27 @@ import styled from "styled-components";
 import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
 const LogoItem = styled.svg`
+  height: 50px;
+  width: 40px;
   cursor: pointer;
   ${mobileMediaQuery} {
+    height: 30px;
+    width: 20px;
   }
   ${tabletMediaQuery} {
   }
 `;
 
 interface IProps {
-  height?: string;
-  width?: string;
   onClick?: React.MouseEventHandler;
 }
 
-export const UpArrow = ({ height = "6vh", width = "3vw", onClick }: IProps) => {
+export const UpArrow = ({ onClick }: IProps) => {
   return (
     <LogoItem
       version="1.1"
       id="Capa_1"
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       viewBox="0 0 49 49"
       fill="white"
       onClick={onClick}

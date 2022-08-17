@@ -1,16 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
-interface IProps {
-  height?: string;
-  width?: string;
-}
+const LogoItem = styled.svg`
+  height: 45px;
+  width: 45px;
+  ${mobileMediaQuery} {
+    height: 30px;
+    width: 30px;
+  }
+  ${tabletMediaQuery} {
+  }
+`;
 
-export const CSSLogo = ({ height = "45px", width = "45px" }: IProps) => {
+export const CSSLogo = () => {
   return (
-    <svg
-      width={width}
-      height={height}
+    <LogoItem
       viewBox="-52.5 0 361 361"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
@@ -32,6 +37,6 @@ export const CSSLogo = ({ height = "45px", width = "45px" }: IProps) => {
         d="M202.127 188.636l5.765-64.641H127.89v31.937h45.002l-2.906 32.704H127.89v31.937h39.327l-3.708 41.42-35.62 9.614v33.226l65.473-18.145.48-5.396 7.506-84.08.779-8.576z"
         fill="#FFF"
       />
-    </svg>
+    </LogoItem>
   );
 };

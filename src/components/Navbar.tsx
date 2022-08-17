@@ -6,9 +6,9 @@ import { Sections } from "../types";
 import { ScrollTo } from "../utils";
 
 const NavbarContainer = styled.nav`
+  display: flex;
   background-color: #2b2b2b;
   color: white;
-  display: flex;
   flex-direction: row;
   height: 40px;
   width: 100%;
@@ -34,6 +34,7 @@ const NavLinkItem = styled.div`
 const NavLinkList = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   width: 100%;
   font-size: 20px;

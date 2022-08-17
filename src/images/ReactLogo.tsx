@@ -1,21 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
-const LogoItem = styled.svg``;
+const LogoItem = styled.svg`
+  height: 45px;
+  width: 45px;
+  ${mobileMediaQuery} {
+    height: 30px;
+    width: 30px;
+  }
+  ${tabletMediaQuery} {
+  }
+`;
 
-interface IProps {
-  height?: string;
-  width?: string;
-}
-
-export const ReactLogo = ({ height = "45px", width = "45px" }: IProps) => {
+export const ReactLogo = () => {
   return (
-    <LogoItem
-      xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
-      viewBox="0 0 32 32"
-    >
+    <LogoItem xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
       <g
         transform="matrix(.05696 0 0 .05696 .647744 2.43826)"
         fill="none"
