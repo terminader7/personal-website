@@ -39,7 +39,7 @@ const EmailItem = styled(motion.div)`
   opacity: 0.7;
   transition: 0.3s;
   ${mobileMediaQuery} {
-    font-size: 10px;
+    font-size: 11px;
   }
   ${tabletMediaQuery} {
   }
@@ -49,7 +49,7 @@ const VeritcalLine = styled.div`
   border-left: 1px solid white;
   height: 120px;
   ${mobileMediaQuery} {
-    height: 45px;
+    height: 60px;
   }
   ${tabletMediaQuery} {
   }

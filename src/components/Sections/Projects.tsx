@@ -12,6 +12,11 @@ const ProjectsContainer = styled.div`
   background-color: #2b2b2b;
   font-family: Bahnschrift;
   padding-bottom: 100px;
+  ${mobileMediaQuery} {
+    padding-bottom: 75px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const ProjectHeaderContainer = styled.div`
@@ -20,6 +25,11 @@ const ProjectHeaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding-bottom: 40px;
+  ${mobileMediaQuery} {
+    padding-bottom: 30px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const ProjectsSectionTitleText = styled.div`
   padding-top: 10px;
@@ -56,7 +66,6 @@ const ProjectItemsContainer = styled.div`
 `;
 const ProjectsPictures = styled.div`
   display: flex;
-  gap: 20px;
   padding-bottom: 20px;
   padding-top: 20px;
   flex-direction: column;
@@ -107,7 +116,7 @@ export const Projects = () => {
       path: "https://drum-machine-nader.herokuapp.com/",
       github: "https://github.com/terminader7/drum-machine-fcc",
       description:
-        "FreeCodeCamp project to exercise basic CSS and JavaScript to make an interactive page",
+        "FreeCodeCamp project made to exercise basic CSS and JavaScript to make an interactive page",
       technologies: [
         "ReactJS",
         "CSS Styling",

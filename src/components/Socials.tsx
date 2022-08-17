@@ -54,7 +54,7 @@ const VerticalLine = styled.div`
   border-left: 1px solid white;
   height: 120px;
   ${mobileMediaQuery} {
-    height: 45px;
+    height: 60px;
   }
   ${tabletMediaQuery} {
   }

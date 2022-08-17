@@ -1,24 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
-const LogoItem = styled.svg``;
+const LogoItem = styled.svg`
+  height: 25px;
+  width: 25px;
+  ${mobileMediaQuery} {
+    height: 18px;
+    width: 18px;
+  }
+  ${tabletMediaQuery} {
+  }
+`;
 
 interface IProps {
-  height?: string;
-  width?: string;
   onClick?: React.MouseEventHandler;
 }
 
-export const TinyGithubTwo = ({
-  height = "25px",
-  width = "25px",
-  onClick,
-}: IProps) => {
+export const TinyGithubTwo = ({ onClick }: IProps) => {
   return (
     <LogoItem
       xmlns="http://www.w3.org/2000/svg"
-      height={height}
-      width={width}
       role="img"
       viewBox="0 0 24 24"
       fill="none"

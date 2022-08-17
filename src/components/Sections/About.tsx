@@ -144,7 +144,7 @@ const BioTextContainer = styled(motion.div)`
   padding: 20px;
   transition: ease-in-out;
   ${mobileMediaQuery} {
-    width: 275px;
+    width: 260px;
   }
 
   ${tabletMediaQuery} {

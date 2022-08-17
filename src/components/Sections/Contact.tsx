@@ -131,7 +131,7 @@ const TinyGitHubContainer = styled.div`
   gap: 5px;
   padding-bottom: 5px;
   ${mobileMediaQuery} {
-    right: 20px;
+    right: 17px;
     width: 90px;
     font-size: 10px;
   }

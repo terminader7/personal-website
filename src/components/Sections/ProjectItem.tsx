@@ -30,8 +30,9 @@ const ProjectRow = styled(motion.div)`
   padding-top: 30px;
   ${mobileMediaQuery} {
     flex-direction: column-reverse;
-    width: 100%;
+    width: 100vw;
     padding-top: 15px;
+    align-items: center;
   }
   ${tabletMediaQuery} {
   }
@@ -54,6 +55,7 @@ const ProjectTitle = styled(motion.div)`
     position: relative;
     justify-content: center;
     align-items: center;
+    margin-left: 0px;
   }
   ${tabletMediaQuery} {
   }
@@ -88,6 +90,7 @@ const PictureContainer = styled(motion.div)`
   align-items: center;
   transition: 0.25s ease-in-out;
   ${mobileMediaQuery} {
+    margin-bottom: 50px;
   }
   ${tabletMediaQuery} {
   }
@@ -104,6 +107,7 @@ const ProjectPicture = styled(motion.img)`
   transition: ease-in-out;
   ${mobileMediaQuery} {
     width: 300px;
+    position: static;
   }
   ${tabletMediaQuery} {
   }
@@ -118,9 +122,10 @@ const ProjectInfoContainer = styled(motion.div)`
   margin-left: -60px;
   width: 500px;
   ${mobileMediaQuery} {
-    width: 0;
+    font-size: 25px;
     justify-content: center;
     margin-left: 0px;
+    width: 100vw;
   }
   ${tabletMediaQuery} {
   }
@@ -236,6 +241,20 @@ export const ProjectItem = ({
 
   const [ref, inView] = useInView({ threshold: 1 });
 
+  const deviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+    } else if (
+      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+        ua
+      )
+    ) {
+      return "mobile";
+    }
+    return "desktop";
+  };
+
   useEffect(() => {
     if (inView) {
       control.start("visible");
@@ -254,37 +273,10 @@ export const ProjectItem = ({
     visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1 },
   };
-
-  return (
-    <ProjectItemContainer>
+  if (deviceType() === "mobile") {
+    return (
       <ProjectRow>
-        <PictureContainer>
-          <ProjectPicture
-            ref={ref}
-            variants={slideInLeftVariant}
-            initial="hidden"
-            transition={{ duration: 1 }}
-            animate={control}
-            src={src}
-            onClick={() => {
-              window.open(path);
-            }}
-          />
-          <AccentBox
-            ref={ref}
-            variants={appearVariant}
-            initial="hidden"
-            transition={{ duration: 2 }}
-            animate={control}
-          />
-        </PictureContainer>
-        <ProjectInfoContainer
-          ref={ref}
-          variants={slideInRightVariant}
-          initial="hidden"
-          transition={{ duration: 1 }}
-          animate={control}
-        >
+        <ProjectInfoContainer>
           <ProjectTitle
             onClick={() => {
               window.open(path);
@@ -292,6 +284,15 @@ export const ProjectItem = ({
           >
             {title}
           </ProjectTitle>
+          <PictureContainer>
+            <ProjectPicture
+              src={src}
+              onClick={() => {
+                window.open(path);
+              }}
+            />
+            <AccentBox />
+          </PictureContainer>
           <ProjectDescriptionContainer>
             <ProjectDescription>{description}</ProjectDescription>
           </ProjectDescriptionContainer>
@@ -316,6 +317,70 @@ export const ProjectItem = ({
           </LinksContainer>
         </ProjectInfoContainer>
       </ProjectRow>
-    </ProjectItemContainer>
-  );
+    );
+  } else {
+    return (
+      <ProjectItemContainer>
+        <ProjectRow>
+          <PictureContainer>
+            <ProjectPicture
+              ref={ref}
+              variants={slideInLeftVariant}
+              initial="hidden"
+              transition={{ duration: 1 }}
+              animate={control}
+              src={src}
+              onClick={() => {
+                window.open(path);
+              }}
+            />
+            <AccentBox
+              ref={ref}
+              variants={appearVariant}
+              initial="hidden"
+              transition={{ duration: 2 }}
+              animate={control}
+            />
+          </PictureContainer>
+          <ProjectInfoContainer
+            ref={ref}
+            variants={slideInRightVariant}
+            initial="hidden"
+            transition={{ duration: 1 }}
+            animate={control}
+          >
+            <ProjectTitle
+              onClick={() => {
+                window.open(path);
+              }}
+            >
+              {title}
+            </ProjectTitle>
+            <ProjectDescriptionContainer>
+              <ProjectDescription>{description}</ProjectDescription>
+            </ProjectDescriptionContainer>
+            <ProjectTechsContainer>
+              <ProjectTechs>{technologies.join(",  ")}</ProjectTechs>
+            </ProjectTechsContainer>
+            <LinksContainer>
+              <TinyGithubContainer>
+                <TinyGithub
+                  onClick={() => {
+                    window.open(github);
+                  }}
+                />
+              </TinyGithubContainer>
+              <AppLinkContainer>
+                <AppLink
+                  onClick={() => {
+                    window.open(path);
+                  }}
+                />
+              </AppLinkContainer>
+            </LinksContainer>
+          </ProjectInfoContainer>
+        </ProjectRow>
+      </ProjectItemContainer>
+    );
+  }
 };
