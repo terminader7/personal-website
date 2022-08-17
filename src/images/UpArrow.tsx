@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
 const LogoItem = styled.svg`
   cursor: pointer;
+  ${mobileMediaQuery} {
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 interface IProps {
@@ -11,11 +16,7 @@ interface IProps {
   onClick?: React.MouseEventHandler;
 }
 
-export const UpArrow = ({
-  height = "50px",
-  width = "40px",
-  onClick,
-}: IProps) => {
+export const UpArrow = ({ height = "6vh", width = "3vw", onClick }: IProps) => {
   return (
     <LogoItem
       version="1.1"

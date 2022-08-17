@@ -6,6 +6,7 @@ import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
 import { TinyGithubTwo } from "../../images/TinyGithubTwo";
+import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -24,26 +25,41 @@ const ContactHeaderContainer = styled.div`
 const HorizontalLine = styled.div`
   border-bottom: 2px solid #00db8b;
   width: 125px;
+  ${mobileMediaQuery} {
+    width: 70px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const ContactTextInvitation = styled.div`
   color: white;
   font-weight: bold;
-  font-size: 40pt;
+  font-size: 50px;
   padding-bottom: 15px;
+  ${mobileMediaQuery} {
+    font-size: 30px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const ContactTextInvitationTwo = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
-  font-size: 17pt;
+  font-size: 20px;
   width: fit-content;
   padding-top: 35px;
   padding-bottom: 20px;
   justify-content: center;
   align-items: center;
+  ${mobileMediaQuery} {
+    font-size: 13px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
-const ContactLinks = styled.div`
+const ContactContentContainer = styled.div`
   display: flex;
   height: calc(100% - 4px - 20px);
   width: calc(100% - 4px - 20px);
@@ -69,6 +85,12 @@ const EmailButton = styled(motion.div)`
   padding: 15px;
   color: #00db8b;
   transition: 0.5s;
+  ${mobileMediaQuery} {
+    font-size: 15px;
+    padding: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const UpArrowContainer = styled(motion.div)`
@@ -77,7 +99,7 @@ const UpArrowContainer = styled(motion.div)`
     background-color: #00db8b;
   }
   justify-content: center;
-  width: 60px;
+  width: 70px;
   transition: 0.5s;
   margin-top: 20px;
   border-radius: 4px;
@@ -103,6 +125,13 @@ const TinyGitHubContainer = styled.div`
   width: 100px;
   gap: 5px;
   padding-bottom: 5px;
+  ${mobileMediaQuery} {
+    right: 20px;
+    width: 90px;
+    font-size: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const TinyGithubText = styled.div`
@@ -114,7 +143,7 @@ const TinyGithubText = styled.div`
 export const Contact = ({ scaleSize = 1.1 }) => {
   return (
     <ContactItemsContainer id={Sections.contact}>
-      <ContactLinks>
+      <ContactContentContainer>
         <ContactHeaderContainer>
           <ContactTextInvitation>Want to know more?</ContactTextInvitation>
           <HorizontalLine />
@@ -153,7 +182,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
           <TinyGithubText>Like the site? View the repo here!</TinyGithubText>
           <TinyGithubTwo />
         </TinyGitHubContainer>
-      </ContactLinks>
+      </ContactContentContainer>
     </ContactItemsContainer>
   );
 };

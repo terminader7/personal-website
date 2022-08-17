@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 import { TinyGithub } from "../../images/TinyGithub";
 import { AppLink } from "../../images/AppLink";
+import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
 
 interface IProps {
   title: string;
@@ -25,6 +26,11 @@ const ProjectRow = styled(motion.div)`
   align-items: flex-start;
   justify-content: center;
   padding-top: 30px;
+  ${mobileMediaQuery} {
+    width: 100%;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const ProjectTitle = styled(motion.div)`
@@ -39,6 +45,11 @@ const ProjectTitle = styled(motion.div)`
   padding-top: 20px;
   width: fit-content;
   margin-left: 200px;
+  ${mobileMediaQuery} {
+    padding-top: 15px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const AccentBox = styled(motion.div)`
   z-index: 0;

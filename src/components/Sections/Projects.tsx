@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
 
 import { Sections } from "../../types";
 import { GetBaseImgPath } from "../../utils";
@@ -23,13 +24,24 @@ const ProjectHeaderContainer = styled.div`
 const ProjectsSectionTitleText = styled.div`
   padding-top: 10px;
   color: white;
-  font-size: 30pt;
+  font-size: 40px;
   font-weight: bold;
   padding-bottom: 15px;
+  ${mobileMediaQuery} {
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const HorizontalLine = styled.div`
   border-bottom: 2px solid #00db8b;
   width: 125px;
+  ${mobileMediaQuery} {
+    width: 70px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 const ProjectContentContainer = styled.div`
   display: flex;

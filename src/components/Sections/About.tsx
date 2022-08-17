@@ -95,8 +95,8 @@ const AccentBox = styled(motion.div)`
   opacity: 1;
   transition: 0.25s ease-in-out;
   ${mobileMediaQuery} {
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     top: 10px;
     left: 10px;
   }
@@ -114,7 +114,7 @@ const PictureOfMeContainer = styled(motion.div)`
   width: fit-content;
   transition: 0.25s ease-in-out;
   ${mobileMediaQuery} {
-    height: 200px;
+    height: 250px;
   }
   ${tabletMediaQuery} {
   }
@@ -128,8 +128,8 @@ const PictureOfMe = styled(motion.img)`
   border-radius: 7px;
   transition: ease-in-out;
   ${mobileMediaQuery} {
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
   }
   ${tabletMediaQuery} {
   }
@@ -155,7 +155,7 @@ const BioText = styled(motion.div)`
   color: white;
   justify-content: flex-start;
   ${mobileMediaQuery} {
-    font-size: 12px;
+    font-size: 15px;
   }
   ${tabletMediaQuery} {
   }
