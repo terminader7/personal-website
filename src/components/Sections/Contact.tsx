@@ -5,8 +5,12 @@ import styled from "styled-components";
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { ScrollTo } from "../../utils";
+import { TinyGithub } from "../../images/TinyGithub";
+import { Linkedin } from "../../images/Linkedin";
+import { Resume } from "../../images/Resume";
 import { TinyGithubTwo } from "../../images/TinyGithubTwo";
 import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
+import { Link } from "react-router-dom";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -77,6 +81,15 @@ const ContactContentContainer = styled.div`
   }
 `;
 
+const ContactLinksContainer = styled.div`
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 10px;
+`;
 const EmailButton = styled(motion.div)`
   :hover {
     background-color: #3d3d3d;
@@ -131,8 +144,8 @@ const TinyGitHubContainer = styled.div`
   gap: 5px;
   padding-bottom: 5px;
   ${mobileMediaQuery} {
-    right: 17px;
-    width: 90px;
+    right: 5px;
+    width: 80px;
     font-size: 10px;
   }
   ${tabletMediaQuery} {
@@ -146,48 +159,129 @@ const TinyGithubText = styled.div`
 `;
 
 export const Contact = ({ scaleSize = 1.1 }) => {
-  return (
-    <ContactItemsContainer id={Sections.contact}>
-      <ContactContentContainer>
-        <ContactHeaderContainer>
-          <ContactTextInvitation>Want to know more?</ContactTextInvitation>
-          <HorizontalLine />
-          <ContactTextInvitationTwo>
-            <div>I'm currently open to new job opportunities.</div>
-            <div>
-              If you would like to get in touch, my inbox is always open!
-            </div>
-          </ContactTextInvitationTwo>
-        </ContactHeaderContainer>
-        <EmailButton
-          whileHover={{ scale: scaleSize }}
-          transition={{ duration: 0.2 }}
-          onClick={() => {
-            window.open("mailto:nebrahim2424@gmail.com");
-          }}
-        >
-          Lets Chat!
-        </EmailButton>
-        <UpArrowContainer
-          whileHover={{ y: -5 }}
-          transition={{ type: "spring", duration: 0.02 }}
-        >
-          <UpArrow
+  const deviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+    } else if (
+      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+        ua
+      )
+    ) {
+      return "mobile";
+    }
+    return "desktop";
+  };
+  if (deviceType() === "mobile") {
+    return (
+      <ContactItemsContainer id={Sections.contact}>
+        <ContactContentContainer>
+          <ContactHeaderContainer>
+            <ContactTextInvitation>Want to know more?</ContactTextInvitation>
+            <HorizontalLine />
+            <ContactTextInvitationTwo>
+              <div>I'm currently open to new job opportunities.</div>
+              <div>
+                If you would like to get in touch, my inbox is always open!
+              </div>
+            </ContactTextInvitationTwo>
+          </ContactHeaderContainer>
+          <ContactLinksContainer>
+            <TinyGithub
+              onClick={() => {
+                window.open("https://github.com/terminader7");
+              }}
+            />
+            <Linkedin
+              onClick={() => {
+                window.open(
+                  "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
+                );
+              }}
+            />
+            <Resume
+              onClick={() => {
+                window.open(
+                  "https://docs.google.com/document/d/1L5rM2lNEvGW-y87W-DhdTfmfv7Jyk58Oh88hihm04YA/edit?usp=sharinghttps://docs.google.com/document/d/1L5rM2lNEvGW-y87W-DhdTfmfv7Jyk58Oh88hihm04YA/edit?usp=sharing"
+                );
+              }}
+            />
+          </ContactLinksContainer>
+          <EmailButton
+            whileHover={{ scale: scaleSize }}
+            transition={{ duration: 0.2 }}
             onClick={() => {
-              ScrollTo(Sections.home);
+              window.open("mailto:nebrahim2424@gmail.com");
             }}
-          />
-        </UpArrowContainer>
+          >
+            Lets Chat!
+          </EmailButton>
+          <UpArrowContainer
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", duration: 0.02 }}
+          >
+            <UpArrow
+              onClick={() => {
+                ScrollTo(Sections.home);
+              }}
+            />
+          </UpArrowContainer>
 
-        <TinyGitHubContainer
-          onClick={() => {
-            window.open("https://github.com/terminader7/personal-website");
-          }}
-        >
-          <TinyGithubText>Like the site? View the repo here!</TinyGithubText>
-          <TinyGithubTwo />
-        </TinyGitHubContainer>
-      </ContactContentContainer>
-    </ContactItemsContainer>
-  );
+          <TinyGitHubContainer
+            onClick={() => {
+              window.open("https://github.com/terminader7/personal-website");
+            }}
+          >
+            <TinyGithubText>Like the site? View the repo here!</TinyGithubText>
+            <TinyGithubTwo />
+          </TinyGitHubContainer>
+        </ContactContentContainer>
+      </ContactItemsContainer>
+    );
+  } else {
+    return (
+      <ContactItemsContainer id={Sections.contact}>
+        <ContactContentContainer>
+          <ContactHeaderContainer>
+            <ContactTextInvitation>Want to know more?</ContactTextInvitation>
+            <HorizontalLine />
+            <ContactTextInvitationTwo>
+              <div>I'm currently open to new job opportunities.</div>
+              <div>
+                If you would like to get in touch, my inbox is always open!
+              </div>
+            </ContactTextInvitationTwo>
+          </ContactHeaderContainer>
+          <EmailButton
+            whileHover={{ scale: scaleSize }}
+            transition={{ duration: 0.2 }}
+            onClick={() => {
+              window.open("mailto:nebrahim2424@gmail.com");
+            }}
+          >
+            Lets Chat!
+          </EmailButton>
+          <UpArrowContainer
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", duration: 0.02 }}
+          >
+            <UpArrow
+              onClick={() => {
+                ScrollTo(Sections.home);
+              }}
+            />
+          </UpArrowContainer>
+
+          <TinyGitHubContainer
+            onClick={() => {
+              window.open("https://github.com/terminader7/personal-website");
+            }}
+          >
+            <TinyGithubText>Like the site? View the repo here!</TinyGithubText>
+            <TinyGithubTwo />
+          </TinyGitHubContainer>
+        </ContactContentContainer>
+      </ContactItemsContainer>
+    );
+  }
 };

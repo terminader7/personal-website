@@ -15,7 +15,7 @@ const ProjectsContainer = styled.div`
   align-items: center;
   padding-bottom: 100px;
   ${mobileMediaQuery} {
-    padding-bottom: 75px;
+    padding-bottom: 50px;
   }
   ${tabletMediaQuery} {
   }
@@ -28,7 +28,7 @@ const ProjectHeaderContainer = styled.div`
   justify-content: center;
   padding-bottom: 40px;
   ${mobileMediaQuery} {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
   }
   ${tabletMediaQuery} {
   }

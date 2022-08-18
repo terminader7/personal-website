@@ -86,7 +86,7 @@ const PictureContainer = styled(motion.div)`
   align-items: center;
   transition: 0.25s ease-in-out;
   ${mobileMediaQuery} {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   ${tabletMediaQuery} {
   }
@@ -153,6 +153,8 @@ const ProjectDescription = styled(motion.div)`
   font-size: 17px;
   font-weight: 100;
   ${mobileMediaQuery} {
+    justify-content: center;
+    padding: 20px;
   }
   ${tabletMediaQuery} {
   }
@@ -180,6 +182,21 @@ const ProjectTechs = styled(motion.div)`
   ${tabletMediaQuery} {
   }
 `;
+const LinksContainer = styled(motion.div)`
+  display: flex;
+  justify-content: flex-end;
+  bottom: 0;
+  flex-direction: row;
+  gap: 10px;
+  padding-top: 40px;
+  ${mobileMediaQuery} {
+    gap: 30px;
+    padding-top: 20px;
+    justify-content: center;
+  }
+  ${tabletMediaQuery} {
+  }
+`;
 const TinyGithubContainer = styled(motion.div)`
   :hover {
     color: #00db8b;
@@ -189,6 +206,7 @@ const TinyGithubContainer = styled(motion.div)`
   width: fit-content;
   height: fit-content;
   ${mobileMediaQuery} {
+    color: #00db8b;
   }
   ${tabletMediaQuery} {
   }
@@ -203,22 +221,7 @@ const AppLinkContainer = styled(motion.div)`
   width: fit-content;
   height: fit-content;
   ${mobileMediaQuery} {
-  }
-  ${tabletMediaQuery} {
-  }
-`;
-
-const LinksContainer = styled(motion.div)`
-  display: flex;
-  justify-content: flex-end;
-  bottom: 0;
-  flex-direction: row;
-  gap: 10px;
-  padding-top: 40px;
-  ${mobileMediaQuery} {
-    gap: 15px;
-    padding-top: 20px;
-    justify-content: center;
+    color: #00db8b;
   }
   ${tabletMediaQuery} {
   }

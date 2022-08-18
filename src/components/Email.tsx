@@ -56,27 +56,44 @@ const VeritcalLine = styled.div`
 `;
 
 export const Email = () => {
+  const deviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return "tablet";
+    } else if (
+      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+        ua
+      )
+    ) {
+      return "mobile";
+    }
+    return "desktop";
+  };
   const appearVariant = {
     visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1 },
   };
-  return (
-    <EmailContainer
-      variants={appearVariant}
-      initial="hidden"
-      animate="visible"
-      transition={{ duration: 3 }}
-    >
-      <EmailItem
-        onClick={() => {
-          window.open("mailto:nebrahim2424@gmail.com");
-        }}
-        whileHover={{ y: -10 }}
-        transition={{ type: "spring", duration: 0.02 }}
+  if (deviceType() === "mobile") {
+    return <></>;
+  } else {
+    return (
+      <EmailContainer
+        variants={appearVariant}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 3 }}
       >
-        nebrahim2424@gmail.com
-      </EmailItem>
-      <VeritcalLine />
-    </EmailContainer>
-  );
+        <EmailItem
+          onClick={() => {
+            window.open("mailto:nebrahim2424@gmail.com");
+          }}
+          whileHover={{ y: -10 }}
+          transition={{ type: "spring", duration: 0.02 }}
+        >
+          nebrahim2424@gmail.com
+        </EmailItem>
+        <VeritcalLine />
+      </EmailContainer>
+    );
+  }
 };

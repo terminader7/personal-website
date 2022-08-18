@@ -7,8 +7,8 @@ const LogoItem = styled.svg`
   width: 40px;
   cursor: pointer;
   ${mobileMediaQuery} {
-    height: 30px;
-    width: 20px;
+    height: 40px;
+    width: 30px;
   }
   ${tabletMediaQuery} {
   }

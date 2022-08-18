@@ -1,8 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 const LogoItem = styled.svg`
-  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+  height: 25px;
+  width: 25px;
+  ${mobileMediaQuery} {
+    height: 30px;
+    width: 30px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 interface IProps {
@@ -11,16 +20,10 @@ interface IProps {
   onClick?: React.MouseEventHandler;
 }
 
-export const Linkedin = ({
-  height = "25px",
-  width = "25px",
-  onClick,
-}: IProps) => {
+export const Linkedin = ({ onClick }: IProps) => {
   return (
     <LogoItem
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

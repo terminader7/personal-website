@@ -1,8 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 
 const LogoItem = styled.svg`
+  cursor: pointer;
   transition: 0.5s;
+  height: 25px;
+  width: 25px;
+  ${mobileMediaQuery} {
+    height: 30px;
+    width: 30px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 interface IProps {
@@ -11,17 +21,11 @@ interface IProps {
   onClick?: React.MouseEventHandler;
 }
 
-export const Resume = ({
-  height = "25px",
-  width = "25px",
-  onClick,
-}: IProps) => {
+export const Resume = ({ onClick }: IProps) => {
   return (
     <LogoItem
       xmlns="http://www.w3.org/2000/svg"
-      height={height}
       viewBox="0 0 24 24"
-      width={width}
       fill="white"
       onClick={onClick}
     >

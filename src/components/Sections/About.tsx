@@ -28,6 +28,11 @@ const AboutHeaderContainer = styled(motion.div)`
   align-items: center;
   justify-content: center;
   padding-bottom: 80px;
+  ${mobileMediaQuery} {
+    padding-bottom: 40px;
+  }
+  ${tabletMediaQuery} {
+  }
 `;
 
 const AboutTitleText = styled(motion.div)`
