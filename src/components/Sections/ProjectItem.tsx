@@ -5,7 +5,8 @@ import { useInView } from "react-intersection-observer";
 
 import { TinyGithub } from "../../images/TinyGithub";
 import { AppLink } from "../../images/AppLink";
-import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
+import { mobileMediaQuery } from "../../constants";
+import { deviceType } from "../../utils";
 
 interface IProps {
   title: string;
@@ -27,10 +28,8 @@ const ProjectRow = styled(motion.div)`
   ${mobileMediaQuery} {
     flex-direction: column;
     width: 100vw;
-    padding-top: 15px;
+    padding-top: 0px;
     align-items: center;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -53,8 +52,6 @@ const ProjectTitle = styled(motion.div)`
     margin-left: 0px;
     padding-bottom: 30px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const AccentBox = styled(motion.div)`
   z-index: 0;
@@ -69,8 +66,6 @@ const AccentBox = styled(motion.div)`
   ${mobileMediaQuery} {
     top: 8px;
     right: 8px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const PictureContainer = styled(motion.div)`
@@ -88,8 +83,6 @@ const PictureContainer = styled(motion.div)`
   ${mobileMediaQuery} {
     margin-bottom: 30px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const ProjectPicture = styled(motion.img)`
@@ -105,25 +98,21 @@ const ProjectPicture = styled(motion.img)`
   ${mobileMediaQuery} {
     width: 300px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const ProjectInfoContainer = styled(motion.div)`
   z-index: 2;
   font-size: 30px;
   color: white;
-  justify-content: flex-end;
-  align-items: center;
   margin-left: -60px;
   width: 500px;
   ${mobileMediaQuery} {
+    display: flex;
     flex-direction: column;
     font-size: 25px;
     justify-content: center;
     margin-left: 0px;
-    width: 78vw;
-  }
-  ${tabletMediaQuery} {
+    width: 100vw;
+    align-items: center;
   }
 `;
 
@@ -142,8 +131,6 @@ const ProjectDescriptionContainer = styled(motion.div)`
     width: 300px;
     margin-top: 0px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const ProjectDescription = styled(motion.div)`
@@ -156,8 +143,6 @@ const ProjectDescription = styled(motion.div)`
     justify-content: center;
     padding: 20px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const ProjectTechsContainer = styled(motion.div)`
   display: flex;
@@ -165,8 +150,6 @@ const ProjectTechsContainer = styled(motion.div)`
   padding-top: 30px;
   ${mobileMediaQuery} {
     justify-content: center;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const ProjectTechs = styled(motion.div)`
@@ -178,8 +161,6 @@ const ProjectTechs = styled(motion.div)`
     justify-content: center;
     align-items: center;
     font-size: 15px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const LinksContainer = styled(motion.div)`
@@ -194,8 +175,6 @@ const LinksContainer = styled(motion.div)`
     padding-top: 20px;
     justify-content: center;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const TinyGithubContainer = styled(motion.div)`
   :hover {
@@ -207,8 +186,6 @@ const TinyGithubContainer = styled(motion.div)`
   height: fit-content;
   ${mobileMediaQuery} {
     color: #00db8b;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -222,8 +199,6 @@ const AppLinkContainer = styled(motion.div)`
   height: fit-content;
   ${mobileMediaQuery} {
     color: #00db8b;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -242,20 +217,6 @@ export const ProjectItem = ({
   const [ref, inView] = useInView({ threshold: 1 });
 
   const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.3 });
-
-  const deviceType = () => {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return "tablet";
-    } else if (
-      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-        ua
-      )
-    ) {
-      return "mobile";
-    }
-    return "desktop";
-  };
 
   useEffect(() => {
     if (inView) {
@@ -285,7 +246,10 @@ export const ProjectItem = ({
     visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1 },
   };
-  if (deviceType() === "mobile") {
+
+  const device = deviceType();
+
+  if (device === "mobile" || device === "tablet") {
     return (
       <ProjectRow
         ref={ref2}

@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { Sections } from "../../types";
 import { Skills } from "./Skills";
 import { GetBaseImgPath } from "../../utils";
-import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
+import { mobileMediaQuery } from "../../constants";
 
 const AboutContainer = styled(motion.div)`
   background-color: #2b2b2b;
@@ -16,9 +16,6 @@ const AboutContainer = styled(motion.div)`
   padding-bottom: 100px;
   ${mobileMediaQuery} {
     padding-bottom: 80px;
-  }
-
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -30,8 +27,6 @@ const AboutHeaderContainer = styled(motion.div)`
   padding-bottom: 80px;
   ${mobileMediaQuery} {
     padding-bottom: 40px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -46,8 +41,6 @@ const AboutTitleText = styled(motion.div)`
   ${mobileMediaQuery} {
     font-size: 25px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const HorizontalLine = styled(motion.div)`
@@ -55,8 +48,6 @@ const HorizontalLine = styled(motion.div)`
   width: 125px;
   ${mobileMediaQuery} {
     width: 70px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const AboutContentContainer = styled(motion.div)`
@@ -67,8 +58,6 @@ const AboutContentContainer = styled(motion.div)`
   font-family: inherit;
   ${mobileMediaQuery} {
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const BioContainer = styled(motion.div)`
   justify-content: center;
@@ -78,8 +67,6 @@ const BioContainer = styled(motion.div)`
   padding-bottom: 30px;
   ${mobileMediaQuery} {
     flex-direction: column-reverse;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const AccentBox = styled(motion.div)`
@@ -99,8 +86,6 @@ const AccentBox = styled(motion.div)`
     top: 10px;
     left: 10px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const PictureOfMeContainer = styled(motion.div)`
   :hover ${AccentBox} {
@@ -115,8 +100,6 @@ const PictureOfMeContainer = styled(motion.div)`
   ${mobileMediaQuery} {
     height: 250px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const PictureOfMe = styled(motion.img)`
   z-index: 2;
@@ -129,8 +112,6 @@ const PictureOfMe = styled(motion.img)`
   ${mobileMediaQuery} {
     height: 250px;
     width: 250px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const BioTextContainer = styled(motion.div)`
@@ -145,9 +126,6 @@ const BioTextContainer = styled(motion.div)`
   ${mobileMediaQuery} {
     width: 260px;
   }
-
-  ${tabletMediaQuery} {
-  }
 `;
 const BioText = styled(motion.div)`
   font-size: 17px;
@@ -155,8 +133,6 @@ const BioText = styled(motion.div)`
   justify-content: flex-start;
   ${mobileMediaQuery} {
     font-size: 15px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 

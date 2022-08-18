@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
+import { mobileMediaQuery } from "../../constants";
 
 import { Sections } from "../../types";
 import { GetBaseImgPath } from "../../utils";
@@ -17,8 +17,6 @@ const ProjectsContainer = styled.div`
   ${mobileMediaQuery} {
     padding-bottom: 50px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const ProjectHeaderContainer = styled.div`
@@ -29,8 +27,6 @@ const ProjectHeaderContainer = styled.div`
   padding-bottom: 40px;
   ${mobileMediaQuery} {
     padding-bottom: 20px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const ProjectsSectionTitleText = styled.div`
@@ -43,16 +39,12 @@ const ProjectsSectionTitleText = styled.div`
     font-size: 25px;
     padding-bottom: 10px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const HorizontalLine = styled.div`
   border-bottom: 2px solid #00db8b;
   width: 125px;
   ${mobileMediaQuery} {
     width: 70px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 const ProjectContentContainer = styled.div`

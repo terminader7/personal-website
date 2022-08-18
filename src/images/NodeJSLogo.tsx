@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { mobileMediaQuery, tabletMediaQuery } from "../constants";
+import { mobileMediaQuery } from "../constants";
 
 const NodeLogo = styled.svg`
   height: 40px;
@@ -8,8 +8,6 @@ const NodeLogo = styled.svg`
   ${mobileMediaQuery} {
     height: 25px;
     width: 25px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 

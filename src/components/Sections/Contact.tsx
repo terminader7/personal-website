@@ -4,13 +4,12 @@ import styled from "styled-components";
 
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
-import { ScrollTo } from "../../utils";
+import { deviceType, ScrollTo } from "../../utils";
 import { TinyGithub } from "../../images/TinyGithub";
 import { Linkedin } from "../../images/Linkedin";
 import { Resume } from "../../images/Resume";
 import { TinyGithubTwo } from "../../images/TinyGithubTwo";
-import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
-import { Link } from "react-router-dom";
+import { mobileMediaQuery } from "../../constants";
 
 const ContactItemsContainer = styled.div`
   display: flex;
@@ -32,8 +31,6 @@ const HorizontalLine = styled.div`
   ${mobileMediaQuery} {
     width: 70px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const ContactTextInvitation = styled.div`
   color: white;
@@ -42,8 +39,6 @@ const ContactTextInvitation = styled.div`
   padding-bottom: 15px;
   ${mobileMediaQuery} {
     font-size: 30px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -60,8 +55,6 @@ const ContactTextInvitationTwo = styled.div`
   ${mobileMediaQuery} {
     font-size: 13px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const ContactContentContainer = styled.div`
   display: flex;
@@ -76,8 +69,6 @@ const ContactContentContainer = styled.div`
   margin: auto;
   position: relative;
   ${mobileMediaQuery} {
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -105,8 +96,6 @@ const EmailButton = styled(motion.div)`
   ${mobileMediaQuery} {
     font-size: 15px;
     padding: 10px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
@@ -148,8 +137,6 @@ const TinyGitHubContainer = styled.div`
     width: 80px;
     font-size: 10px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const TinyGithubText = styled.div`
@@ -159,20 +146,9 @@ const TinyGithubText = styled.div`
 `;
 
 export const Contact = ({ scaleSize = 1.1 }) => {
-  const deviceType = () => {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return "tablet";
-    } else if (
-      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-        ua
-      )
-    ) {
-      return "mobile";
-    }
-    return "desktop";
-  };
-  if (deviceType() === "mobile") {
+  const device = deviceType();
+
+  if (device === "mobile" || device === "tablet") {
     return (
       <ContactItemsContainer id={Sections.contact}>
         <ContactContentContainer>

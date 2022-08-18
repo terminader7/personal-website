@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
+import { mobileMediaQuery } from "../../constants";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -29,9 +29,6 @@ const SkillsContainer = styled(motion.div)`
     width: fit-content;
     gap: 0px;
   }
-
-  ${tabletMediaQuery} {
-  }
 `;
 const SkillsItemsTitleText = styled(motion.div)`
   display: flex;
@@ -42,9 +39,6 @@ const SkillsItemsTitleText = styled(motion.div)`
   justify-content: center;
   ${mobileMediaQuery} {
     font-size: 25px;
-  }
-
-  ${tabletMediaQuery} {
   }
 `;
 const SkillsItem = styled(motion.div)`
@@ -59,9 +53,6 @@ const SkillsItem = styled(motion.div)`
     gap: 10px;
     padding: 0px;
   }
-
-  ${tabletMediaQuery} {
-  }
 `;
 const SkillsItemRow = styled(motion.div)`
   display: flex;
@@ -74,9 +65,6 @@ const SkillsItemRow = styled(motion.div)`
     font-size: 20px;
     gap: 5px;
   }
-
-  ${tabletMediaQuery} {
-  }
 `;
 
 const SkillsItemList = styled(motion.div)`
@@ -88,9 +76,6 @@ const SkillsItemList = styled(motion.div)`
   padding-bottom: 10px;
   ${mobileMediaQuery} {
     grid-template-columns: repeat(1);
-  }
-
-  ${tabletMediaQuery} {
   }
 `;
 

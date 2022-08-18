@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { mobileMediaQuery, tabletMediaQuery } from "../constants";
+import { mobileMediaQuery } from "../constants";
+import { deviceType } from "../utils";
 
 const EmailContainer = styled(motion.div)`
   display: flex;
@@ -21,8 +22,6 @@ const EmailContainer = styled(motion.div)`
   ${mobileMediaQuery} {
     right: 13px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const EmailItem = styled(motion.div)`
@@ -41,8 +40,6 @@ const EmailItem = styled(motion.div)`
   ${mobileMediaQuery} {
     font-size: 11px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const VeritcalLine = styled.div`
@@ -51,29 +48,16 @@ const VeritcalLine = styled.div`
   ${mobileMediaQuery} {
     height: 60px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 export const Email = () => {
-  const deviceType = () => {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return "tablet";
-    } else if (
-      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-        ua
-      )
-    ) {
-      return "mobile";
-    }
-    return "desktop";
-  };
   const appearVariant = {
     visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1 },
   };
-  if (deviceType() === "mobile") {
+  const device = deviceType();
+
+  if (device === "mobile" || device === "tablet") {
     return <></>;
   } else {
     return (

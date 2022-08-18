@@ -10,7 +10,7 @@ import { Sections } from "../../types";
 import { Navbar } from "../Navbar";
 import { Socials } from "../Socials";
 import { Email } from "../Email";
-import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
+import { mobileMediaQuery } from "../../constants";
 
 const HomepageContainer = styled.div`
   display: flex;
@@ -29,8 +29,6 @@ const WelcomeTextContainer = styled.div`
   flex-direction: column;
   animation: gradient 60s ease infinite;
   ${mobileMediaQuery} {
-  }
-  ${tabletMediaQuery} {
   }
 
   @keyframes gradient {
@@ -56,8 +54,6 @@ const WelcomeText = styled(motion.h1)`
   ${mobileMediaQuery} {
     font-size: 30px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const WelcomeButtonContainer = styled(motion.div)`
@@ -82,8 +78,6 @@ const WelcomeButtonContainer = styled(motion.div)`
   opacity: 0.5;
   ${mobileMediaQuery} {
     height: 40px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 

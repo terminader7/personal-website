@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 import { TinyGithub } from "../images/TinyGithub";
 import { Linkedin } from "../images/Linkedin";
 import { Instagram } from "../images/Instagram";
 import { Resume } from "../images/Resume";
-import { mobileMediaQuery, tabletMediaQuery } from "../constants";
+import { mobileMediaQuery } from "../constants";
+import { deviceType } from "../utils";
 
 const SocialsList = styled(motion.div)`
   display: flex;
@@ -28,8 +28,6 @@ const SocialsList = styled(motion.div)`
     left: 13px;
     gap: 15px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const SocialLinkItem = styled(motion.div)`
@@ -45,8 +43,6 @@ const SocialLinkItem = styled(motion.div)`
     height: 15px;
     width: 15px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const VerticalLine = styled.div`
@@ -55,28 +51,14 @@ const VerticalLine = styled.div`
   ${mobileMediaQuery} {
     height: 60px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 export const Socials = () => {
-  const deviceType = () => {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return "tablet";
-    } else if (
-      /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-        ua
-      )
-    ) {
-      return "mobile";
-    }
-    return "desktop";
-  };
   const appearVariant = {
     visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1 },
   };
-  if (deviceType() === "mobile") {
+  const device = deviceType();
+  if (device === "mobile" || device === "tablet") {
     return <></>;
   } else {
     return (

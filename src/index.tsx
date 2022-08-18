@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-
+import GlobalFont from "./globalFont";
 import { Homepage } from "./components/Sections/Homepage";
 
 const WebsiteContainer = styled.div`
@@ -16,6 +16,7 @@ const WebsiteContainer = styled.div`
 export const App = () => {
   return (
     <WebsiteContainer>
+      <GlobalFont />
       <Router>
         <Routes>
           <Route path="/personal-website" element={<Homepage />} />

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { mobileMediaQuery, tabletMediaQuery } from "../constants";
+import { mobileMediaQuery } from "../constants";
 
 import { Sections } from "../types";
 import { ScrollTo } from "../utils";
@@ -19,8 +19,6 @@ const NavbarContainer = styled.nav`
   font-family: Bahnschrift;
   ${mobileMediaQuery} {
   }
-  ${tabletMediaQuery} {
-  }
 `;
 
 const NavLinkList = styled.div`
@@ -37,8 +35,6 @@ const NavLinkList = styled.div`
     justify-content: center;
     padding-left: 0px;
   }
-  ${tabletMediaQuery} {
-  }
 `;
 const NavLinkItem = styled.div`
   display: inline-block;
@@ -51,8 +47,6 @@ const NavLinkItem = styled.div`
   transition: 0.5s;
   ${mobileMediaQuery} {
     gap: 20px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 

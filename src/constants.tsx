@@ -1,2 +1,1 @@
-export const mobileMediaQuery = "@media (max-width: 480px)";
-export const tabletMediaQuery = "@media (max-width: 768px)";
+export const mobileMediaQuery = "@media (max-width: 820px)";

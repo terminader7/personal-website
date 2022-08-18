@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { mobileMediaQuery, tabletMediaQuery } from "../constants";
+import { mobileMediaQuery } from "../constants";
 
 const LogoItem = styled.svg`
   height: 50px;
@@ -9,8 +9,6 @@ const LogoItem = styled.svg`
   ${mobileMediaQuery} {
     height: 40px;
     width: 30px;
-  }
-  ${tabletMediaQuery} {
   }
 `;
 
