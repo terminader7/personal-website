@@ -77,7 +77,6 @@ const ProjectsPictures = styled.div`
 `;
 
 export const Projects = () => {
-  //make object differentiating left structure from right structure
   const ProjectItemArray = [
     {
       title: "Contact Keeper",
@@ -95,13 +94,7 @@ export const Projects = () => {
       github: "https://github.com/terminader7/github-finder",
       description:
         "React application for users to search for Github profiles. The application leverages the Github search API to return results based on user query.",
-      technologies: [
-        " ReactJS ",
-        "Axios ",
-        " Github API ",
-        "Axios",
-        " Heroku ",
-      ],
+      technologies: ["ReactJS", "Github API", "Axios", "Heroku"],
     },
     {
       title: "Calculator",
@@ -110,7 +103,7 @@ export const Projects = () => {
       github: "https://github.com/terminader7/js-calculator",
       description:
         "Calculator app that uses JavaScript to perform mathematical equations.",
-      technologies: ["ReactJS", "Styled Components", "Heroku", "JavaScript"],
+      technologies: ["ReactJS", "Heroku", "Styled Components"],
     },
     {
       title: "Drum-Machine",
@@ -119,13 +112,7 @@ export const Projects = () => {
       github: "https://github.com/terminader7/drum-machine-fcc",
       description:
         "FreeCodeCamp project made to exercise basic CSS and JavaScript to make an interactive page",
-      technologies: [
-        "ReactJS",
-        "CSS Styling",
-        "JavaScript",
-        "React Hooks",
-        "Heroku",
-      ],
+      technologies: ["ReactJS", "CSS Styling", "React Hooks", "Heroku"],
     },
   ];
   return (

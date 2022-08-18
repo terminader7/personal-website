@@ -19,7 +19,6 @@ interface IProps {
 const ProjectRow = styled(motion.div)`
   display: flex;
   flex-direction: row;
-  position: relative;
   height: auto;
   width: 1500px;
   align-items: flex-start;
@@ -45,14 +44,14 @@ const ProjectTitle = styled(motion.div)`
   font-weight: bold;
   transition: 0.5s;
   padding-top: 20px;
-  width: fit-content;
+  width: auto;
   margin-left: 200px;
   ${mobileMediaQuery} {
     padding-top: 15px;
-    position: relative;
     justify-content: center;
     align-items: center;
     margin-left: 0px;
+    padding-bottom: 30px;
   }
   ${tabletMediaQuery} {
   }
@@ -68,8 +67,8 @@ const AccentBox = styled(motion.div)`
   border-radius: 3px;
   transition: 0.25s ease-in-out;
   ${mobileMediaQuery} {
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
   }
   ${tabletMediaQuery} {
   }
@@ -87,7 +86,7 @@ const PictureContainer = styled(motion.div)`
   align-items: center;
   transition: 0.25s ease-in-out;
   ${mobileMediaQuery} {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
   ${tabletMediaQuery} {
   }
@@ -95,13 +94,14 @@ const PictureContainer = styled(motion.div)`
 
 const ProjectPicture = styled(motion.img)`
   z-index: 1;
-  position: relative;
   cursor: pointer;
   height: auto;
   width: 500px;
   border-radius: 3px;
   transition: 0.5s;
   transition: ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
   ${mobileMediaQuery} {
     width: 300px;
   }
@@ -121,14 +121,13 @@ const ProjectInfoContainer = styled(motion.div)`
     font-size: 25px;
     justify-content: center;
     margin-left: 0px;
-    width: 100vw;
+    width: 78vw;
   }
   ${tabletMediaQuery} {
   }
 `;
 
 const ProjectDescriptionContainer = styled(motion.div)`
-  position: relative;
   color: white;
   justify-content: center;
   align-items: center;
@@ -148,7 +147,6 @@ const ProjectDescriptionContainer = styled(motion.div)`
 `;
 
 const ProjectDescription = styled(motion.div)`
-  position: relative;
   display: flex;
   padding: 25px;
   justify-content: flex-start;
@@ -213,7 +211,6 @@ const AppLinkContainer = styled(motion.div)`
 const LinksContainer = styled(motion.div)`
   display: flex;
   justify-content: flex-end;
-  position: relative;
   bottom: 0;
   flex-direction: row;
   gap: 10px;

@@ -22,11 +22,26 @@ const NavbarContainer = styled.nav`
   ${tabletMediaQuery} {
   }
 `;
-const NavLink = styled.li`
-  display: inline-block;
-`;
 
+const NavLinkList = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  font-size: 20px;
+  padding-left: 85px;
+  ${mobileMediaQuery} {
+    font-size: 18px;
+    gap: 25px;
+    justify-content: center;
+    padding-left: 0px;
+  }
+  ${tabletMediaQuery} {
+  }
+`;
 const NavLinkItem = styled.div`
+  display: inline-block;
   text-decoration: none;
   color: white;
   :hover {
@@ -34,61 +49,45 @@ const NavLinkItem = styled.div`
     cursor: pointer;
   }
   transition: 0.5s;
-`;
-const NavLinkList = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
-  width: 100%;
-  font-size: 20px;
   ${mobileMediaQuery} {
-    font-size: 18px;
-    justify-content: center;
+    gap: 20px;
   }
   ${tabletMediaQuery} {
   }
 `;
+
 export const Navbar = () => {
   return (
     <NavbarContainer>
       <NavLinkList>
-        <NavLink>
-          <NavLinkItem
-            onClick={() => {
-              ScrollTo(Sections.home);
-            }}
-          >
-            Home
-          </NavLinkItem>
-        </NavLink>
-        <NavLink>
-          <NavLinkItem
-            onClick={() => {
-              ScrollTo(Sections.about);
-            }}
-          >
-            About
-          </NavLinkItem>
-        </NavLink>
-        <NavLink>
-          <NavLinkItem
-            onClick={() => {
-              ScrollTo(Sections.projects);
-            }}
-          >
-            Projects
-          </NavLinkItem>
-        </NavLink>
-        <NavLink>
-          <NavLinkItem
-            onClick={() => {
-              ScrollTo(Sections.contact);
-            }}
-          >
-            Contact
-          </NavLinkItem>
-        </NavLink>
+        <NavLinkItem
+          onClick={() => {
+            ScrollTo(Sections.home);
+          }}
+        >
+          Home
+        </NavLinkItem>
+        <NavLinkItem
+          onClick={() => {
+            ScrollTo(Sections.about);
+          }}
+        >
+          About
+        </NavLinkItem>
+        <NavLinkItem
+          onClick={() => {
+            ScrollTo(Sections.projects);
+          }}
+        >
+          Projects
+        </NavLinkItem>
+        <NavLinkItem
+          onClick={() => {
+            ScrollTo(Sections.contact);
+          }}
+        >
+          Contact
+        </NavLinkItem>
       </NavLinkList>
     </NavbarContainer>
   );

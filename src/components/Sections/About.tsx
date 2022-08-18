@@ -40,7 +40,6 @@ const AboutTitleText = styled(motion.div)`
   padding-bottom: 15px;
   ${mobileMediaQuery} {
     font-size: 25px;
-    padding-bottom: 10px;
   }
   ${tabletMediaQuery} {
   }
