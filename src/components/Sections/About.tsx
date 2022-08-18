@@ -4,12 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import { Sections } from "../../types";
-import { ReactLogo } from "../../images/ReactLogo";
-import { JSLogo } from "../../images/JSLogo";
-import { HTMLLogo } from "../../images/HTMLLogo";
-import { CSSLogo } from "../../images/CSSLogo";
-import { NodeJSLogo } from "../../images/NodeJSLogo";
-import { TypeScriptLogo } from "../../images/TypeScriptLogo";
+import { Skills } from "./Skills";
 import { GetBaseImgPath } from "../../utils";
 import { mobileMediaQuery, tabletMediaQuery } from "../../constants";
 
@@ -160,108 +155,17 @@ const BioText = styled(motion.div)`
   ${tabletMediaQuery} {
   }
 `;
-const SkillsContainer = styled(motion.div)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  flex-direction: column;
-  padding-top: 40px;
-  gap: 10px;
-  font-family: inherit;
-  border: 2px #00db8b solid;
-  border-radius: 5px;
-  padding: 10px;
-  margin: auto;
-  position: relative;
-  ${mobileMediaQuery} {
-    padding-top: 30px;
-    width: fit-content;
-    padding: 15px;
-  }
-
-  ${tabletMediaQuery} {
-  }
-`;
-const SkillsItemsTitleText = styled(motion.div)`
-  display: flex;
-  color: white;
-  font-weight: bold;
-  font-size: 30px;
-  align-items: center;
-  justify-content: center;
-  ${mobileMediaQuery} {
-    font-size: 25px;
-  }
-
-  ${tabletMediaQuery} {
-  }
-`;
-const SkillsItem = styled(motion.div)`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  gap: 60px;
-  ${mobileMediaQuery} {
-    gap: 10px;
-  }
-
-  ${tabletMediaQuery} {
-  }
-`;
-const SkillsItemRow = styled(motion.div)`
-  display: flex;
-  padding-top: 30px;
-  flex-direction: row;
-  gap: 10px;
-  padding-left: 10px;
-  align-items: center;
-  ${mobileMediaQuery} {
-    font-size: 20px;
-    gap: 5px;
-  }
-
-  ${tabletMediaQuery} {
-  }
-`;
-
-const SkillsItemList = styled(motion.div)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  align-items: start;
-  justify-content: flex-start;
-  padding-bottom: 10px;
-  ${mobileMediaQuery} {
-    grid-template-columns: repeat(1);
-  }
-
-  ${tabletMediaQuery} {
-  }
-`;
 
 export const About = () => {
   const control = useAnimation();
 
-  const control2 = useAnimation();
-
   const [ref, inView] = useInView({ threshold: 0.1 });
-
-  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     if (inView) {
       control.start("visible");
     }
   }, [inView]);
-
-  useEffect(() => {
-    if (inView2) {
-      control2.start("visible");
-    }
-  });
 
   const appearVariant = {
     visible: { opacity: 1, scale: 1 },
@@ -276,10 +180,6 @@ export const About = () => {
     hidden: { opacity: 0, x: 200 },
   };
 
-  const appearFromBottomVariant = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 50 },
-  };
   return (
     <AboutContainer id={Sections.about}>
       <AboutHeaderContainer>
@@ -329,37 +229,7 @@ export const About = () => {
             />
           </PictureOfMeContainer>
         </BioContainer>
-        <SkillsContainer
-          ref={ref2}
-          variants={appearFromBottomVariant}
-          initial="hidden"
-          transition={{ duration: 1 }}
-          animate={control2}
-        >
-          <SkillsItemsTitleText>Skills</SkillsItemsTitleText>
-          <SkillsItem>
-            <SkillsItemList>
-              <SkillsItemRow>
-                <ReactLogo /> React
-              </SkillsItemRow>
-              <SkillsItemRow>
-                <JSLogo /> JavaScript
-              </SkillsItemRow>
-              <SkillsItemRow>
-                <HTMLLogo /> HTML
-              </SkillsItemRow>
-              <SkillsItemRow>
-                <CSSLogo /> CSS
-              </SkillsItemRow>
-              <SkillsItemRow>
-                <TypeScriptLogo /> TypeScript
-              </SkillsItemRow>
-              <SkillsItemRow>
-                <NodeJSLogo /> Node.js
-              </SkillsItemRow>
-            </SkillsItemList>
-          </SkillsItem>
-        </SkillsContainer>
+        <Skills />
       </AboutContentContainer>
     </AboutContainer>
   );

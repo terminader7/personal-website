@@ -11,6 +11,8 @@ const ProjectsContainer = styled.div`
   flex-direction: column;
   background-color: #2b2b2b;
   font-family: Bahnschrift;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 100px;
   ${mobileMediaQuery} {
     padding-bottom: 75px;

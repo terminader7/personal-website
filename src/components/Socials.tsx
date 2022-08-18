@@ -13,7 +13,7 @@ import { mobileMediaQuery, tabletMediaQuery } from "../constants";
 const SocialsList = styled(motion.div)`
   display: flex;
   position: fixed;
-  z-index: 0;
+  z-index: 3;
   flex-direction: column;
   width: fit-content;
   justify-content: space-evenly;

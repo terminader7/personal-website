@@ -38,12 +38,13 @@ const NavLinkItem = styled.div`
 const NavLinkList = styled.ul`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   width: 100%;
   font-size: 20px;
   ${mobileMediaQuery} {
     font-size: 18px;
+    justify-content: center;
   }
   ${tabletMediaQuery} {
   }

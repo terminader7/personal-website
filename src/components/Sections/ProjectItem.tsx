@@ -15,9 +15,6 @@ interface IProps {
   technologies: string[];
   github: string;
 }
-const ProjectItemContainer = styled(motion.div)`
-  display: flex;
-`;
 
 const ProjectRow = styled(motion.div)`
   display: flex;
@@ -29,7 +26,7 @@ const ProjectRow = styled(motion.div)`
   justify-content: center;
   padding-top: 30px;
   ${mobileMediaQuery} {
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100vw;
     padding-top: 15px;
     align-items: center;
@@ -97,7 +94,7 @@ const PictureContainer = styled(motion.div)`
 `;
 
 const ProjectPicture = styled(motion.img)`
-  z-index: 2;
+  z-index: 1;
   position: relative;
   cursor: pointer;
   height: auto;
@@ -107,21 +104,20 @@ const ProjectPicture = styled(motion.img)`
   transition: ease-in-out;
   ${mobileMediaQuery} {
     width: 300px;
-    position: static;
   }
   ${tabletMediaQuery} {
   }
 `;
 const ProjectInfoContainer = styled(motion.div)`
-  z-index: 3;
+  z-index: 2;
   font-size: 30px;
   color: white;
-  height: 350px;
   justify-content: flex-end;
   align-items: center;
   margin-left: -60px;
   width: 500px;
   ${mobileMediaQuery} {
+    flex-direction: column;
     font-size: 25px;
     justify-content: center;
     margin-left: 0px;
@@ -168,6 +164,7 @@ const ProjectTechsContainer = styled(motion.div)`
   justify-content: flex-end;
   padding-top: 30px;
   ${mobileMediaQuery} {
+    justify-content: center;
   }
   ${tabletMediaQuery} {
   }
@@ -180,6 +177,7 @@ const ProjectTechs = styled(motion.div)`
   ${mobileMediaQuery} {
     justify-content: center;
     align-items: center;
+    font-size: 15px;
   }
   ${tabletMediaQuery} {
   }
@@ -221,7 +219,7 @@ const LinksContainer = styled(motion.div)`
   gap: 10px;
   padding-top: 40px;
   ${mobileMediaQuery} {
-    gap: 7px;
+    gap: 15px;
     padding-top: 20px;
     justify-content: center;
   }
@@ -320,67 +318,65 @@ export const ProjectItem = ({
     );
   } else {
     return (
-      <ProjectItemContainer>
-        <ProjectRow>
-          <PictureContainer>
-            <ProjectPicture
-              ref={ref}
-              variants={slideInLeftVariant}
-              initial="hidden"
-              transition={{ duration: 1 }}
-              animate={control}
-              src={src}
-              onClick={() => {
-                window.open(path);
-              }}
-            />
-            <AccentBox
-              ref={ref}
-              variants={appearVariant}
-              initial="hidden"
-              transition={{ duration: 2 }}
-              animate={control}
-            />
-          </PictureContainer>
-          <ProjectInfoContainer
+      <ProjectRow>
+        <PictureContainer>
+          <ProjectPicture
             ref={ref}
-            variants={slideInRightVariant}
+            variants={slideInLeftVariant}
             initial="hidden"
             transition={{ duration: 1 }}
             animate={control}
+            src={src}
+            onClick={() => {
+              window.open(path);
+            }}
+          />
+          <AccentBox
+            ref={ref}
+            variants={appearVariant}
+            initial="hidden"
+            transition={{ duration: 2 }}
+            animate={control}
+          />
+        </PictureContainer>
+        <ProjectInfoContainer
+          ref={ref}
+          variants={slideInRightVariant}
+          initial="hidden"
+          transition={{ duration: 1 }}
+          animate={control}
+        >
+          <ProjectTitle
+            onClick={() => {
+              window.open(path);
+            }}
           >
-            <ProjectTitle
-              onClick={() => {
-                window.open(path);
-              }}
-            >
-              {title}
-            </ProjectTitle>
-            <ProjectDescriptionContainer>
-              <ProjectDescription>{description}</ProjectDescription>
-            </ProjectDescriptionContainer>
-            <ProjectTechsContainer>
-              <ProjectTechs>{technologies.join(",  ")}</ProjectTechs>
-            </ProjectTechsContainer>
-            <LinksContainer>
-              <TinyGithubContainer>
-                <TinyGithub
-                  onClick={() => {
-                    window.open(github);
-                  }}
-                />
-              </TinyGithubContainer>
-              <AppLinkContainer>
-                <AppLink
-                  onClick={() => {
-                    window.open(path);
-                  }}
-                />
-              </AppLinkContainer>
-            </LinksContainer>
-          </ProjectInfoContainer>
-        </ProjectRow>
-      </ProjectItemContainer>
+            {title}
+          </ProjectTitle>
+          <ProjectDescriptionContainer>
+            <ProjectDescription>{description}</ProjectDescription>
+          </ProjectDescriptionContainer>
+          <ProjectTechsContainer>
+            <ProjectTechs>{technologies.join(",  ")}</ProjectTechs>
+          </ProjectTechsContainer>
+          <LinksContainer>
+            <TinyGithubContainer>
+              <TinyGithub
+                onClick={() => {
+                  window.open(github);
+                }}
+              />
+            </TinyGithubContainer>
+            <AppLinkContainer>
+              <AppLink
+                onClick={() => {
+                  window.open(path);
+                }}
+              />
+            </AppLinkContainer>
+          </LinksContainer>
+        </ProjectInfoContainer>
+      </ProjectRow>
     );
   }
 };
