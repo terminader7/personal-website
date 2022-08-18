@@ -100,9 +100,9 @@ const PreviewsContainer = styled.div`
 `;
 
 export const Homepage = () => {
-  // useEffect(() => {
-  //   window.history.scrollRestoration = "manual";
-  // }, []);
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
   const appearVariant = {
     visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1 },

@@ -237,7 +237,11 @@ export const ProjectItem = ({
 }: IProps) => {
   const control = useAnimation();
 
+  const control2 = useAnimation();
+
   const [ref, inView] = useInView({ threshold: 1 });
+
+  const { ref: ref2, inView: inView2 } = useInView({ threshold: 0.3 });
 
   const deviceType = () => {
     const ua = navigator.userAgent;
@@ -259,6 +263,12 @@ export const ProjectItem = ({
     }
   }, [inView]);
 
+  useEffect(() => {
+    if (inView2) {
+      control2.start("visible");
+    }
+  });
+
   const slideInLeftVariant = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -200 },
@@ -267,13 +277,23 @@ export const ProjectItem = ({
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: 200 },
   };
+  const appearFromBottomVariant = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 50 },
+  };
   const appearVariant = {
     visible: { opacity: 1, scale: 1 },
     hidden: { opacity: 0, scale: 1 },
   };
   if (deviceType() === "mobile") {
     return (
-      <ProjectRow>
+      <ProjectRow
+        ref={ref2}
+        variants={appearFromBottomVariant}
+        initial="hidden"
+        transition={{ duration: 0.5 }}
+        animate={control2}
+      >
         <ProjectInfoContainer>
           <ProjectTitle
             onClick={() => {

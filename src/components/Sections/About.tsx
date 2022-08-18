@@ -163,7 +163,7 @@ const BioText = styled(motion.div)`
 export const About = () => {
   const control = useAnimation();
 
-  const [ref, inView] = useInView({ threshold: 0.1 });
+  const [ref, inView] = useInView({ threshold: 0.2 });
 
   useEffect(() => {
     if (inView) {
