@@ -5,10 +5,10 @@ import styled from "styled-components";
 import { Sections } from "../../types";
 import { UpArrow } from "../../images/UpArrow";
 import { deviceType, ScrollTo } from "../../utils";
-import { TinyGithub } from "../../images/TinyGithub";
+import { Github } from "../../images/Github";
 import { Linkedin } from "../../images/Linkedin";
 import { Resume } from "../../images/Resume";
-import { TinyGithubTwo } from "../../images/TinyGithubTwo";
+import { TinyGithub } from "../../images/TinyGithub";
 import { mobileMediaQuery } from "../../constants";
 
 const ContactItemsContainer = styled.div`
@@ -163,7 +163,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             </ContactTextInvitationTwo>
           </ContactHeaderContainer>
           <ContactLinksContainer>
-            <TinyGithub
+            <Github
               onClick={() => {
                 window.open("https://github.com/terminader7");
               }}
@@ -209,7 +209,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             }}
           >
             <TinyGithubText>Like the site? View the repo here!</TinyGithubText>
-            <TinyGithubTwo />
+            <TinyGithub />
           </TinyGitHubContainer>
         </ContactContentContainer>
       </ContactItemsContainer>
@@ -254,7 +254,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             }}
           >
             <TinyGithubText>Like the site? View the repo here!</TinyGithubText>
-            <TinyGithubTwo />
+            <TinyGithub />
           </TinyGitHubContainer>
         </ContactContentContainer>
       </ContactItemsContainer>

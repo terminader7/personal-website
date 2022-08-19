@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import { Contact } from "./Contact";
 import { About } from "./About";
-import { Projects } from "./Projects";
+import { Projects } from "./projects/Projects";
 import { ScrollTo } from "../../utils";
 import { Sections } from "../../types";
 import { Navbar } from "../Navbar";
@@ -18,6 +18,7 @@ const HomepageContainer = styled.div`
   flex-direction: column;
   width: 100%;
 `;
+
 const WelcomeTextContainer = styled.div`
   display: flex;
   background: linear-gradient(-45deg, #a7c7e7, #00db8b, #ff5148, #ffb347);
@@ -72,8 +73,7 @@ const WelcomeButtonContainer = styled(motion.div)`
   width: auto;
   transition: 0.5s;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0px 10px;
   justify-content: center;
   opacity: 0.5;
   ${mobileMediaQuery} {

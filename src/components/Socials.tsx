@@ -2,11 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import { TinyGithub } from "../images/TinyGithub";
+import { Github } from "../images/Github";
 import { Linkedin } from "../images/Linkedin";
-import { Instagram } from "../images/Instagram";
 import { Resume } from "../images/Resume";
-import { mobileMediaQuery } from "../constants";
 import { deviceType } from "../utils";
 
 const SocialsList = styled(motion.div)`
@@ -16,7 +14,7 @@ const SocialsList = styled(motion.div)`
   flex-direction: column;
   width: fit-content;
   justify-content: space-evenly;
-  gap: 20px;
+  gap: 30px;
   left: 50px;
   bottom: 13px;
   justify-content: flex-start;
@@ -24,10 +22,6 @@ const SocialsList = styled(motion.div)`
   height: auto;
   background-color: transparent;
   align-items: center;
-  ${mobileMediaQuery} {
-    left: 13px;
-    gap: 15px;
-  }
 `;
 
 const SocialLinkItem = styled(motion.div)`
@@ -39,18 +33,11 @@ const SocialLinkItem = styled(motion.div)`
   display: flex;
   color: white;
   transition: 0.5s;
-  ${mobileMediaQuery} {
-    height: 15px;
-    width: 15px;
-  }
 `;
 
 const VerticalLine = styled.div`
   border-left: 1px solid white;
   height: 120px;
-  ${mobileMediaQuery} {
-    height: 60px;
-  }
 `;
 export const Socials = () => {
   const appearVariant = {
@@ -72,7 +59,7 @@ export const Socials = () => {
           whileHover={{ y: -10 }}
           transition={{ type: "spring", duration: 0.02 }}
         >
-          <TinyGithub
+          <Github
             onClick={() => {
               window.open("https://github.com/terminader7");
             }}
@@ -87,16 +74,6 @@ export const Socials = () => {
               window.open(
                 "https://www.linkedin.com/in/nader-ebrahim-28576b199/"
               );
-            }}
-          />
-        </SocialLinkItem>
-        <SocialLinkItem
-          whileHover={{ y: -10 }}
-          transition={{ type: "spring", duration: 0.1 }}
-        >
-          <Instagram
-            onClick={() => {
-              window.open("https://www.instagram.com/the_terminader/");
             }}
           />
         </SocialLinkItem>

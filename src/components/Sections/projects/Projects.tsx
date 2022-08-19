@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { mobileMediaQuery } from "../../constants";
+import { mobileMediaQuery } from "../../../constants";
 
-import { Sections } from "../../types";
-import { GetBaseImgPath } from "../../utils";
+import { Sections } from "../../../types";
+import { GetBaseImgPath } from "../../../utils";
 import { ProjectItem } from "./ProjectItem";
 
 const ProjectsContainer = styled.div`

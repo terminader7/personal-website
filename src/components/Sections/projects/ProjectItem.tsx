@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import { TinyGithub } from "../../images/TinyGithub";
-import { AppLink } from "../../images/AppLink";
-import { mobileMediaQuery } from "../../constants";
-import { deviceType } from "../../utils";
+import { Github } from "../../../images/Github";
+import { AppLink } from "../../../images/AppLink";
+import { mobileMediaQuery } from "../../../constants";
+import { deviceType } from "../../../utils";
 
 interface IProps {
   title: string;
@@ -283,7 +283,7 @@ export const ProjectItem = ({
           </ProjectTechsContainer>
           <LinksContainer>
             <TinyGithubContainer>
-              <TinyGithub
+              <Github
                 onClick={() => {
                   window.open(github);
                 }}
@@ -345,7 +345,7 @@ export const ProjectItem = ({
           </ProjectTechsContainer>
           <LinksContainer>
             <TinyGithubContainer>
-              <TinyGithub
+              <Github
                 onClick={() => {
                   window.open(github);
                 }}

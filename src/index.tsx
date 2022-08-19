@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import GlobalFont from "./globalFont";
-import { Homepage } from "./components/Sections/Homepage";
+import { Homepage } from "./components/sections/Homepage";
 
 const WebsiteContainer = styled.div`
   box-sizing: border-box;
