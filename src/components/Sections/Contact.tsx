@@ -69,6 +69,7 @@ const ContactContentContainer = styled.div`
   margin: auto;
   position: relative;
   ${mobileMediaQuery} {
+    gap: 0px;
   }
 `;
 
@@ -80,6 +81,9 @@ const ContactLinksContainer = styled.div`
   align-items: center;
   gap: 40px;
   padding-bottom: 10px;
+  ${mobileMediaQuery} {
+    padding-bottom: 30px;
+  }
 `;
 const EmailButton = styled(motion.div)`
   :hover {
