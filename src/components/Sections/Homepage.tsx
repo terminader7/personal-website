@@ -53,7 +53,7 @@ const WelcomeText = styled(motion.h1)`
   justify-content: center;
   align-items: center;
   ${mobileMediaQuery} {
-    font-size: 30px;
+    font-size: 27px;
   }
 `;
 
