@@ -26,7 +26,7 @@ const EmailItem = styled(motion.div)`
   }
   font-family: Bahnschrift;
   color: white;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: lighter;
   writing-mode: vertical-lr;
   transition: 0.5s;
@@ -59,12 +59,12 @@ export const Email = () => {
       >
         <EmailItem
           onClick={() => {
-            window.open("mailto:nebrahim2424@gmail.com");
+            window.open("mailto:mohammad.n.ebrahim@gmail.com");
           }}
           whileHover={{ y: -10 }}
           transition={{ type: "spring", duration: 0.02 }}
         >
-          nebrahim2424@gmail.com
+          mohammad.n.ebrahim@gmail.com
         </EmailItem>
         <VeritcalLine />
       </EmailContainer>

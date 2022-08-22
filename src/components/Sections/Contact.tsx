@@ -191,7 +191,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             whileHover={{ scale: scaleSize }}
             transition={{ duration: 0.2 }}
             onClick={() => {
-              window.open("mailto:nebrahim2424@gmail.com");
+              window.open("mailto:mohammad.n.ebrahim@gmail.com");
             }}
           >
             Lets Chat!
@@ -236,7 +236,7 @@ export const Contact = ({ scaleSize = 1.1 }) => {
             whileHover={{ scale: scaleSize }}
             transition={{ duration: 0.2 }}
             onClick={() => {
-              window.open("mailto:nebrahim2424@gmail.com");
+              window.open("mailto:mohammad.n.ebrahim@gmail.com");
             }}
           >
             Lets Chat!
